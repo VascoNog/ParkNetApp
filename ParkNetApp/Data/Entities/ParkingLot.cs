@@ -8,11 +8,8 @@ public class ParkingLot
     public string City { get; set; }
     public string Country { get; set; }
     public string PLIC { get; set; } // Parking Lot Identification Code ID+City+Country?
-    public DateOnly ActiveAt { get; set; }
+    public DateTime ActiveAt { get; set; }
+    public string Layout { get; set; }
     public string Description { get; set; }
-
-    //FK SchemaId
-    public int SchemaId { get; set; }
-    public Schema Schema { get; set; } 
 
 }

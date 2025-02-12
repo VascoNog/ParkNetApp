@@ -1,12 +1,10 @@
 ﻿namespace ParkNetApp.Data.Entities;
 
-public class ActivityHistory
+public class EntryAndExitHistory  // Para ter um histórico de entradas e saídas dos parques da rede.
 {
     public int Id { get; set; }
-
     public DateTime EntryAt { get; set; }
     public DateTime ExitAt { get; set; }
-    public double Fee { get; set; } // Valor cobrado, Pode ser Null se for avença?
 
     //Foreign Key UserId
     public string UserId { get; set; }
@@ -18,7 +16,12 @@ public class ActivityHistory
     public Vehicle Vehicle { get; set; }
 
 
-    //Foreign Key ParkingId
-    public int ParkingId { get; set; }
-    public ParkingLot Parking { get; set; }
+    //Foreign Key SlotId
+    public int SlotId { get; set; }
+    public Slot Slot { get; set; }
+
+
+    //Foreign Key TransactionId
+    public int TransactionId { get; set; }
+    public Transaction Transaction { get; set; }
 }

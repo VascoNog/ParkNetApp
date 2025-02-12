@@ -9,4 +9,9 @@ public class ParkingPermit
     //Foreign Key UserId
     public string UserId { get; set; }
     public IdentityUser User { get; set; }
+
+    //Foreign ParkingLotId -> A avença deve ser associada a um parque de estacionamento
+    public int ParkingLotId { get; set; }
+    public ParkingLot ParkingLot { get; set; }
+
 }
