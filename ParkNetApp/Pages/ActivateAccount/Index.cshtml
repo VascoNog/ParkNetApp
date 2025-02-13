@@ -1,0 +1,62 @@
+﻿@page
+@using System.Security.Claims
+@model ParkNetApp.Pages.ActivateAccount.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+    UserInfo currentUserInfo = null;
+    if (Model.UserInfo.Any(d => d.Id == userId))
+        currentUserInfo = Model.UserInfo.FirstOrDefault(d => d.Id == userId);
+}
+
+@if(currentUserInfo == null)
+{
+    <a href="/ActivateAccount/Create">Activate Now</a>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Account Status
+                </th>
+                <th>
+                    Credit Card (Valid Thru)
+                </th>
+                <th>
+                    Driver License (Valid Thru)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    @if (currentUserInfo.IsActivated)
+                    {
+                        <p>ACTIVE</p>
+                    }
+            </td>
+            <td>
+                @currentUserInfo.CreditCardNumb
+                (@currentUserInfo.CCExpDate)
+            </td>
+            <td>
+                @currentUserInfo.DriverLicenseNumber
+                (@currentUserInfo.DLExpDate)
+            </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@currentUserInfo.Id">Edit</a>
+                    @* <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>  *@
+                </td>
+        </tr>
+    </tbody>
+</table>
+
+}
+

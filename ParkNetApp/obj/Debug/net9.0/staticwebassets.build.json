@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0UPDCyNmugMtQQRhTdu5SDCb6rqM2KmCz1J3vVFHbc0=",
+  "Hash": "AYHyMR1mYqEjOFe8Sbop8oe0ye4Ia6Jj1iOLeQ0bL2g=",
   "Source": "ParkNetApp",
   "BasePath": "_content/ParkNetApp",
   "Mode": "Default",
@@ -2915,12 +2915,12 @@
       "OriginalItemSpec": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\ParkNetApp.bundle.scp.css"
     },
     {
-      "Identity": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-fvhpjtyr6v.gz",
+      "Identity": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-adgo1bmnw3.gz",
       "SourceId": "ParkNetApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ParkNetApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css#[.{fingerprint=fvhpjtyr6v}]?.map.gz",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css#[.{fingerprint=adgo1bmnw3}]?.map.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -2929,8 +2929,8 @@
       "RelatedAsset": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "5b7ig2cj79",
-      "Integrity": "fzLlXEmw9871JGb59kzfItifyrM9MgjHNQirf4lIS64=",
+      "Fingerprint": "dtokui5hl8",
+      "Integrity": "X0++qR+y8my3PhSlFZ8y9k9cKnG1qq6lQsQuM/vRcGY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
@@ -4462,8 +4462,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fvhpjtyr6v",
-      "Integrity": "RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ=",
+      "Fingerprint": "adgo1bmnw3",
+      "Integrity": "3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
@@ -20378,13 +20378,13 @@
       ]
     },
     {
-      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.fvhpjtyr6v.map",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-fvhpjtyr6v.gz",
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.adgo1bmnw3.map",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-adgo1bmnw3.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000038887809"
+          "Quality": "0.000038254084"
         }
       ],
       "ResponseHeaders": [
@@ -20394,15 +20394,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "25714"
+          "Value": "26140"
         },
         {
           "Name": "ETag",
-          "Value": "\"fzLlXEmw9871JGb59kzfItifyrM9MgjHNQirf4lIS64=\""
+          "Value": "\"X0++qR+y8my3PhSlFZ8y9k9cKnG1qq6lQsQuM/vRcGY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Thu, 13 Feb 2025 18:23:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -20422,13 +20422,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ=\""
+          "Value": "W/\"3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fvhpjtyr6v"
+          "Value": "adgo1bmnw3"
         },
         {
           "Name": "label",
@@ -20436,12 +20436,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ="
+          "Value": "sha256-3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4="
         }
       ]
     },
     {
-      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.fvhpjtyr6v.map",
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.adgo1bmnw3.map",
       "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "Selectors": [],
       "ResponseHeaders": [
@@ -20451,7 +20451,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "129371"
+          "Value": "130783"
         },
         {
           "Name": "Content-Type",
@@ -20459,11 +20459,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ=\""
+          "Value": "\"3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Thu, 13 Feb 2025 18:23:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -20473,7 +20473,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fvhpjtyr6v"
+          "Value": "adgo1bmnw3"
         },
         {
           "Name": "label",
@@ -20481,13 +20481,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ="
+          "Value": "sha256-3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4="
         }
       ]
     },
     {
-      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.fvhpjtyr6v.map.gz",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-fvhpjtyr6v.gz",
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.adgo1bmnw3.map.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-adgo1bmnw3.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -20496,7 +20496,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "25714"
+          "Value": "26140"
         },
         {
           "Name": "Content-Type",
@@ -20504,11 +20504,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fzLlXEmw9871JGb59kzfItifyrM9MgjHNQirf4lIS64=\""
+          "Value": "\"X0++qR+y8my3PhSlFZ8y9k9cKnG1qq6lQsQuM/vRcGY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Thu, 13 Feb 2025 18:23:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -20526,7 +20526,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fvhpjtyr6v"
+          "Value": "adgo1bmnw3"
         },
         {
           "Name": "label",
@@ -20534,7 +20534,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fzLlXEmw9871JGb59kzfItifyrM9MgjHNQirf4lIS64="
+          "Value": "sha256-X0++qR+y8my3PhSlFZ8y9k9cKnG1qq6lQsQuM/vRcGY="
         }
       ]
     },
@@ -20622,12 +20622,12 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-fvhpjtyr6v.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-adgo1bmnw3.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000038887809"
+          "Quality": "0.000038254084"
         }
       ],
       "ResponseHeaders": [
@@ -20637,15 +20637,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "25714"
+          "Value": "26140"
         },
         {
           "Name": "ETag",
-          "Value": "\"fzLlXEmw9871JGb59kzfItifyrM9MgjHNQirf4lIS64=\""
+          "Value": "\"X0++qR+y8my3PhSlFZ8y9k9cKnG1qq6lQsQuM/vRcGY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Thu, 13 Feb 2025 18:23:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -20665,13 +20665,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ=\""
+          "Value": "W/\"3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ="
+          "Value": "sha256-3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4="
         }
       ]
     },
@@ -20686,7 +20686,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "129371"
+          "Value": "130783"
         },
         {
           "Name": "Content-Type",
@@ -20694,11 +20694,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ=\""
+          "Value": "\"3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Thu, 13 Feb 2025 18:23:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -20708,13 +20708,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RXJ/QZiBfHXoPtXR2EgC+bFo2pe3GtbZO722RtiLGzQ="
+          "Value": "sha256-3jXfGBELeh9mF6cHj4FQjeKSbmZazX6ol1z783VrMZ4="
         }
       ]
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.map.gz",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-fvhpjtyr6v.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\muqybbsygz-adgo1bmnw3.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -20723,7 +20723,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "25714"
+          "Value": "26140"
         },
         {
           "Name": "Content-Type",
@@ -20731,11 +20731,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fzLlXEmw9871JGb59kzfItifyrM9MgjHNQirf4lIS64=\""
+          "Value": "\"X0++qR+y8my3PhSlFZ8y9k9cKnG1qq6lQsQuM/vRcGY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Thu, 13 Feb 2025 18:23:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -20753,7 +20753,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fzLlXEmw9871JGb59kzfItifyrM9MgjHNQirf4lIS64="
+          "Value": "sha256-X0++qR+y8my3PhSlFZ8y9k9cKnG1qq6lQsQuM/vRcGY="
         }
       ]
     },

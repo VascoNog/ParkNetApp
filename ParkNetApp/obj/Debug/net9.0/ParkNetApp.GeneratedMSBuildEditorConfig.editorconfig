@@ -32,6 +32,26 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivateAccount/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZhdGVBY2NvdW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivateAccount/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZhdGVBY2NvdW50XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivateAccount/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZhdGVBY2NvdW50XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivateAccount/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZhdGVBY2NvdW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivateAccount/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZhdGVBY2NvdW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

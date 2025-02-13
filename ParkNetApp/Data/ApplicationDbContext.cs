@@ -13,7 +13,7 @@ public class ParkNetDbContext : IdentityDbContext
     public DbSet<Floor> Floors { get; set; }    
     public DbSet<ParkingLot> ParkingLots { get; set; }
     public DbSet<ParkingPermit> ParkingPermits { get; set; }
-    public DbSet<PermitPrice> PermitePrices { get; set; }
+    public DbSet<PermitPrice> PermitPrices { get; set; }
     public DbSet<Slot> Slots { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<UserInfo> UserInfos { get; set; }
@@ -80,9 +80,9 @@ public class ParkNetDbContext : IdentityDbContext
         // Configuration of Transaction Entity
         modelBuilder.Entity<Transaction>(entity =>
         {
-            entity.Property(e => e.TransactionDate).HasColumnType("datetime2");
-            entity.Property(e => e.Amount).HasColumnType("decimal(18,2)");
-            entity.Property(e => e.Description).HasColumnType("nvarchar(500)"); // NULLABLE
+            entity.Property(e => e.TransactionDate).IsRequired().HasColumnType("datetime2");
+            entity.Property(e => e.Amount).IsRequired(). HasColumnType("decimal(18,2)");
+            entity.Property(e => e.TransactionType).HasColumnType("nvarchar(500)"); // NULLABLE
         });
 
         // Configuration of UserInfo Entity
@@ -94,7 +94,7 @@ public class ParkNetDbContext : IdentityDbContext
             entity.Property(e => e.DriverLicenseNumber).IsRequired().HasColumnType("nvarchar(25)");
             entity.HasIndex(e => e.DriverLicenseNumber).IsUnique();
             entity.Property(e => e.DLExpDate).IsRequired().HasColumnType("date");
-
+            entity.Property(e => e.IsActivated).IsRequired();
         });
 
         // Configuration of Vehicle Entity

@@ -1,5 +1,6 @@
 
 using ParkNetApp;
+using ParkNetApp.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ParkNetDbContext>();
 builder.Services.AddRazorPages();
 
-builder.Services.AddScoped<ParkNetDbContext>();
+builder.Services.AddScoped<ParkNetRepository>();
+
 
 var app = builder.Build();
 

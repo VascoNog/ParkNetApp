@@ -10,8 +10,8 @@ public class ParkingPermit
     public string UserId { get; set; }
     public IdentityUser User { get; set; }
 
-    //Foreign ParkingLotId -> A avença deve ser associada a um parque de estacionamento
-    public int ParkingLotId { get; set; }
-    public ParkingLot ParkingLot { get; set; }
+    //Foreign SlotId -> A avença deve ser associada a um Slot
+    public int SLotId { get; set; }
+    public Slot Slot { get; set; }
 
 }

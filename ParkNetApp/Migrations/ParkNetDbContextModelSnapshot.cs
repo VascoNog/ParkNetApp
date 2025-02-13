@@ -342,7 +342,7 @@ namespace ParkNetApp.Migrations
                     b.Property<int>("DaysOfPermit")
                         .HasColumnType("int");
 
-                    b.Property<int>("ParkingLotId")
+                    b.Property<int>("SLotId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("SartedAt")
@@ -353,7 +353,7 @@ namespace ParkNetApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParkingLotId");
+                    b.HasIndex("SLotId");
 
                     b.HasIndex("UserId");
 
@@ -383,7 +383,7 @@ namespace ParkNetApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PermitePrices");
+                    b.ToTable("PermitPrices");
                 });
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.Slot", b =>
@@ -406,8 +406,7 @@ namespace ParkNetApp.Migrations
 
                     b.Property<string>("SlotType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(1)")
-                        .HasColumnName("nvarchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -424,16 +423,14 @@ namespace ParkNetApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<double>("Amount")
-                        .HasColumnType("float")
-                        .HasColumnName("decimal(18,2)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("nvarchar(500)");
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("TransactionDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("TransactionType")
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -463,6 +460,9 @@ namespace ParkNetApp.Migrations
                     b.Property<string>("DriverLicenseNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(25)");
+
+                    b.Property<bool>("IsActivated")
+                        .HasColumnType("bit");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -614,9 +614,9 @@ namespace ParkNetApp.Migrations
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.ParkingPermit", b =>
                 {
-                    b.HasOne("ParkNetApp.Data.Entities.ParkingLot", "ParkingLot")
+                    b.HasOne("ParkNetApp.Data.Entities.Slot", "Slot")
                         .WithMany()
-                        .HasForeignKey("ParkingLotId")
+                        .HasForeignKey("SLotId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -624,7 +624,7 @@ namespace ParkNetApp.Migrations
                         .WithMany()
                         .HasForeignKey("UserId");
 
-                    b.Navigation("ParkingLot");
+                    b.Navigation("Slot");
 
                     b.Navigation("User");
                 });
