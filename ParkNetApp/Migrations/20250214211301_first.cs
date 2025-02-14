@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ParkNetApp.Migrations
 {
     /// <inheritdoc />
-    public partial class AddEntities : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -60,7 +60,6 @@ namespace ParkNetApp.Migrations
                     Address = table.Column<string>(type: "nvarchar(500)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    PLIC = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     ActiveAt = table.Column<DateTime>(type: "date", nullable: false),
                     Layout = table.Column<string>(type: "nvarchar(500)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(500)", nullable: true)
@@ -222,7 +221,8 @@ namespace ParkNetApp.Migrations
                     CreditCardNumb = table.Column<string>(type: "nvarchar(25)", nullable: false),
                     CCExpDate = table.Column<DateOnly>(type: "date", nullable: false),
                     DriverLicenseNumber = table.Column<string>(type: "nvarchar(25)", nullable: false),
-                    DLExpDate = table.Column<DateOnly>(type: "date", nullable: false)
+                    DLExpDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    IsActivated = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -283,7 +283,7 @@ namespace ParkNetApp.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Code = table.Column<string>(type: "nvarchar(10)", nullable: false),
-                    SlotType = table.Column<string>(type: "nvarchar(20)", nullable: false),
+                    SlotType = table.Column<string>(type: "nchar(1)", nullable: false),
                     IsOccupied = table.Column<bool>(type: "bit", nullable: false),
                     FloorId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -431,9 +431,9 @@ namespace ParkNetApp.Migrations
                 column: "ParkingLotId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ParkingLots_PLIC",
+                name: "IX_ParkingLots_Designation",
                 table: "ParkingLots",
-                column: "PLIC",
+                column: "Designation",
                 unique: true);
 
             migrationBuilder.CreateIndex(

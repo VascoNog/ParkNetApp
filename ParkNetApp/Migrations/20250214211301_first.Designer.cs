@@ -12,8 +12,8 @@ using ParkNetApp.Data;
 namespace ParkNetApp.Migrations
 {
     [DbContext(typeof(ParkNetDbContext))]
-    [Migration("20250213175620_AddEntities")]
-    partial class AddEntities
+    [Migration("20250214211301_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -322,13 +322,9 @@ namespace ParkNetApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("PLIC")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("PLIC")
+                    b.HasIndex("Designation")
                         .IsUnique();
 
                     b.ToTable("ParkingLots");
@@ -409,7 +405,7 @@ namespace ParkNetApp.Migrations
 
                     b.Property<string>("SlotType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nchar(1)");
 
                     b.HasKey("Id");
 
@@ -463,6 +459,9 @@ namespace ParkNetApp.Migrations
                     b.Property<string>("DriverLicenseNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(25)");
+
+                    b.Property<bool>("IsActivated")
+                        .HasColumnType("bit");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");

@@ -1,0 +1,70 @@
+﻿@page
+@model ParkNetApp.Pages.AddParkingLot.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ParkingLot</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ParkingLot.Id" />
+            <div class="form-group">
+                <label asp-for="ParkingLot.Designation" class="control-label"></label>
+                <input asp-for="ParkingLot.Designation" class="form-control" />
+                <span asp-validation-for="ParkingLot.Designation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="ParkingLot.Address" class="control-label"></label>
+                <input asp-for="ParkingLot.Address" class="form-control" />
+                <span asp-validation-for="ParkingLot.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="ParkingLot.City" class="control-label"></label>
+                <input asp-for="ParkingLot.City" class="form-control" />
+                <span asp-validation-for="ParkingLot.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="ParkingLot.Country" class="control-label"></label>
+                <input asp-for="ParkingLot.Country" class="form-control" />
+                <span asp-validation-for="ParkingLot.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="ParkingLot.ActiveAt" class="control-label"></label>
+                <input asp-for="ParkingLot.ActiveAt" class="form-control" />
+                <span asp-validation-for="ParkingLot.ActiveAt" class="text-danger"></span>
+            </div>
+@*             <div class="form-group">
+                <label asp-for="ParkingLot.Layout" class="control-label"></label>
+                <textarea asp-for="ParkingLot.Layout" class="form-control" style="width: 95vw; height: 80vh; resize: none;"></textarea>
+                <span asp-validation-for="ParkingLot.Layout" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                
+                <label asp-for="ParkingLot.Description" class="control-label"></label>
+                <input asp-for="ParkingLot.Description" class="form-control" />
+                <span asp-validation-for="ParkingLot.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

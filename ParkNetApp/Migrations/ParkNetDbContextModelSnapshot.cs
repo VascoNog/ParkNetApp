@@ -319,13 +319,9 @@ namespace ParkNetApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("PLIC")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("PLIC")
+                    b.HasIndex("Designation")
                         .IsUnique();
 
                     b.ToTable("ParkingLots");
@@ -406,7 +402,7 @@ namespace ParkNetApp.Migrations
 
                     b.Property<string>("SlotType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nchar(1)");
 
                     b.HasKey("Id");
 

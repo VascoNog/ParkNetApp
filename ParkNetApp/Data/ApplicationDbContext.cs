@@ -42,11 +42,10 @@ public class ParkNetDbContext : IdentityDbContext
         modelBuilder.Entity<ParkingLot>(entity =>
         {
             entity.Property(e => e.Designation).IsRequired().HasColumnType("nvarchar(100)");
+            entity.HasIndex(e => e.Designation).IsUnique();
             entity.Property(e => e.Address).IsRequired().HasColumnType("nvarchar(500)");
             entity.Property(e => e.City).IsRequired().HasColumnType("nvarchar(50)");
             entity.Property(e => e.Country).IsRequired().HasColumnType("nvarchar(50)");
-            entity.Property(e => e.PLIC).IsRequired().HasColumnType("nvarchar(50)"); // Parking Lot Identification Code ID+City+Country?
-            entity.HasIndex(e => e.PLIC).IsUnique();
             entity.Property(e => e.ActiveAt).IsRequired().HasColumnType("date");
             entity.Property(e => e.Layout).IsRequired().HasColumnType("nvarchar(500)");
             entity.Property(e => e.Description).HasColumnType("nvarchar(500)"); // NULLABLE
@@ -73,7 +72,7 @@ public class ParkNetDbContext : IdentityDbContext
         modelBuilder.Entity<Slot>(entity =>
         {
             entity.Property(e => e.Code).IsRequired().HasColumnType("nvarchar(10)");
-            entity.Property(e => e.SlotType).IsRequired().HasColumnType("nvarchar(20)");
+            entity.Property(e => e.SlotType).IsRequired().HasColumnType("nchar(1)");
             entity.Property(e => e.IsOccupied).IsRequired(); // BOOLEAN TYPE; True if occupied, False if not
         });
 
