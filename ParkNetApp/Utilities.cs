@@ -1,4 +1,7 @@
-﻿namespace ParkNetApp;
+﻿using System.Numerics;
+using System.Runtime.Intrinsics.X86;
+
+namespace ParkNetApp;
 
 public class Utilities
 {
@@ -54,41 +57,50 @@ public class Utilities
     {
         int numberOfFloors = floorsOfParkingLot.Count;
         int floorIndex = 0;
+        bool isLastRowBlank = false;
+        int lastRowWithSlots = 0;
+
+        var adjustLastRowWithSlots = 0;
 
         var slotsOfParkingLot = new List<Slot>();
         var originalMatrix = GetRowsMatrix(layout);
         int numbRows = originalMatrix.Length;
+        //int numbOfSlotRows = numbRows - floorsOfParkingLot.Count(); 
 
-        while (floorIndex < numberOfFloors)
+        for (int i = 0; i < numbRows; i++)
         {
-            for (int i = 0; i < numbRows; i++)
+            if (IsSlotRow(originalMatrix, i))
             {
-                if (IsSlotRow(originalMatrix, i))
-                {
-                    string codeLetter = GetCodeLetter(i);
+                lastRowWithSlots = i - adjustLastRowWithSlots;
 
-                    for (int j = 0; j < originalMatrix[i].Length; j++)
+                isLastRowBlank = false;
+                for (int j = 0; j < originalMatrix[i].Length; j++)
+                {
+                    if (!char.IsWhiteSpace(originalMatrix[i][j]))
                     {
-                        if (!char.IsWhiteSpace(originalMatrix[i][j]))
+                        var codeLetter = GetCodeLetter(lastRowWithSlots);
+                        slotsOfParkingLot.Add(new Slot
                         {
-                            slotsOfParkingLot.Add(new Slot
-                            {
-                                Code = $"{codeLetter}{j}",
-                                SlotType = originalMatrix[i][j],
-                                FloorId = floorsOfParkingLot[floorIndex].Id
-                            });
-                        }
+                            Code = $"{codeLetter}{j}",
+                            SlotType = originalMatrix[i][j],
+                            FloorId = floorsOfParkingLot[floorIndex].Id
+                        });
                     }
                 }
-                else
+            }
+            else
+            {
+                if (isLastRowBlank)
                 {
-                    floorIndex++;
-                    if (floorIndex >= numberOfFloors)
-                        return slotsOfParkingLot;
+                    adjustLastRowWithSlots++;
+                    continue;
                 }
+                adjustLastRowWithSlots++;
+                // Se última não foi blank e a corrente é, então é um novo floor
+                floorIndex++;
+                isLastRowBlank = true;
             }
         }
-
         return slotsOfParkingLot;
     }
 
@@ -96,8 +108,10 @@ public class Utilities
     {
         var floorsOfParkingLot = new List<Floor>();
         var originalMatrix = GetRowsMatrix(layout);
+        bool IsLastRowBlank = false;
 
         var numbFloor = 1;
+
         // First floor
         floorsOfParkingLot.Add(new Floor
         {
@@ -108,16 +122,23 @@ public class Utilities
         int numbRows = originalMatrix.Length;
         for (int i = 0; i < numbRows; i++)
         {
-            if (!IsSlotRow(originalMatrix, i))
+            if (!IsSlotRow(originalMatrix, i)) // É porque é uma blank row
             {
-                numbFloor++;
-                floorsOfParkingLot.Add(new Floor
+                if (!IsLastRowBlank)
                 {
-                    Name = $"Floor{numbFloor}",
-                    ParkingLotId = parkingLotId
-                });
+                    numbFloor++;
+                    floorsOfParkingLot.Add(new Floor
+                    {
+                        Name = $"Floor{numbFloor}",
+                        ParkingLotId = parkingLotId
+                    });
+                }
+                IsLastRowBlank = true;
             }
+            else
+                IsLastRowBlank = false;
         }
+
         return floorsOfParkingLot;
     }
 
