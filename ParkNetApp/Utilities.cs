@@ -1,5 +1,7 @@
-﻿using System.Numerics;
+﻿using ParkNetApp.Migrations;
+using System.Numerics;
 using System.Runtime.Intrinsics.X86;
+using System.Text.RegularExpressions;
 
 namespace ParkNetApp;
 
@@ -65,7 +67,6 @@ public class Utilities
         var slotsOfParkingLot = new List<Slot>();
         var originalMatrix = GetRowsMatrix(layout);
         int numbRows = originalMatrix.Length;
-        //int numbOfSlotRows = numbRows - floorsOfParkingLot.Count(); 
 
         for (int i = 0; i < numbRows; i++)
         {
@@ -86,6 +87,8 @@ public class Utilities
                             FloorId = floorsOfParkingLot[floorIndex].Id
                         });
                     }
+                    if (floorIndex >= numberOfFloors)
+                        return slotsOfParkingLot;
                 }
             }
             else
@@ -108,9 +111,10 @@ public class Utilities
     {
         var floorsOfParkingLot = new List<Floor>();
         var originalMatrix = GetRowsMatrix(layout);
-        bool IsLastRowBlank = false;
 
         var numbFloor = 1;
+
+        bool IsLastRowBlank = false;
 
         // First floor
         floorsOfParkingLot.Add(new Floor
@@ -122,7 +126,7 @@ public class Utilities
         int numbRows = originalMatrix.Length;
         for (int i = 0; i < numbRows; i++)
         {
-            if (!IsSlotRow(originalMatrix, i)) // É porque é uma blank row
+            if (!IsSlotRow(originalMatrix, i))
             {
                 if (!IsLastRowBlank)
                 {
@@ -162,5 +166,8 @@ public class Utilities
     }
 
     public static char[][] GetRowsMatrix(string layout)
-        => layout.Split("\n").Select(x => x.ToCharArray()).ToArray();
+    {
+        layout = Regex.Replace(layout, @"^\s*\n\s*", ""); // Remove espaços e quebras de linha iniciais
+        return layout.Split("\n").Select(x => x.ToCharArray()).ToArray();
+    }
 }

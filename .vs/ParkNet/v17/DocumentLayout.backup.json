@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:2:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addparkinglot\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addparkinglot\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:1:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:1:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -53,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addparkinglot\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addparkinglot\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250214142925_ChangedParkingLotEntity_DesignationAsUnique.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -192,7 +192,7 @@
               "RelativeDocumentMoniker": "ParkNetApp\\Utilities.cs",
               "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Utilities.cs",
               "RelativeToolTip": "ParkNetApp\\Utilities.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAAwFMAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAQwKwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-15T15:17:05.657Z",
               "EditorCaption": ""
@@ -200,32 +200,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Floor.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Floor.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Floor.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Floor.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Floor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T15:35:53.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Slot.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Slot.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Slot.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Slot.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Slot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T15:40:57.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Create.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml.cs",
@@ -233,12 +207,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAswDEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T13:01:30.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:30.165Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
@@ -246,12 +219,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAQwA0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:10:47.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:47.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Create.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
@@ -259,12 +231,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAkwBUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:10:47.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:47.566Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Details.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Details.cshtml",
@@ -272,12 +243,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Details.cshtml",
               "ViewState": "AgIAACQAAAAAAAAAAAAAADAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-14T13:01:30.763Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:30.763Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml",
@@ -285,12 +255,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-14T13:01:30.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:30.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Delete.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Delete.cshtml",
@@ -298,12 +267,48 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Delete.cshtml",
               "ViewState": "AgIAACIAAAAAAAAAAAAUwCUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-14T13:01:31.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:31.022Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
+              "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAuwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T13:01:30.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Slot.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Slot.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Slot.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Slot.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Slot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T15:40:57.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Floor.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Floor.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Floor.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Floor.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Floor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T15:35:53.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Utilities.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Utilities.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Utilities.cs",
@@ -311,8 +316,7 @@
               "RelativeToolTip": "ParkNetApp\\Utilities.cs",
               "ViewState": "AgIAAE0AAAAAAAAAAAAIwGYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:12:19.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:12:19.774Z"
             },
             {
               "$type": "Document",
@@ -324,12 +328,11 @@
               "RelativeToolTip": "ParkNetApp\\Migrations\\20250214211301_first.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T21:13:01.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T21:13:01.298Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Data\\ApplicationDbContext.cs",
@@ -337,12 +340,11 @@
               "RelativeToolTip": "ParkNetApp\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAYwEoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:18:00.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:18:00.884Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Index.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Index.cshtml",
@@ -350,12 +352,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Index.cshtml",
               "ViewState": "AgIAADIAAAAAAAAAAAAtwDkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-14T13:01:31.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:31.277Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml",
@@ -363,21 +364,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml",
               "ViewState": "AgIAAAEAAAAAAAAAAAAQwAgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-14T13:01:29.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Edit.cshtml.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
-              "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T13:01:30.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:29.21Z"
             },
             {
               "$type": "Document",
@@ -389,8 +376,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Details.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T13:01:30.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:30.888Z"
             },
             {
               "$type": "Document",
@@ -413,8 +399,7 @@
               "RelativeToolTip": "ParkNetApp\\Data\\Entities\\PermitPrice.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T14:22:27.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T14:22:27.034Z"
             },
             {
               "$type": "Document",
@@ -426,8 +411,7 @@
               "RelativeToolTip": "ParkNetApp\\Data\\Entities\\ParkingLot.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAzwAsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T14:22:30.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T14:22:30.493Z"
             },
             {
               "$type": "Document",
@@ -439,8 +423,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAYwCYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:13:11.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:13:11.635Z"
             },
             {
               "$type": "Document",
@@ -452,8 +435,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:10:48.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:48.774Z"
             },
             {
               "$type": "Document",
@@ -465,8 +447,7 @@
               "RelativeToolTip": "ParkNetApp\\Usings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T13:21:22.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:21:22.559Z"
             },
             {
               "$type": "Document",
@@ -478,8 +459,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Delete.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T13:01:31.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:31.143Z"
             },
             {
               "$type": "Document",
@@ -491,8 +471,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddParkingLot\\Index.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T13:01:31.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T13:01:31.399Z"
             },
             {
               "$type": "Document",
@@ -504,8 +483,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Edit.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:10:47.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:47.915Z"
             },
             {
               "$type": "Document",
@@ -517,8 +495,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Delete.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:10:48.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:48.648Z"
             },
             {
               "$type": "Document",
@@ -530,8 +507,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Details.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:10:48.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:48.163Z"
             },
             {
               "$type": "Document",
@@ -543,8 +519,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Details.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:10:48.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:48.323Z"
             },
             {
               "$type": "Document",
@@ -556,8 +531,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:10:47.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:47.742Z"
             },
             {
               "$type": "Document",
@@ -569,8 +543,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:10:48.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:48.896Z"
             },
             {
               "$type": "Document",
@@ -582,8 +555,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:10:48.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T19:10:48.507Z"
             },
             {
               "$type": "Document",
@@ -595,8 +567,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\Index.cshtml.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAzwBEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:32:17.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:32:17.432Z"
             },
             {
               "$type": "Document",
@@ -608,8 +579,7 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T18:02:11.033Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:02:11.033Z"
             },
             {
               "$type": "Document",
@@ -621,8 +591,7 @@
               "RelativeToolTip": "ParkNetApp\\Data\\Entities\\UserInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T22:31:19.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T22:31:19.617Z"
             },
             {
               "$type": "Document",
@@ -634,8 +603,7 @@
               "RelativeToolTip": "ParkNetApp\\Program.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:57:41.317Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:57:41.317Z"
             },
             {
               "$type": "Document",
@@ -647,8 +615,7 @@
               "RelativeToolTip": "ParkNetApp\\Data\\Repositories\\ParkNetRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:16:14.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:16:14.511Z"
             },
             {
               "$type": "Document",
@@ -660,8 +627,7 @@
               "RelativeToolTip": "ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAACvHAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-13T18:07:03.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:07:03.416Z"
             },
             {
               "$type": "Document",
@@ -673,8 +639,7 @@
               "RelativeToolTip": "ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
               "ViewState": "AgIAACsBAAAAAAAAAAASwDUBAACFFgAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-13T18:06:50.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:06:50.876Z"
             },
             {
               "$type": "Document",
@@ -686,8 +651,7 @@
               "RelativeToolTip": "ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAC8oQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-13T18:07:12.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:07:12.293Z"
             },
             {
               "$type": "Document",
@@ -699,8 +663,7 @@
               "RelativeToolTip": "ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
               "ViewState": "AgIAAFABAAAAAAAAAAAAAHMBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-13T18:07:15.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:07:15.472Z"
             },
             {
               "$type": "Document",
@@ -712,8 +675,7 @@
               "RelativeToolTip": "ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
               "ViewState": "AgIAAFoBAAAAAAAAAAAtwGUBAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-13T18:06:47.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T18:06:47.582Z"
             }
           ]
         }
