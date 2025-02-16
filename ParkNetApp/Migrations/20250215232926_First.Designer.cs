@@ -12,8 +12,8 @@ using ParkNetApp.Data;
 namespace ParkNetApp.Migrations
 {
     [DbContext(typeof(ParkNetDbContext))]
-    [Migration("20250214211301_first")]
-    partial class first
+    [Migration("20250215232926_First")]
+    partial class First
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

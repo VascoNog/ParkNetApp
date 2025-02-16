@@ -72,6 +72,7 @@ public class ParkNetDbContext : IdentityDbContext
         modelBuilder.Entity<Slot>(entity =>
         {
             entity.Property(e => e.Code).IsRequired().HasColumnType("nvarchar(10)");
+            /*entity.HasIndex(e => new { e.Code, e.FloorId }).IsUnique(); */// Torna Code Unico dentro de cada Floor
             entity.Property(e => e.SlotType).IsRequired().HasColumnType("nchar(1)");
             entity.Property(e => e.IsOccupied).IsRequired(); // BOOLEAN TYPE; True if occupied, False if not
         });

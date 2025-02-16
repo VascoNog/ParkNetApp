@@ -43,11 +43,7 @@
                 <input asp-for="ParkingLot.ActiveAt" class="form-control" />
                 <span asp-validation-for="ParkingLot.ActiveAt" class="text-danger"></span>
             </div>
-@*             <div class="form-group">
-                <label asp-for="ParkingLot.Layout" class="control-label"></label>
-                <textarea asp-for="ParkingLot.Layout" class="form-control" style="width: 95vw; height: 80vh; resize: none;"></textarea>
-                <span asp-validation-for="ParkingLot.Layout" class="text-danger"></span>
-            </div> *@
+            <input type="hidden" asp-for="ParkingLot.Layout" />
             <div class="form-group">
                 
                 <label asp-for="ParkingLot.Description" class="control-label"></label>

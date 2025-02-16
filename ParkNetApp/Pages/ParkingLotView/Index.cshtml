@@ -1,0 +1,68 @@
+﻿@page "{id?}"
+@model ParkNetApp.Pages.ParkingLotView.IndexModel
+
+@{
+    ViewData["Title"] = "Parking Lot Layout";
+    var floors = Model.Slot.GroupBy(s => s.Floor);
+}
+
+<h4>Parking Lot Layout</h4>
+
+@if (Model.ParkingLot != null)
+{
+    <h2>@Model.ParkingLot.Designation</h2>
+    <p><strong>Location:</strong> @Model.ParkingLot.City - @Model.ParkingLot.Country</p>
+}
+else
+{
+    <p class="text-danger">Parking Lot not found.</p>
+}
+
+<hr />
+
+@if (Model.Slot != null && Model.Slot.Any())
+{
+    @foreach (var floor in floors)
+    {
+        <h3>@floor.Key.Name</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Slot Code</th>
+                    <th>Type</th>
+                    <th>Occupied</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var slot in floor)
+                {
+                    <tr>
+                        <td>@slot.Code</td>
+                        <td>@slot.SlotType</td>
+                        <td>
+                            @if (slot.IsOccupied)
+                            {
+                                <span class="text-danger"><strong>YES</strong></span>
+                            }
+                            else
+                            {
+                                <span class="text-success"><strong>NO</strong></span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@slot.Id">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@slot.Id">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@slot.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+else
+{
+    <p class="text-warning"><strong>No slots found for this Parking Lot.</strong></p>
+}

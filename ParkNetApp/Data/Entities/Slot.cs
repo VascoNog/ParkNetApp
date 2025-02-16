@@ -10,5 +10,6 @@ public class Slot
     //Foreign Key FloorId
     public int FloorId { get; set; }
     public Floor Floor { get; set; }
+
 }
 

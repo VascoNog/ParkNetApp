@@ -2,15 +2,16 @@
 
 public class EditModel : PageModel
 {
+
+    [BindProperty]
+    public ParkingLot ParkingLot { get; set; } 
+
     private readonly ParkNetApp.Data.ParkNetDbContext _context;
 
     public EditModel(ParkNetApp.Data.ParkNetDbContext context)
     {
         _context = context;
     }
-
-    [BindProperty]
-    public ParkingLot ParkingLot { get; set; } = default!;
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {
@@ -28,8 +29,6 @@ public class EditModel : PageModel
         return Page();
     }
 
-    // To protect from overposting attacks, enable the specific properties you want to bind to.
-    // For more information, see https://aka.ms/RazorPagesCRUD.
     public async Task<IActionResult> OnPostAsync()
     {
         if (!ModelState.IsValid)

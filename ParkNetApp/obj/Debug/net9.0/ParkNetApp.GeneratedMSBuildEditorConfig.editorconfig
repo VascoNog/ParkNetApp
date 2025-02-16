@@ -80,6 +80,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ParkingLotView/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFya2luZ0xvdFZpZXdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ParkingLotView/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFya2luZ0xvdFZpZXdcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ParkingLotView/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFya2luZ0xvdFZpZXdcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ParkingLotView/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFya2luZ0xvdFZpZXdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ParkingLotView/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFya2luZ0xvdFZpZXdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
