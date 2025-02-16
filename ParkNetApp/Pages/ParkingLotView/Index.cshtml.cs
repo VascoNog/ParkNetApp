@@ -1,25 +1,39 @@
-﻿namespace ParkNetApp.Pages.ParkingLotView;
+﻿using ParkNetApp.Data.Repositories;
+using ParkNetApp.Models;
+
+namespace ParkNetApp.Pages.ParkingLotView;
 
 [Authorize]
 public class IndexModel : PageModel
 {
     public IList<Slot> Slot { get; set; }
     public ParkingLot ParkingLot  { get; set; }
+    public IList<ParkingModel> ParkingModel { get; set; } 
 
-    private readonly ParkNetApp.Data.ParkNetDbContext _context;
+    private readonly ParkNetRepository _repo;
+    public IndexModel(ParkNetRepository parkNetRepository) => _repo = parkNetRepository; 
 
-    public IndexModel(ParkNetApp.Data.ParkNetDbContext context)
+    public async Task<IActionResult> OnGetAsync(int? id)
     {
-        _context = context;
+        //ParkingLot = await _repo.GetParkingLot(id.Value);
+
+        //Slot = await _repo.GetSlotsFromParkingLot(id.Value);
+
+        ParkingModel = await _repo.GetParkingLotSchema(id.Value);
+        if (ParkingModel == null)
+        {
+            return NotFound();
+        }
+
+        return Page();
     }
 
-    public async Task OnGetAsync(int? id)
-    {
-        ParkingLot = await _context.ParkingLots.FirstOrDefaultAsync(p => p.Id == id);
-        Slot = await _context.Slots
-            .Include(s => s.Floor)
-            .ThenInclude(f => f.ParkingLot)
-            .Where(s => s.Floor.ParkingLotId == id) // Filtra os Slots pelo ParkingLot com o id passado no URL
-            .ToListAsync();
-    }
+
+
+    //public async Task<IActionResult> OnPostAsync(int slotId, int parkingLotId)
+    //{
+
+
+    //    return RedirectToPage(new { id = parkingLotId });
+    //}
 }

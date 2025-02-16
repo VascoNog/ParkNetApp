@@ -1,4 +1,4 @@
-﻿
+﻿using ParkNetApp.Models;
 using System.Numerics;
 using System.Runtime.Intrinsics.X86;
 using System.Text.RegularExpressions;
@@ -7,6 +7,10 @@ namespace ParkNetApp;
 
 public class Utilities
 {
+    //public ParkNetDbContext _ctx;
+
+    //public Utilities(ParkNetDbContext ctx) => _ctx = ctx;
+
     //   // public string fileName = "Schema_01LisbonPortugal.txt"; // Exemplo dos nomes usando o Parking Lot Internal Code
 
     //    public static string GetParkingLotSchemaPath(string fileName)
@@ -170,4 +174,5 @@ public class Utilities
         layout = Regex.Replace(layout, @"^\s*\n\s*", ""); // Remove espaços e quebras de linha iniciais
         return layout.Split("\n").Select(x => x.ToCharArray()).ToArray();
     }
+
 }

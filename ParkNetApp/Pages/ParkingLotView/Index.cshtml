@@ -1,69 +1,86 @@
-﻿
-@page "{id?}"
+﻿@page "{id?}"
 @model ParkNetApp.Pages.ParkingLotView.IndexModel
 
 @{
     ViewData["Title"] = "Parking Lot Layout";
-    var floors = Model.Slot.GroupBy(s => s.Floor);
+    var parkingLot = Model.ParkingModel.GroupBy(s => s.FloorId); // Agrupa os slots por andar
 }
 
-<h4>Parking Lot Layout</h4>
+<h1>@parkingLot.First().First().ParkingLotDesignation</h1>
 
-@if (Model.ParkingLot != null)
+@foreach (var floor in parkingLot) // Itera sobre cada andar
 {
-    <h2>@Model.ParkingLot.Designation</h2>
-    <p><strong>Location:</strong> @Model.ParkingLot.City - @Model.ParkingLot.Country</p>
-}
-else
-{
-    <p class="text-danger">Parking Lot not found.</p>
-}
+    <h2>Floor: @floor.First().FloorName</h2>
 
-<hr />
+    
+        var sortedSlots = floor
+            .OrderBy(s => s.SlotCode[0]) // Ordena por letra (A, B, C...)
+            .ThenBy(s => s.SlotCode.Substring(1).PadLeft(3, '0')) // Corrige ordenação numérica
+            .ToList();
 
-@if (Model.Slot != null && Model.Slot.Any())
-{
-    @foreach (var floor in floors)
-    {
-        <h3>@floor.Key.Name</h3>
+        var rows = sortedSlots
+            .Select(s => s.SlotCode[0])
+            .Distinct()
+            .OrderBy(c => c)
+            .ToList();
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Slot Code</th>
-                    <th>Type</th>
-                    <th>Occupied</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var slot in floor)
-                {
-                    <tr>
-                        <td>@slot.Code</td>
-                        <td>@slot.SlotType</td>
-                        <td>
-                            @if (slot.IsOccupied)
-                            {
-                                <span class="text-danger"><strong>YES</strong></span>
-                            }
-                            else
-                            {
-                                <span class="text-success"><strong>NO</strong></span>
-                            }
-                        </td>
-                        <td>
-                            <a asp-page="./Edit" asp-route-id="@slot.Id">Edit</a> |
-                            @* <a asp-page="./Details" asp-route-id="@slot.Id">Details</a> | *@
-                            <a asp-page="./Delete" asp-route-id="@slot.Id">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-}
-else
-{
-    <p class="text-warning"><strong>No slots found for this Parking Lot.</strong></p>
+        int maxColumn = sortedSlots
+            .Select(s => int.Parse(s.SlotCode.Substring(1)))
+            .Max();
+    
+
+    <style>
+        .parking-grid {
+            display: grid;
+            grid-template-columns: repeat(@maxColumn, 50px);
+            grid-template-rows: repeat(@rows.Count, 50px);
+            gap: 5px;
+        }
+
+        .slot {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: lightgray;
+            text-decoration: none; /* Remove sublinhado dos links */
+            color: black;
+        }
+
+        .occupied {
+            background-color: red;
+            color: white;
+        }
+
+        .slot a {
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slot:hover {
+            background-color: #ddd; /* Efeito hover */
+        }
+    </style>
+
+    <div class="parking-grid">
+        @foreach (var slot in sortedSlots)
+        {
+            var rowIndex = rows.IndexOf(slot.SlotCode[0]) + 1;
+            var columnIndex = int.Parse(slot.SlotCode.Substring(1)) + 1;
+
+            <div class="slot @(slot.IsOccupied ? "occupied" : "")"
+                 style="grid-row: @rowIndex; grid-column: @columnIndex;">
+                <a asp-page="./Edit" asp-route-id="@slot.SlotId" title="Editar @slot.SlotCode">
+                    @slot.SlotCode
+                </a>
+            </div>
+        }
+    </div>
 }
