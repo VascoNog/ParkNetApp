@@ -30,17 +30,51 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Slot.IsOccupied)
         </dd>
+    </dl>
+
+        <p style="color: cornflowerblue;"><strong>More information (Parking Lot): </strong></p>
+    <dl>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Slot.Floor)
+            @Html.DisplayNameFor(model => model.Slot.Floor.ParkingLot.Designation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Slot.Floor.ParkingLot.Designation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Slot.Floor.ParkingLot.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Slot.Floor.ParkingLot.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Slot.Floor.ParkingLot.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Slot.Floor.ParkingLot.City)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Slot.Floor.ParkingLot.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Slot.Floor.ParkingLot.Country)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Slot.Floor.Name)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Slot.Floor.Name)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="Slot.Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
     </form>
+
+    <a asp-page="/ParkingLotView/Index" asp-route-id="@Model.Slot.Floor.ParkingLot.Id" class="btn btn-secondary">
+        Back to Parking Lot Layout
+    </a>
 </div>
+
+
+

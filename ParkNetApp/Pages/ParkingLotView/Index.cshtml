@@ -1,4 +1,5 @@
-﻿@page "{id?}"
+﻿
+@page "{id?}"
 @model ParkNetApp.Pages.ParkingLotView.IndexModel
 
 @{
@@ -53,7 +54,7 @@ else
                         </td>
                         <td>
                             <a asp-page="./Edit" asp-route-id="@slot.Id">Edit</a> |
-                            <a asp-page="./Details" asp-route-id="@slot.Id">Details</a> |
+                            @* <a asp-page="./Details" asp-route-id="@slot.Id">Details</a> | *@
                             <a asp-page="./Delete" asp-route-id="@slot.Id">Delete</a>
                         </td>
                     </tr>

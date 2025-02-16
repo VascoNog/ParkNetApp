@@ -1,79 +1,113 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ParkNetApp.Data;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using ParkNetApp.Data.Entities;
 
-namespace ParkNetApp.Pages.ParkingLotView
+namespace ParkNetApp.Pages.ParkingLotView;
+
+public class EditModel : PageModel
 {
-    public class EditModel : PageModel
+    [BindProperty]
+    public Slot Slot { get; set; }
+
+    [BindProperty]
+    public IList<Floor> Floor { get; set; }
+
+
+    private readonly ParkNetApp.Data.ParkNetDbContext _context;
+
+    public EditModel(ParkNetApp.Data.ParkNetDbContext context)
     {
-        private readonly ParkNetApp.Data.ParkNetDbContext _context;
+        _context = context;
+    }
 
-        public EditModel(ParkNetApp.Data.ParkNetDbContext context)
+
+    public async Task<IActionResult> OnGetAsync(int? id)
+    {
+        if (id == null)
         {
-            _context = context;
+            return NotFound();
         }
 
-        [BindProperty]
-        public Slot Slot { get; set; } = default!;
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        var slot = await _context.Slots.Include(s => s.Floor)
+            .ThenInclude(f => f.ParkingLot)
+            .FirstOrDefaultAsync(m => m.Id == id);
+        if (slot == null)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            return NotFound();
+        }
+        Slot = slot;
 
-            var slot =  await _context.Slots.FirstOrDefaultAsync(m => m.Id == id);
-            if (slot == null)
-            {
-                return NotFound();
-            }
-            Slot = slot;
-            ViewData["FloorId"] = new SelectList(_context.Floors, "Id", "Name");
+
+        var floor = _context.Slots.Include(s => s.Floor)
+            .ThenInclude(f => f.ParkingLot)
+            .Where(s => s.Floor.ParkingLotId == slot.Floor.ParkingLotId)
+            .Select(s => s.Floor)
+            .Distinct()
+            .ToList();
+        if(floor == null)
+        {
+            return NotFound();
+        }
+        Floor = floor;
+
+        ViewData["FloorId"] = new SelectList(Floor, "Id", "Name");
+        return Page();
+    }
+
+    public async Task<IActionResult> OnPostAsync()
+    {
+        if (!ModelState.IsValid)
+        {
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more information, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        _context.Attach(Slot).State = EntityState.Modified;
+
+        try
         {
-            if (!ModelState.IsValid)
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!SlotExists(Slot.Id))
             {
-                return Page();
+                return NotFound();
             }
-
-            _context.Attach(Slot).State = EntityState.Modified;
-
-            try
+            else
             {
-                await _context.SaveChangesAsync();
+                throw;
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!SlotExists(Slot.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            ViewData["FloorId"] = new SelectList(_context.Floors, "Id", "Name");
-            return Page();
         }
 
-        private bool SlotExists(int id)
+         var slot = await _context.Slots
+        .Include(s => s.Floor)
+        .ThenInclude(f => f.ParkingLot)
+        .FirstOrDefaultAsync(s => s.Id == Slot.Id);
+        if (slot == null)
         {
-            return _context.Slots.Any(e => e.Id == id);
+            return NotFound();
         }
+        Slot = slot;
+
+
+        var floor = _context.Slots.Include(s => s.Floor)
+            .ThenInclude(f => f.ParkingLot)
+            .Where(s => s.Floor.ParkingLotId == slot.Floor.ParkingLotId)
+            .Select(s => s.Floor)
+            .Distinct()
+            .ToList();
+        if (floor == null)
+        {
+            return NotFound();
+        }
+        Floor = floor;
+
+        ViewData["FloorId"] = new SelectList(Floor, "Id", "Name");
+
+        return Page();
+    }
+
+    private bool SlotExists(int id)
+    {
+        return _context.Slots.Any(e => e.Id == id);
     }
 }
