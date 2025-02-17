@@ -21,7 +21,7 @@ namespace ParkNetApp.Pages.ParkingLotView
 
         public IActionResult OnGet()
         {
-        ViewData["FloorId"] = new SelectList(_context.Floors, "Id", "Name");
+            ViewData["FloorId"] = new SelectList(_context.Floors, "Id", "Name");
             return Page();
         }
 

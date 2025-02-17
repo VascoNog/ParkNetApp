@@ -4,14 +4,14 @@ using ParkNetApp.Models;
 namespace ParkNetApp.Pages.ParkingLotView;
 
 [Authorize]
-public class IndexModel : PageModel
+public class ViewModel : PageModel
 {
     public IList<Slot> Slot { get; set; }
     public ParkingLot ParkingLot  { get; set; }
     public IList<ParkingModel> ParkingModel { get; set; } 
 
     private readonly ParkNetRepository _repo;
-    public IndexModel(ParkNetRepository parkNetRepository) => _repo = parkNetRepository; 
+    public ViewModel(ParkNetRepository parkNetRepository) => _repo = parkNetRepository; 
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {

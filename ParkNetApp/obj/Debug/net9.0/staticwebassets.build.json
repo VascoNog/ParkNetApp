@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zyUuQdUla1IJn7Z9MzFwAhSWon68ECm0cVmUwIgQ6Lc=",
+  "Hash": "6IEjipHMlGRx5Kz6zHfH0gzYIUoTk28hLzoYPXFzpY8=",
   "Source": "ParkNetApp",
   "BasePath": "_content/ParkNetApp",
   "Mode": "Default",
@@ -3125,12 +3125,12 @@
       "OriginalItemSpec": "C:\\Users\\Vasco Nogueira\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.1\\staticwebassets\\V5\\css\\site.css"
     },
     {
-      "Identity": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-b7pk76d08c.gz",
+      "Identity": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-fwrpzi6ras.gz",
       "SourceId": "ParkNetApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ParkNetApp",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min#[.{fingerprint=b7pk76d08c}]?.css.gz",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min#[.{fingerprint=fwrpzi6ras}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -3139,8 +3139,8 @@
       "RelatedAsset": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "5fx04t62wt",
-      "Integrity": "z14pI3bmpzGTIVaJu6aKOcry1zSAu/H44LHt9J3bXFM=",
+      "Fingerprint": "be62091pqn",
+      "Integrity": "HV91uhycaDy1lmtFUJBR4mtj0QxtcR3Z32Xj1j2MiQw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
@@ -3734,12 +3734,12 @@
       "OriginalItemSpec": "C:\\Users\\Vasco Nogueira\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.1\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-ppx6i31qx9.gz",
+      "Identity": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-z7tjbgkh5w.gz",
       "SourceId": "ParkNetApp",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ParkNetApp",
-      "RelativePath": "css/site#[.{fingerprint=ppx6i31qx9}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=z7tjbgkh5w}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -3748,8 +3748,8 @@
       "RelatedAsset": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "hbhyoo614e",
-      "Integrity": "01vsfvd4ehf4aGUy2seoU4B+HOBnQQKR0cbU1oM0vvA=",
+      "Fingerprint": "cnglnph3j5",
+      "Integrity": "eG33aimTWWH+6w15m/StG4Mc6lAXW9BRo0nunVz1hf0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\css\\site.css"
@@ -4042,8 +4042,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ppx6i31qx9",
-      "Integrity": "00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY=",
+      "Fingerprint": "z7tjbgkh5w",
+      "Integrity": "r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -4483,8 +4483,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "b7pk76d08c",
-      "Integrity": "l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84=",
+      "Fingerprint": "fwrpzi6ras",
+      "Integrity": "gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
@@ -5391,12 +5391,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-ppx6i31qx9.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-z7tjbgkh5w.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001428571429"
+          "Quality": "0.001501501502"
         }
       ],
       "ResponseHeaders": [
@@ -5406,15 +5406,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "699"
+          "Value": "665"
         },
         {
           "Name": "ETag",
-          "Value": "\"01vsfvd4ehf4aGUy2seoU4B+HOBnQQKR0cbU1oM0vvA=\""
+          "Value": "\"eG33aimTWWH+6w15m/StG4Mc6lAXW9BRo0nunVz1hf0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Feb 2025 17:19:40 GMT"
+          "Value": "Mon, 17 Feb 2025 21:39:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5434,13 +5434,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY=\""
+          "Value": "W/\"r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY="
+          "Value": "sha256-r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk="
         }
       ]
     },
@@ -5455,7 +5455,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1747"
+          "Value": "1739"
         },
         {
           "Name": "Content-Type",
@@ -5463,11 +5463,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY=\""
+          "Value": "\"r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Feb 2025 17:19:40 GMT"
+          "Value": "Mon, 17 Feb 2025 21:39:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5477,13 +5477,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY="
+          "Value": "sha256-r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-ppx6i31qx9.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-z7tjbgkh5w.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5492,7 +5492,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "699"
+          "Value": "665"
         },
         {
           "Name": "Content-Type",
@@ -5500,11 +5500,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"01vsfvd4ehf4aGUy2seoU4B+HOBnQQKR0cbU1oM0vvA=\""
+          "Value": "\"eG33aimTWWH+6w15m/StG4Mc6lAXW9BRo0nunVz1hf0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Feb 2025 17:19:40 GMT"
+          "Value": "Mon, 17 Feb 2025 21:39:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5522,18 +5522,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-01vsfvd4ehf4aGUy2seoU4B+HOBnQQKR0cbU1oM0vvA="
+          "Value": "sha256-eG33aimTWWH+6w15m/StG4Mc6lAXW9BRo0nunVz1hf0="
         }
       ]
     },
     {
-      "Route": "css/site.ppx6i31qx9.css",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-ppx6i31qx9.gz",
+      "Route": "css/site.z7tjbgkh5w.css",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-z7tjbgkh5w.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001428571429"
+          "Quality": "0.001501501502"
         }
       ],
       "ResponseHeaders": [
@@ -5543,15 +5543,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "699"
+          "Value": "665"
         },
         {
           "Name": "ETag",
-          "Value": "\"01vsfvd4ehf4aGUy2seoU4B+HOBnQQKR0cbU1oM0vvA=\""
+          "Value": "\"eG33aimTWWH+6w15m/StG4Mc6lAXW9BRo0nunVz1hf0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Feb 2025 17:19:40 GMT"
+          "Value": "Mon, 17 Feb 2025 21:39:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5571,13 +5571,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY=\""
+          "Value": "W/\"r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ppx6i31qx9"
+          "Value": "z7tjbgkh5w"
         },
         {
           "Name": "label",
@@ -5585,12 +5585,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY="
+          "Value": "sha256-r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk="
         }
       ]
     },
     {
-      "Route": "css/site.ppx6i31qx9.css",
+      "Route": "css/site.z7tjbgkh5w.css",
       "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5600,7 +5600,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1747"
+          "Value": "1739"
         },
         {
           "Name": "Content-Type",
@@ -5608,11 +5608,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY=\""
+          "Value": "\"r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Feb 2025 17:19:40 GMT"
+          "Value": "Mon, 17 Feb 2025 21:39:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5622,7 +5622,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ppx6i31qx9"
+          "Value": "z7tjbgkh5w"
         },
         {
           "Name": "label",
@@ -5630,13 +5630,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-00Ena4/tPPuN8sTxHWvbziQ0LDAodvZHihFCbLiNBHY="
+          "Value": "sha256-r8Wm3uyHwI9mIkuXrAlKdxDnRImQwY9DBHNXe3aiGSk="
         }
       ]
     },
     {
-      "Route": "css/site.ppx6i31qx9.css.gz",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-ppx6i31qx9.gz",
+      "Route": "css/site.z7tjbgkh5w.css.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\w1zqpgyx2w-z7tjbgkh5w.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5645,7 +5645,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "699"
+          "Value": "665"
         },
         {
           "Name": "Content-Type",
@@ -5653,11 +5653,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"01vsfvd4ehf4aGUy2seoU4B+HOBnQQKR0cbU1oM0vvA=\""
+          "Value": "\"eG33aimTWWH+6w15m/StG4Mc6lAXW9BRo0nunVz1hf0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Feb 2025 17:19:40 GMT"
+          "Value": "Mon, 17 Feb 2025 21:39:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5675,7 +5675,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ppx6i31qx9"
+          "Value": "z7tjbgkh5w"
         },
         {
           "Name": "label",
@@ -5683,7 +5683,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-01vsfvd4ehf4aGUy2seoU4B+HOBnQQKR0cbU1oM0vvA="
+          "Value": "sha256-eG33aimTWWH+6w15m/StG4Mc6lAXW9BRo0nunVz1hf0="
         }
       ]
     },
@@ -20758,167 +20758,6 @@
       ]
     },
     {
-      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.b7pk76d08c.css",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-b7pk76d08c.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000312500000"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3199"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"z14pI3bmpzGTIVaJu6aKOcry1zSAu/H44LHt9J3bXFM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "b7pk76d08c"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap-reboot.min.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.b7pk76d08c.css",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "10126"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "b7pk76d08c"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap-reboot.min.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.b7pk76d08c.css.gz",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-b7pk76d08c.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3199"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"z14pI3bmpzGTIVaJu6aKOcry1zSAu/H44LHt9J3bXFM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "b7pk76d08c"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-z14pI3bmpzGTIVaJu6aKOcry1zSAu/H44LHt9J3bXFM="
-        }
-      ]
-    },
-    {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetFile": "C:\\Users\\Vasco Nogueira\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.1\\staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "Selectors": [],
@@ -20957,12 +20796,12 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-b7pk76d08c.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-fwrpzi6ras.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000312500000"
+          "Quality": "0.000304971028"
         }
       ],
       "ResponseHeaders": [
@@ -20972,15 +20811,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3199"
+          "Value": "3278"
         },
         {
           "Name": "ETag",
-          "Value": "\"z14pI3bmpzGTIVaJu6aKOcry1zSAu/H44LHt9J3bXFM=\""
+          "Value": "\"HV91uhycaDy1lmtFUJBR4mtj0QxtcR3Z32Xj1j2MiQw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Mon, 17 Feb 2025 20:21:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21000,13 +20839,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84=\""
+          "Value": "W/\"gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84="
+          "Value": "sha256-gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM="
         }
       ]
     },
@@ -21021,7 +20860,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10126"
+          "Value": "19800"
         },
         {
           "Name": "Content-Type",
@@ -21029,11 +20868,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84=\""
+          "Value": "\"gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Mon, 17 Feb 2025 20:21:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21043,7 +20882,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-l8vt5oozv958eMd9TFsPAWgl9JJK9YKfbVSs8mchQ84="
+          "Value": "sha256-gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM="
         }
       ]
     },
@@ -21210,7 +21049,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.gz",
-      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-b7pk76d08c.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-fwrpzi6ras.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21219,7 +21058,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3199"
+          "Value": "3278"
         },
         {
           "Name": "Content-Type",
@@ -21227,11 +21066,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"z14pI3bmpzGTIVaJu6aKOcry1zSAu/H44LHt9J3bXFM=\""
+          "Value": "\"HV91uhycaDy1lmtFUJBR4mtj0QxtcR3Z32Xj1j2MiQw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 16:40:54 GMT"
+          "Value": "Mon, 17 Feb 2025 20:21:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21249,7 +21088,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-z14pI3bmpzGTIVaJu6aKOcry1zSAu/H44LHt9J3bXFM="
+          "Value": "sha256-HV91uhycaDy1lmtFUJBR4mtj0QxtcR3Z32Xj1j2MiQw="
         }
       ]
     },
@@ -21424,6 +21263,167 @@
         {
           "Name": "integrity",
           "Value": "sha256-ADH59/NtYFvapbe8WFHRcZlFJ2Si4p3FnbxP5fFT5lg="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.fwrpzi6ras.css",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-fwrpzi6ras.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000304971028"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3278"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HV91uhycaDy1lmtFUJBR4mtj0QxtcR3Z32Xj1j2MiQw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Feb 2025 20:21:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fwrpzi6ras"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.fwrpzi6ras.css",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19800"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Feb 2025 20:21:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fwrpzi6ras"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gftXoIQvF1PEEaQcbtaL/XSkCzIFQVCPjsyWC7ugbGM="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.fwrpzi6ras.css.gz",
+      "AssetFile": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\Debug\\net9.0\\compressed\\ot756y5lbt-fwrpzi6ras.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3278"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HV91uhycaDy1lmtFUJBR4mtj0QxtcR3Z32Xj1j2MiQw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Feb 2025 20:21:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fwrpzi6ras"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HV91uhycaDy1lmtFUJBR4mtj0QxtcR3Z32Xj1j2MiQw="
         }
       ]
     },

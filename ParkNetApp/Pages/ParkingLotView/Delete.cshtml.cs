@@ -22,7 +22,7 @@ public class DeleteModel : PageModel
         //var slot = await _context.Slots.FirstOrDefaultAsync(m => m.Id == id);
         var slot = await _context.Slots.Include(s => s.Floor)
              .ThenInclude(f => f.ParkingLot)
-             .FirstOrDefaultAsync(m => m.Id == id);
+             .FirstOrDefaultAsync(s => s.Id == id);
         if (slot is not null)
         {
             Slot = slot;
@@ -58,6 +58,7 @@ public class DeleteModel : PageModel
             await _context.SaveChangesAsync();
         }
 
-        return Redirect($"/ParkingLotView/{currentParkingLotId}");
+        return Redirect($"/ParkingLotView/View?id={currentParkingLotId}");
+
     }
 }

@@ -1,0 +1,13 @@
+﻿@page 
+@model ParkNetApp.Pages.ParkingLotView.OptionsModel
+@{
+
+}
+
+@* Reservar ao Admin *@
+<a asp-page="./Edit" asp-route-id="@Model.SlotId" class="btn btn-lg btn-warning">Edit</a>  
+<a asp-page="./Delete" asp-route-id="@Model.SlotId" class="btn btn-lg btn-danger">Delete</a> 
+
+@* Reservar ao User *@
+<a asp-page="./ToPark" asp-route-id="@Model.SlotId" class="btn btn-lg btn-primary">Park/Unpark in this Slot</a>  
+

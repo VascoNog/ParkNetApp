@@ -513,6 +513,33 @@ namespace ParkNetApp.Migrations
                     b.ToTable("Vehicles");
                 });
 
+            modelBuilder.Entity("ParkNetApp.Data.Entities.VehicleType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasColumnType("nchar(1)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Symbol")
+                        .IsUnique();
+
+                    b.HasIndex("Type")
+                        .IsUnique();
+
+                    b.ToTable("VehicleTypes");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)

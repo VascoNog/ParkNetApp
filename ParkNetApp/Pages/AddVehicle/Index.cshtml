@@ -1,0 +1,70 @@
+﻿@page
+@model ParkNetApp.Pages.AddVehicle.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Add New Vehicle</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+@if (Model.Vehicle.Count == 0)
+{
+    <p> You don't have any vehicles yet! </p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vehicle[0].Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vehicle[0].PlateNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vehicle[0].Make)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vehicle[0].Model)
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Vehicle)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlateNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Make)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Model)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+}
+
+
+

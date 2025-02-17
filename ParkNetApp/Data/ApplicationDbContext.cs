@@ -12,12 +12,14 @@ public class ParkNetDbContext : IdentityDbContext
     public DbSet<EntryAndExitHistory> EntriesAndExitsHistory {get; set; }
     public DbSet<Floor> Floors { get; set; }    
     public DbSet<ParkingLot> ParkingLots { get; set; }
-    public DbSet<ParkingPermit> ParkingPermits { get; set; }
+    public DbSet<ParkingPermit> ParkingPermits { get; set; } // Entidade isolada
     public DbSet<PermitPrice> PermitPrices { get; set; }
     public DbSet<Slot> Slots { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<UserInfo> UserInfos { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
+    public DbSet<VehicleType> VehicleTypes { get; set; } // Entidade isolada
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -105,6 +107,15 @@ public class ParkNetDbContext : IdentityDbContext
             entity.HasIndex(e => e.PlateNumber).IsUnique();
             entity.Property(e => e.Make).IsRequired().HasColumnType("nvarchar(50)");
             entity.Property(e => e.Model).IsRequired().HasColumnType("nvarchar(50)");
+        });
+
+        // Configuration of VehicleType Entity
+        modelBuilder.Entity<VehicleType>(entity =>
+        {
+            entity.Property(e => e.Type).IsRequired().HasColumnType("nvarchar(20)");
+            entity.HasIndex(e => e.Type).IsUnique();
+            entity.Property(e => e.Symbol).IsRequired().HasColumnType("nchar(1)");
+            entity.HasIndex(e => e.Symbol).IsUnique();
         });
     }
 }
