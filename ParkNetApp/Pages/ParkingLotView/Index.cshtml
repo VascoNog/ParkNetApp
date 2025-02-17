@@ -6,79 +6,38 @@
     var parkingLot = Model.ParkingModel.GroupBy(s => s.FloorId); // Agrupa os slots por andar
 }
 
+
+<style>
+    .parking-grid {
+        display: grid;
+        grid-template-columns: repeat(20, 50px);
+        grid-auto-rows: 50px; /* Ajusta dinamicamente o número de linhas */
+        gap: 5px;
+    }
+</style>
+
+
 <h1>@parkingLot.First().First().ParkingLotDesignation</h1>
-
-@foreach (var floor in parkingLot) // Itera sobre cada andar
+@foreach (var floor in parkingLot)
 {
-    <h2>Floor: @floor.First().FloorName</h2>
+    <h2>@floor.First().FloorName</h2>
 
-    
-        var sortedSlots = floor
-            .OrderBy(s => s.SlotCode[0]) // Ordena por letra (A, B, C...)
-            .ThenBy(s => s.SlotCode.Substring(1).PadLeft(3, '0')) // Corrige ordenação numérica
-            .ToList();
+    var sortedByCodeFloor = floor
+    .OrderBy(s => s.SlotCode[0]) // Ordena por letra (A, B, C...)
+    .ThenBy(s => s.SlotCode.Substring(1).PadLeft(3, '0'))
+    .ToList();
 
-        var rows = sortedSlots
-            .Select(s => s.SlotCode[0])
-            .Distinct()
-            .OrderBy(c => c)
-            .ToList();
-
-        int maxColumn = sortedSlots
-            .Select(s => int.Parse(s.SlotCode.Substring(1)))
-            .Max();
-    
-
-    <style>
-        .parking-grid {
-            display: grid;
-            grid-template-columns: repeat(@maxColumn, 50px);
-            grid-template-rows: repeat(@rows.Count, 50px);
-            gap: 5px;
-        }
-
-        .slot {
-            width: 50px;
-            height: 50px;
-            border: 1px solid black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: lightgray;
-            text-decoration: none; /* Remove sublinhado dos links */
-            color: black;
-        }
-
-        .occupied {
-            background-color: red;
-            color: white;
-        }
-
-        .slot a {
-            text-decoration: none;
-            color: inherit;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slot:hover {
-            background-color: #ddd; /* Efeito hover */
-        }
-    </style>
 
     <div class="parking-grid">
-        @foreach (var slot in sortedSlots)
+        @foreach (var slot in sortedByCodeFloor)
         {
-            var rowIndex = rows.IndexOf(slot.SlotCode[0]) + 1;
-            var columnIndex = int.Parse(slot.SlotCode.Substring(1)) + 1;
+            var rowIdx = slot.RowIndex + 1;
+            var colIdx = slot.ColumnIndex + 1;
 
-            <div class="slot @(slot.IsOccupied ? "occupied" : "")"
-                 style="grid-row: @rowIndex; grid-column: @columnIndex;">
-                <a asp-page="./Edit" asp-route-id="@slot.SlotId" title="Editar @slot.SlotCode">
-                    @slot.SlotCode
+            <div class="slot @(slot.IsOccupied ? "occupied" : "free") @(slot.SlotType == 'M' ? "moto" : "car")"
+                 style="grid-row: @rowIdx; grid-column: @colIdx;">
+                <a asp-page="./Edit" asp-route-id="@slot.SlotId">
+                    @slot.SlotCode [@(slot.SlotType == 'M' ? "moto" : "car")]
                 </a>
             </div>
         }

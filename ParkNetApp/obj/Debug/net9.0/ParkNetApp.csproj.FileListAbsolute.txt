@@ -197,7 +197,6 @@ D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\a3ygkwa5zy-2z0
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
-D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\w1zqpgyx2w-b9sayid5wm.gz
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\8hx48e60lv-61n19gt1b8.gz
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\63egtxlhpq-xtxxf3hu2r.gz
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\c4mv0hesgr-bqjiyaj88i.gz
@@ -394,3 +393,4 @@ D:\ReStart_Pessoal\ParkNet\ParkNetApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\w1zqpgyx2w-ppx6i31qx9.gz

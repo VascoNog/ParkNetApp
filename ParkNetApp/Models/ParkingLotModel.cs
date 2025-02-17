@@ -5,6 +5,8 @@ public class ParkingModel
     public int Id { get; set; }
     public int SlotId { get; set; }
     public string SlotCode { get; set; }
+    public int RowIndex { get; set; }
+    public int ColumnIndex { get; set; }
     public char SlotType { get; set; }
     public bool IsOccupied { get; set; }
 
