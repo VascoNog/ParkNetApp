@@ -1,0 +1,93 @@
+﻿@page
+@model ParkNetApp.Pages.AddPermit.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+}
+
+<h1> Add a new Permit</h1>
+<form method="get" asp-page="Create">
+    <label for="ParkingLots"></label>
+    <select id="ParkingLots" name="id" asp-items="ViewBag.ParkingLots">
+        @if (Model.ParkingLots.Any())
+        {
+            <option value="@Model.ParkingLots.First().Id" selected>
+                @Model.ParkingLots.First().Designation
+                - @Model.ParkingLots.First().City
+                (@Model.ParkingLots.First().Country)
+            </option>
+        }
+        @foreach (var parkingLot in Model.ParkingLots)
+        {
+            <option value="@parkingLot.Id">
+                @parkingLot.Designation
+                 - @parkingLot.City
+                (@parkingLot.Country)
+
+            </option>
+        }
+    </select>
+    <p>
+        <input type="submit" value="Ok" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Sarted at
+            </th>
+            <th>
+                Permit Expiration Date
+            </th>
+            <th>
+                Permit Value ($)
+            </th>
+            <th>
+                Parking Lot
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Floor
+            </th>
+            <th>
+                Slot
+            </th>
+       
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ParkingPermits)
+        {
+            <tr>
+                <td>
+                    @item.SartedAt
+                </td>
+                <td>
+                    @item.SartedAt.AddDays(item.PermitInfo.DaysOfPermit).ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @item.PermitInfo.Value
+                </td>
+                <td>
+                    @item.Slot.Floor.ParkingLot.Designation
+                </td>
+                <td>
+                    @item.Slot.Floor.ParkingLot.City
+                    (@item.Slot.Floor.ParkingLot.Country)
+                </td>
+                <td>
+                    @item.Slot.Floor.Name
+                </td>
+                <td>
+                    @item.Slot.Code
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -9,6 +9,7 @@ public class UserInfo
     public DateOnly CCExpDate { get; set; }
     public string DriverLicenseNumber { get; set; }
     public DateOnly DLExpDate { get; set; }
+    public double ParkNetCardBalance { get; set; } // Em principio não é necessário
     public bool IsActivated { get; set; } = false; // Default value
 
 }

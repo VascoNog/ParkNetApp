@@ -13,7 +13,7 @@ public class ParkNetDbContext : IdentityDbContext
     public DbSet<Floor> Floors { get; set; }    
     public DbSet<ParkingLot> ParkingLots { get; set; }
     public DbSet<ParkingPermit> ParkingPermits { get; set; } // Entidade isolada
-    public DbSet<PermitPrice> PermitPrices { get; set; }
+    public DbSet<PermitInfo> PermitInfos { get; set; }
     public DbSet<Slot> Slots { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<UserInfo> UserInfos { get; set; }
@@ -57,18 +57,17 @@ public class ParkNetDbContext : IdentityDbContext
         modelBuilder.Entity<ParkingPermit>(entity =>
         {
             entity.Property(e => e.SartedAt).IsRequired().HasColumnType("datetime2(0)");
-            entity.Property(e => e.DaysOfPermit).IsRequired();
         });
 
         // Configuration of PermitPrice Entity
-        modelBuilder.Entity<PermitPrice>(entity =>
+        modelBuilder.Entity<PermitInfo>(entity =>
         {
-            entity.Property(e => e.PermitType).IsRequired().HasColumnType("nvarchar(20)");
+            entity.Property(e => e.DaysOfPermit).IsRequired().HasColumnType("int");
             entity.Property(e => e.Value).IsRequired().HasColumnType("decimal(18,2)");
+            entity.Property(e => e.ActiveSince).IsRequired().HasColumnType("date");
             entity.Property(e => e.ActiveUntil).HasColumnType("date");
-            entity.Property(e => e.IsActive); // BOOLEAN TYPE - NULLABLE
-        });
 
+        });
 
         // Configuration of Slot Entity
         modelBuilder.Entity<Slot>(entity =>
@@ -96,6 +95,7 @@ public class ParkNetDbContext : IdentityDbContext
             entity.Property(e => e.DriverLicenseNumber).IsRequired().HasColumnType("nvarchar(25)");
             entity.HasIndex(e => e.DriverLicenseNumber).IsUnique();
             entity.Property(e => e.DLExpDate).IsRequired().HasColumnType("date");
+            entity.Property(e => e.ParkNetCardBalance).HasColumnType("decimal(18,2)");
             entity.Property(e => e.IsActivated).IsRequired();
         });
 

@@ -12,7 +12,7 @@ using ParkNetApp.Data;
 namespace ParkNetApp.Migrations
 {
     [DbContext(typeof(ParkNetDbContext))]
-    [Migration("20250215232926_First")]
+    [Migration("20250218193349_First")]
     partial class First
     {
         /// <inheritdoc />
@@ -338,7 +338,7 @@ namespace ParkNetApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DaysOfPermit")
+                    b.Property<int>("PermitInfoId")
                         .HasColumnType("int");
 
                     b.Property<int>("SLotId")
@@ -352,6 +352,8 @@ namespace ParkNetApp.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PermitInfoId");
+
                     b.HasIndex("SLotId");
 
                     b.HasIndex("UserId");
@@ -359,7 +361,7 @@ namespace ParkNetApp.Migrations
                     b.ToTable("ParkingPermits");
                 });
 
-            modelBuilder.Entity("ParkNetApp.Data.Entities.PermitPrice", b =>
+            modelBuilder.Entity("ParkNetApp.Data.Entities.PermitInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -367,22 +369,21 @@ namespace ParkNetApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateOnly>("ActiveUntil")
+                    b.Property<DateOnly>("ActiveSince")
                         .HasColumnType("date");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                    b.Property<DateOnly?>("ActiveUntil")
+                        .HasColumnType("date");
 
-                    b.Property<string>("PermitType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<int>("DaysOfPermit")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Value")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("PermitPrices");
+                    b.ToTable("PermitInfos");
                 });
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.Slot", b =>
@@ -463,6 +464,9 @@ namespace ParkNetApp.Migrations
                     b.Property<bool>("IsActivated")
                         .HasColumnType("bit");
 
+                    b.Property<decimal>("ParkNetCardBalance")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
@@ -514,6 +518,33 @@ namespace ParkNetApp.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Vehicles");
+                });
+
+            modelBuilder.Entity("ParkNetApp.Data.Entities.VehicleType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasColumnType("nchar(1)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Symbol")
+                        .IsUnique();
+
+                    b.HasIndex("Type")
+                        .IsUnique();
+
+                    b.ToTable("VehicleTypes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -613,6 +644,12 @@ namespace ParkNetApp.Migrations
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.ParkingPermit", b =>
                 {
+                    b.HasOne("ParkNetApp.Data.Entities.PermitInfo", "PermitInfo")
+                        .WithMany()
+                        .HasForeignKey("PermitInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ParkNetApp.Data.Entities.Slot", "Slot")
                         .WithMany()
                         .HasForeignKey("SLotId")
@@ -622,6 +659,8 @@ namespace ParkNetApp.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+
+                    b.Navigation("PermitInfo");
 
                     b.Navigation("Slot");
 

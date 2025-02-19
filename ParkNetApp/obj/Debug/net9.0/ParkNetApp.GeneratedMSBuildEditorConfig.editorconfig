@@ -72,6 +72,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGFya2luZ0xvdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/AddPermit/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGVybWl0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/AddPermit/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGVybWl0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/AddPermit/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGVybWl0XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/AddPermit/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGVybWl0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/AddPermit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGVybWl0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/AddVehicle/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVmVoaWNsZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

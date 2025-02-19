@@ -1,5 +1,9 @@
-﻿using ParkNetApp.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using ParkNetApp.Models;
+using System.Collections;
 using System.Globalization;
+using System.Linq;
 
 namespace ParkNetApp.Data.Repositories;
 
@@ -79,4 +83,47 @@ public class ParkNetRepository
             .ThenInclude(f => f.ParkingLot)
             .Where(s => s.Floor.ParkingLotId == parkingLotId)
             .ToListAsync();
+
+    public IList<PermitInfo> GetPermitAvailableDays()
+        => _ctx.PermitInfos.Where(p => p.ActiveSince <= DateOnly.FromDateTime(DateTime.Now) && p.ActiveUntil == null).ToList();
+
+    public IList<ParkingLot> GetAvailableParkingLots() => _ctx.ParkingLots.ToList();
+
+    public IList<Slot> GetAvailableSlots(int chosenParkingLotId)
+    {
+        // Obtém os slots do estacionamento que não estão ocupados
+        var slotsFromParkingLot = _ctx.Slots
+            .Include(s => s.Floor)
+            .Where(s => s.Floor.ParkingLotId == chosenParkingLotId && !s.IsOccupied)
+            .ToList();
+        // Obtém os slots que possuem uma avença ativa
+        var slotsWithCurrentPermit = GetSlotsWithCurrentPermit();
+        // Filtra os slots removendo os que possuem o current permit
+        var availableSlots = slotsFromParkingLot
+            .Where(s => !slotsWithCurrentPermit.Any(permitSlot => permitSlot.Id == s.Id))
+            .ToList();
+
+        return availableSlots;
+    }
+
+    public List<Slot> GetSlotsWithCurrentPermit()
+    {
+        return _ctx.ParkingPermits
+            .Include(p => p.Slot)
+            .Include(p => p.PermitInfo)
+            .Where(p => p.SartedAt <= DateTime.Now && p.PermitInfo.ActiveUntil == null)
+            .Select(p => p.Slot)
+            .ToList();
+    }
+
+
+
+
+    public async Task AddNewPermitAndSaveChangesAsync(ParkingPermit parkingPermit)
+    {
+        _ctx.ParkingPermits.Add(parkingPermit);
+        await _ctx.SaveChangesAsync();
+    }
+
+
 }
