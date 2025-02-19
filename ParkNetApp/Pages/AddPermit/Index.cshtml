@@ -37,13 +37,13 @@
     <thead>
         <tr>
             <th>
-               Sarted at
+               Started at
             </th>
             <th>
-                Permit Expiration Date
+                Expiration date
             </th>
             <th>
-                Permit Value ($)
+                Permit Value
             </th>
             <th>
                 Parking Lot
@@ -57,6 +57,9 @@
             <th>
                 Slot
             </th>
+            <th>
+                Type
+            </th>
        
             <th></th>
         </tr>
@@ -66,13 +69,13 @@
         {
             <tr>
                 <td>
-                    @item.SartedAt
+                    @item.StartedAt
                 </td>
                 <td>
-                    @item.SartedAt.AddDays(item.PermitInfo.DaysOfPermit).ToString("dd/MM/yyyy")
+                    @item.StartedAt.AddDays(item.PermitInfo.DaysOfPermit).ToString("dd/MM/yyyy")
                 </td>
                 <td>
-                    @item.PermitInfo.Value
+                    @(item.PermitInfo.Value.ToString("c"))
                 </td>
                 <td>
                     @item.Slot.Floor.ParkingLot.Designation
@@ -86,6 +89,9 @@
                 </td>
                 <td>
                     @item.Slot.Code
+                </td>
+                <td>
+                    @(item.Slot.SlotType == 'C' ? "Car" : "Motorcycle")
                 </td>
             </tr>
         }

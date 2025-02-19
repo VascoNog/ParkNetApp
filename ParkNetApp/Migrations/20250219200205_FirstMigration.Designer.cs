@@ -12,8 +12,8 @@ using ParkNetApp.Data;
 namespace ParkNetApp.Migrations
 {
     [DbContext(typeof(ParkNetDbContext))]
-    [Migration("20250218193224_ChangesAtParkingPermitAndPermitInfoEntities")]
-    partial class ChangesAtParkingPermitAndPermitInfoEntities
+    [Migration("20250219200205_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -341,10 +341,10 @@ namespace ParkNetApp.Migrations
                     b.Property<int>("PermitInfoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SLotId")
+                    b.Property<int>("SlotId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("SartedAt")
+                    b.Property<DateTime>("StartedAt")
                         .HasColumnType("datetime2(0)");
 
                     b.Property<string>("UserId")
@@ -354,7 +354,7 @@ namespace ParkNetApp.Migrations
 
                     b.HasIndex("PermitInfoId");
 
-                    b.HasIndex("SLotId");
+                    b.HasIndex("SlotId");
 
                     b.HasIndex("UserId");
 
@@ -652,7 +652,7 @@ namespace ParkNetApp.Migrations
 
                     b.HasOne("ParkNetApp.Data.Entities.Slot", "Slot")
                         .WithMany()
-                        .HasForeignKey("SLotId")
+                        .HasForeignKey("SlotId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

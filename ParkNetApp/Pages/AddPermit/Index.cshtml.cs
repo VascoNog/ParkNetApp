@@ -18,7 +18,7 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        ParkingLots = await _context.ParkingLots.ToListAsync();
+        ParkingLots = await _context.ParkingLots.ToListAsync(); 
 
         UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 

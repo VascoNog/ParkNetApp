@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ParkNetApp.Migrations
 {
     /// <inheritdoc />
-    public partial class ChangesAtParkingPermitAndPermitInfoEntities : Migration
+    public partial class FirstMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -360,9 +360,9 @@ namespace ParkNetApp.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SartedAt = table.Column<DateTime>(type: "datetime2(0)", nullable: false),
+                    StartedAt = table.Column<DateTime>(type: "datetime2(0)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    SLotId = table.Column<int>(type: "int", nullable: false),
+                    SlotId = table.Column<int>(type: "int", nullable: false),
                     PermitInfoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -380,8 +380,8 @@ namespace ParkNetApp.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ParkingPermits_Slots_SLotId",
-                        column: x => x.SLotId,
+                        name: "FK_ParkingPermits_Slots_SlotId",
+                        column: x => x.SlotId,
                         principalTable: "Slots",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -463,9 +463,9 @@ namespace ParkNetApp.Migrations
                 column: "PermitInfoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ParkingPermits_SLotId",
+                name: "IX_ParkingPermits_SlotId",
                 table: "ParkingPermits",
-                column: "SLotId");
+                column: "SlotId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ParkingPermits_UserId",

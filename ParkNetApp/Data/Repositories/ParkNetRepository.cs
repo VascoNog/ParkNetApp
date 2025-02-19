@@ -111,7 +111,7 @@ public class ParkNetRepository
         return _ctx.ParkingPermits
             .Include(p => p.Slot)
             .Include(p => p.PermitInfo)
-            .Where(p => p.SartedAt <= DateTime.Now && p.PermitInfo.ActiveUntil == null)
+            .Where(p => p.StartedAt <= DateTime.Now && p.PermitInfo.ActiveUntil == null)
             .Select(p => p.Slot)
             .ToList();
     }
@@ -123,6 +123,7 @@ public class ParkNetRepository
     {
         _ctx.ParkingPermits.Add(parkingPermit);
         await _ctx.SaveChangesAsync();
+
     }
 
 

@@ -56,7 +56,7 @@ public class ParkNetDbContext : IdentityDbContext
         // Configuration of ParkingPermit Entity
         modelBuilder.Entity<ParkingPermit>(entity =>
         {
-            entity.Property(e => e.SartedAt).IsRequired().HasColumnType("datetime2(0)");
+            entity.Property(e => e.StartedAt).IsRequired().HasColumnType("datetime2(0)");
         });
 
         // Configuration of PermitPrice Entity
