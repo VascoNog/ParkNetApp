@@ -1,23 +1,48 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace ParkNetApp.Pages.ActivateAccount;
-
+﻿namespace ParkNetApp.Pages.ActivateAccount;
 [Authorize]
 
 public class IndexModel : PageModel
 {
-    private readonly ParkNetApp.Data.ParkNetDbContext _context;
+    private readonly ParkNetRepository _repo;
+    public IndexModel(ParkNetRepository parkNetRepository) => _repo = parkNetRepository;
 
-    public IndexModel(ParkNetApp.Data.ParkNetDbContext context)
-    {
-        _context = context;
-    }
-
-    public IList<UserInfo> UserInfo { get;set; } = default!;
+    [BindProperty]
+    public Transaction NewTransaction { get; set; }
+    public string UserId { get; set; }  
+    public UserInfo UserInfo { get;set; } // Posso lidar deste lado com o corrente user logado
+    public double CurrentBalance { get; set; }
 
     public async Task OnGetAsync()
     {
-        UserInfo = await _context.UserInfos.ToListAsync();
+        UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        UserInfo = await _repo.GetCurrentUserInfo(UserId);
+        CurrentBalance = await _repo.GetCurrentUserBalance(UserId);
     }
+
+    public async Task<IActionResult> OnPostAsync()
+    {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
+
+        if (NewTransaction.TransactionType == "Withdraw")
+        {
+            NewTransaction.Amount = - NewTransaction.Amount; // Para garantir que o valor é negativo no caso de levantamento
+        }
+
+        NewTransaction.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        NewTransaction.TransactionDate = DateTime.Now;
+
+        Console.WriteLine(NewTransaction.Amount);
+        Console.WriteLine(NewTransaction.UserId);
+        Console.WriteLine(NewTransaction.TransactionDate);
+        Console.WriteLine(NewTransaction.TransactionType);
+        
+        await _repo.AddTransactionAndSaveChangesAsync(NewTransaction);
+
+        return RedirectToPage("./Index");
+        // OU return Page();
+    }
+
 }

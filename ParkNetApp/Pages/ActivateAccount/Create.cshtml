@@ -8,65 +8,66 @@
         var dateNow = DateTime.Now;
         }
  
-    <h4>Ative a sua conta</h4>
+    <h4>Activate your account</h4>
     <hr />
     <div class="row">
-    <div class="col-md-4">
-    <form method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <input type="hidden" asp-for="UserInfo.Id" value="@userId" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="UserInfo.CreditCardNumb" class="control-label">Credit Card</label>
-                <input asp-for="UserInfo.CreditCardNumb" class="form-control" />
-                <span asp-validation-for="UserInfo.CreditCardNumb" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserInfo.CCExpDate" class="control-label"> Valid Thru</label>
-                <input asp-for="UserInfo.CCExpDate" class="form-control" />
-                <span asp-validation-for="UserInfo.CCExpDate" class="text-danger"></span>
-            </div>
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="UserInfo.Id" value="@userId" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserInfo.CreditCardNumb" class="control-label">Credit Card</label>
+                    <input asp-for="UserInfo.CreditCardNumb" class="form-control" />
+                    <span asp-validation-for="UserInfo.CreditCardNumb" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserInfo.CCExpDate" class="control-label"> Valid Thru</label>
+                    <input asp-for="UserInfo.CCExpDate" class="form-control" />
+                    <span asp-validation-for="UserInfo.CCExpDate" class="text-danger"></span>
+                </div>
 
 
-            @*Transaction updating *@
-            <div class="form-group">
-                <label> Load ParkNet Card with </label>
-                <select asp-for="FirstCardPayment.Amount" class="form-control">
+                @*Transaction updating *@
+                <div class="form-group">
+                    <label> Load ParkNet Card with </label>
+                    <select asp-for="FirstCardPayment.Amount" class="form-control">
                     <option value="5">5€</option>
                     <option value="10">10€</option>
                     <option value="20">20€</option>
                     <option value="30">30€</option>
                     <option value="40">40€</option>
                     <option value="50">50€</option>
-                    <option value="60">50€</option>
-                    <option value="70">50€</option>
-                    <option value="80">50€</option>
-                    <option value="90">50€</option>
+                    <option value="60">60€</option>
+                    <option value="70">70€</option>
+                    <option value="80">80€</option>
+                    <option value="90">90€</option>
                     <option value="100">100€</option>
-                </select>
-            </div>
-            <input type="hidden" asp-for="FirstCardPayment.TransactionDate" value="@dateNow" class="form-control" />
-            <input type="hidden" asp-for="FirstCardPayment.UserId" value="@userId" class="form-control" />
-            <input type="hidden" asp-for="FirstCardPayment.TransactionType" value="Adding Funds to Card" class="form-control" />
- 
+                    </select>
+                </div>
+                <input type="hidden" asp-for="FirstCardPayment.TransactionDate" value="@dateNow" class="form-control" />
+                <input type="hidden" asp-for="FirstCardPayment.UserId" value="@userId" class="form-control" />
+                <input type="hidden" asp-for="FirstCardPayment.TransactionType" value="Adding Funds to Card" class="form-control" />
 
-            <div class="form-group">
-                <label asp-for="UserInfo.DriverLicenseNumber" class="control-label">Driver License</label>
-                <input asp-for="UserInfo.DriverLicenseNumber" class="form-control" />
-                <span asp-validation-for="UserInfo.DriverLicenseNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserInfo.DLExpDate" class="control-label">Valid Thru</label>
-                <input asp-for="UserInfo.DLExpDate" class="form-control" />
-                <span asp-validation-for="UserInfo.DLExpDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+                <div class="form-group">
+                    <label asp-for="UserInfo.DriverLicenseNumber" class="control-label">Driver License</label>
+                    <input asp-for="UserInfo.DriverLicenseNumber" class="form-control" />
+                    <span asp-validation-for="UserInfo.DriverLicenseNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserInfo.DLExpDate" class="control-label">Valid Thru</label>
+                    <input asp-for="UserInfo.DLExpDate" class="form-control" />
+                    <span asp-validation-for="UserInfo.DLExpDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+
 
 <div>
     <a asp-page="Index">Back to List</a>

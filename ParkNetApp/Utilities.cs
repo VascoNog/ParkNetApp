@@ -1,8 +1,4 @@
-﻿using ParkNetApp.Models;
-using System.Numerics;
-using System.Runtime.Intrinsics.X86;
-using System.Text.RegularExpressions;
-
+﻿
 namespace ParkNetApp;
 
 public class Utilities

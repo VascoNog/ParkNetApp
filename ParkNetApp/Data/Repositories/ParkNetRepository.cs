@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using ParkNetApp.Models;
-using System.Collections;
-using System.Globalization;
-using System.Linq;
+﻿
 
 namespace ParkNetApp.Data.Repositories;
 
@@ -57,11 +52,6 @@ public class ParkNetRepository
 
     public static int GetColumnIndex(string slotCode)
         => int.Parse(slotCode.Substring(slotCode.Count(char.IsLetter)));
-
-
-
-
-
 
     public static string GetCodeLetter(int row)
     {
@@ -124,6 +114,25 @@ public class ParkNetRepository
         _ctx.ParkingPermits.Add(parkingPermit);
         await _ctx.SaveChangesAsync();
 
+    }
+
+    public async Task<IList<UserInfo>> GetCurrentUsersInfos()
+        => await _ctx.UserInfos.ToListAsync();
+
+    public async Task<UserInfo> GetCurrentUserInfo(string currentUserId)
+        => await _ctx.UserInfos.FirstOrDefaultAsync(ui => ui.Id == currentUserId);
+
+    public async Task<double> GetCurrentUserBalance(string userId)
+    =>  await _ctx.Transactions
+            .Where(t => t.UserId == userId)
+            .Where(t => t.TransactionDate <= DateTime.Now) // Porque o saldo é calculado até à data corrente e existirão avenças com data de transação futura
+            .SumAsync(t => t.Amount);
+
+
+    public async Task AddTransactionAndSaveChangesAsync(Transaction transaction)
+    {
+        await _ctx.Transactions.AddAsync(transaction);
+        await _ctx.SaveChangesAsync(); 
     }
 
 

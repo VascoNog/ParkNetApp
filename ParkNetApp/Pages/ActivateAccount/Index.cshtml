@@ -5,13 +5,9 @@
 @{
     ViewData["Title"] = "Index";
     var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-    UserInfo currentUserInfo = null;
-    if (Model.UserInfo.Any(d => d.Id == userId))
-        currentUserInfo = Model.UserInfo.FirstOrDefault(d => d.Id == userId);
 }
 
-@if(currentUserInfo == null)
+@if(Model.UserInfo == null)
 {
     <a href="/ActivateAccount/Create">Activate Now</a>
 }
@@ -36,27 +32,89 @@ else
 
             <tr>
                 <td>
-                    @if (currentUserInfo.IsActivated)
+                    @if (Model.UserInfo.IsActivated)
                     {
                         <p>ACTIVE</p>
                     }
             </td>
             <td>
-                @currentUserInfo.CreditCardNumb
-                (@currentUserInfo.CCExpDate)
+                @Model.UserInfo.CreditCardNumb
+                (@Model.UserInfo.CCExpDate)
             </td>
             <td>
-                @currentUserInfo.DriverLicenseNumber
-                (@currentUserInfo.DLExpDate)
+                @Model.UserInfo.DriverLicenseNumber
+                (@Model.UserInfo.DLExpDate)
             </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@currentUserInfo.Id">Edit</a>
+                    <a asp-page="./Edit" asp-route-id="@Model.UserInfo.Id">Edit</a>
                     @* <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>  *@
                 </td>
         </tr>
     </tbody>
 </table>
+
+    <h4>Load or Withdraw money from the ParkNet card</h4>
+
+    <form method="post">
+        <div>
+            @if (Model.CurrentBalance == 0)
+            {
+                <label>You have a balance of 0€ - Load ParkNet card with:</label>
+                
+                <div class="form-group">
+                    <select asp-for="NewTransaction.Amount" class="form-control">
+                        <option value="5">5€</option>
+                        <option value="10">10€</option>
+                        <option value="20">20€</option>
+                        <option value="30">30€</option>
+                        <option value="40">40€</option>
+                        <option value="50">50€</option>
+                        <option value="60">60€</option>
+                        <option value="70">70€</option>
+                        <option value="80">80€</option>
+                        <option value="90">90€</option>
+                        <option value="100">100€</option>
+                    </select>
+                    <input type="hidden" asp-for="NewTransaction.TransactionType" value="Adding Funds to Card" />
+                </div>
+            }
+            else if (Model.CurrentBalance < 0)
+            {
+                <label>You have a debt of @(Model.CurrentBalance.ToString("c")) - Withdraw ParkNet card with</label>
+                <div class="form-group">
+                    <label for="NewTransaction_Amount">Choose an amount:</label>
+                    <input asp-for="NewTransaction.Amount" type="number" class="form-control mt-2"
+                           min="@Math.Abs(Model.CurrentBalance) + 0.01" step="0.01"
+                           placeholder="Enter a value greater than @Math.Abs(Model.CurrentBalance)">
+                    <input type="hidden" asp-for="NewTransaction.TransactionType" value="Withdraw" />
+                </div>
+            }
+            else
+            {
+                <label>You have a credit of @(Model.CurrentBalance.ToString("c")) - Load ParkNet card with:</label>
+                <div class="form-group">
+                    <select asp-for="NewTransaction.Amount" class="form-control">
+                        <option value="5">5€</option>
+                        <option value="10">10€</option>
+                        <option value="20">20€</option>
+                        <option value="30">30€</option>
+                        <option value="40">40€</option>
+                        <option value="50">50€</option>
+                        <option value="60">60€</option>
+                        <option value="70">70€</option>
+                        <option value="80">80€</option>
+                        <option value="90">90€</option>
+                        <option value="100">100€</option>
+                    </select>
+                    <input type="hidden" asp-for="NewTransaction.TransactionType" value="Adding Funds to Card" />
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Apply" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
 
 }
 

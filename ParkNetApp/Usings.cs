@@ -9,3 +9,5 @@ global using Microsoft.AspNetCore.Mvc.RazorPages;
 global using System.Security.Claims;
 global using Microsoft.AspNetCore.Mvc.Rendering;
 global using ParkNetApp.Data.Repositories;
+global using ParkNetApp.Models;
+global using System.Text.RegularExpressions;

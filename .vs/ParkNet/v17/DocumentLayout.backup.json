@@ -3,8 +3,48 @@
   "WorkspaceRootPath": "D:\\ReStart_Pessoal\\ParkNet\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\data\\repositories\\parknetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\data\\repositories\\parknetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\data\\entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\data\\entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addpermit\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addpermit\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\usings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\usings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addpermit\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +55,16 @@
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addpermit\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\data\\repositories\\parknetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\data\\repositories\\parknetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\data\\entities\\parkingpermit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\data\\entities\\parkingpermit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addvehicle\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addvehicle\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\data\\entities\\userinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\data\\entities\\userinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250219200205_FirstMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ParkNetApp\\Migrations\\20250219200205_FirstMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\data\\entities\\parkingpermit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\data\\entities\\parkingpermit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\data\\entities\\permitinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,10 +107,6 @@
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\data\\entities\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addparkinglot\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addparkinglot\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -83,32 +115,8 @@
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addparkinglot\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\data\\entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\data\\entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addvehicle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addvehicle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\usings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\usings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addvehicle\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addvehicle\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -133,10 +141,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addpermit\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addpermit\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250218192947_ChangesAtParkingPermitAndPermitInfoEntities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -169,10 +173,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addvehicle\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\addvehicle\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -221,10 +221,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\activateaccount\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\activateaccount\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\addvehicle\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -361,6 +357,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|d:\\restart_pessoal\\parknet\\parknetapp\\migrations\\20250219200205_firstmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0C3BAC-4C12-4FDE-A9BC-1B643FEE3F35}|ParkNetApp\\ParkNetApp.csproj|solutionrelative:parknetapp\\migrations\\20250219200205_firstmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -370,7 +370,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -382,119 +382,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Vehicle.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Vehicle.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Vehicle.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Vehicle.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Vehicle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
+              "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T18:50:12.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAqwHgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:18:00.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Slot.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Slot.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Slot.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Slot.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Slot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T15:40:57.783Z",
+              "WhenOpened": "2025-02-13T19:10:48.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "PermitInfo.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\PermitInfo.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\PermitInfo.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\PermitInfo.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\PermitInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T14:22:27.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserInfo.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\UserInfo.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\UserInfo.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\UserInfo.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\UserInfo.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAA7wBAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T22:31:19.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Create.cshtml.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Create.cshtml.cs",
-              "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Create.cshtml.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAwwDAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
+              "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwCcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T19:53:52.394Z",
+              "WhenOpened": "2025-02-13T19:10:47.566Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
+              "Title": "Usings.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Usings.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Usings.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Usings.cs",
+              "RelativeToolTip": "ParkNetApp\\Usings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T13:21:22.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Utilities.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Utilities.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Utilities.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Utilities.cs",
+              "RelativeToolTip": "ParkNetApp\\Utilities.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAuwHYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T15:17:05.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Index.cshtml",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Index.cshtml",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Index.cshtml",
+              "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAGAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-18T19:53:53.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Create.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Create.cshtml",
               "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Create.cshtml",
               "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Create.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABIAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-18T21:42:06.522Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ParkingPermit.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\ParkingPermit.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\ParkingPermit.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\ParkingPermit.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\ParkingPermit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Program.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Program.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Program.cs",
+              "RelativeToolTip": "ParkNetApp\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T17:50:41.899Z",
+              "WhenOpened": "2025-02-13T18:57:41.317Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Index.cshtml",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Index.cshtml",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Index.cshtml",
-              "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Index.cshtml",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFcAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-18T19:53:53.837Z",
+              "DocumentIndex": 4,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Transaction.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Transaction.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Transaction.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Transaction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T17:31:46.256Z",
               "EditorCaption": ""
             },
             {
@@ -505,14 +492,152 @@
               "RelativeDocumentMoniker": "ParkNetApp\\Data\\Repositories\\ParkNetRepository.cs",
               "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Repositories\\ParkNetRepository.cs",
               "RelativeToolTip": "ParkNetApp\\Data\\Repositories\\ParkNetRepository.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAowG8AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAvwIoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T18:16:14.511Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-13T19:13:11.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
+              "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAABEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-13T19:10:48.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
+              "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAuwE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-13T19:10:47.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Create.cshtml.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Create.cshtml.cs",
+              "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Create.cshtml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T19:53:52.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Create.cshtml",
+              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Create.cshtml",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Create.cshtml",
+              "RelativeToolTip": "ParkNetApp\\Pages\\AddVehicle\\Create.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAA8AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T18:54:44.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ParkingPermit.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\ParkingPermit.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\ParkingPermit.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\ParkingPermit.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\ParkingPermit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T17:50:41.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserInfo.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\UserInfo.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\UserInfo.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\UserInfo.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\UserInfo.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T22:31:19.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PermitInfo.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\PermitInfo.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\PermitInfo.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\PermitInfo.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\PermitInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:22:27.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Slot.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Slot.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Slot.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Slot.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Slot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T15:40:57.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAqwHgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T18:18:00.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Vehicle.cs",
+              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Vehicle.cs",
+              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Vehicle.cs",
+              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Vehicle.cs",
+              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Vehicle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T18:50:12.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "View.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\View.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\View.cshtml",
@@ -520,12 +645,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\ParkingLotView\\View.cshtml",
               "ViewState": "AgIAACMAAAAAAAAAAAAAACMAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-15T23:33:35.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-15T23:33:35.76Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 89,
               "Title": "20250219200205_FirstMigration.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250219200205_FirstMigration.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Migrations\\20250219200205_FirstMigration.cs",
@@ -533,12 +657,11 @@
               "RelativeToolTip": "ParkNetApp\\Migrations\\20250219200205_FirstMigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T20:02:06.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T20:02:06.104Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "Edit.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Edit.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Edit.cshtml.cs",
@@ -546,12 +669,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Edit.cshtml.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAAACcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T19:53:52.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T19:53:52.934Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Edit.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Edit.cshtml",
@@ -559,12 +681,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Edit.cshtml",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwCAAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-18T19:53:52.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T19:53:52.651Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Index.cshtml.cs",
@@ -572,12 +693,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Index.cshtml.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAswCIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T19:53:53.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T19:53:53.992Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Delete.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Delete.cshtml",
@@ -585,12 +705,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Delete.cshtml",
               "ViewState": "AgIAABQAAAAAAAAAAAAmwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-18T19:53:53.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T19:53:53.559Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Details.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Details.cshtml",
@@ -598,12 +717,11 @@
               "RelativeToolTip": "ParkNetApp\\Pages\\AddPermit\\Details.cshtml",
               "ViewState": "AgIAABgAAAAAAAAAAAAowBcAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-18T19:53:53.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T19:53:53.155Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Index.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Index.cshtml",
@@ -615,31 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Program.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Program.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Program.cs",
-              "RelativeToolTip": "ParkNetApp\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:57:41.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
-              "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:10:47.343Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 26,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml",
@@ -651,31 +745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
-              "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:10:48.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Transaction.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Transaction.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Transaction.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Transaction.cs",
-              "RelativeToolTip": "ParkNetApp\\Data\\Entities\\Transaction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T17:31:46.256Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Index.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Index.cshtml",
@@ -687,43 +757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Usings.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Usings.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Usings.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Usings.cs",
-              "RelativeToolTip": "ParkNetApp\\Usings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T13:21:22.559Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Utilities.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Utilities.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Utilities.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Utilities.cs",
-              "RelativeToolTip": "ParkNetApp\\Utilities.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAA3wKIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-15T15:17:05.657Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Create.cshtml",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Create.cshtml",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Create.cshtml",
-              "RelativeToolTip": "ParkNetApp\\Pages\\AddVehicle\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-17T18:54:44.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "ParkingLot.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\ParkingLot.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\ParkingLot.cs",
@@ -735,7 +769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\Index.cshtml",
@@ -747,7 +781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Create.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Create.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Create.cshtml.cs",
@@ -759,7 +793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "PermitModel.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Models\\PermitModel.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Models\\PermitModel.cs",
@@ -771,7 +805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "Details.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Details.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Details.cshtml.cs",
@@ -783,7 +817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "Delete.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddPermit\\Delete.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddPermit\\Delete.cshtml.cs",
@@ -795,7 +829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "20250218192947_ChangesAtParkingPermitAndPermitInfoEntities.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250218192947_ChangesAtParkingPermitAndPermitInfoEntities.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Migrations\\20250218192947_ChangesAtParkingPermitAndPermitInfoEntities.cs",
@@ -807,7 +841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "Floor.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Data\\Entities\\Floor.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Data\\Entities\\Floor.cs",
@@ -819,19 +853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ParkNetApp\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAC4AAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T19:13:11.635Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\Shared\\_LoginPartial.cshtml",
@@ -843,7 +865,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "Edit.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Edit.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Edit.cshtml.cs",
@@ -855,7 +877,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Edit.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Edit.cshtml",
@@ -867,7 +889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "Edit.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Edit.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Edit.cshtml.cs",
@@ -879,7 +901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Edit.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Edit.cshtml",
@@ -891,7 +913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Details.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Details.cshtml",
@@ -900,18 +922,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-17T18:54:45.563Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
-              "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Create.cshtml.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAkwA0AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:10:47.566Z"
             },
             {
               "$type": "Document",
@@ -1061,18 +1071,6 @@
               "$type": "Document",
               "DocumentIndex": 55,
               "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
-              "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
-              "RelativeToolTip": "ParkNetApp\\Pages\\ActivateAccount\\Index.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T19:10:48.896Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Index.cshtml.cs",
               "ToolTip": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Index.cshtml.cs",
@@ -1083,7 +1081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 56,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Delete.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Delete.cshtml",
@@ -1095,7 +1093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 57,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml",
@@ -1107,7 +1105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 58,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Delete.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Delete.cshtml",
@@ -1119,7 +1117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 59,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\Delete.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\Delete.cshtml",
@@ -1131,7 +1129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 61,
               "Title": "Details.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Details.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Details.cshtml.cs",
@@ -1143,7 +1141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 60,
               "Title": "Delete.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddVehicle\\Delete.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddVehicle\\Delete.cshtml.cs",
@@ -1155,7 +1153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 62,
               "Title": "ToPark.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\ToPark.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\ToPark.cshtml",
@@ -1167,7 +1165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 66,
               "Title": "View.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\View.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\View.cshtml.cs",
@@ -1179,7 +1177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 67,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\Create.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\Create.cshtml",
@@ -1191,7 +1189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 64,
               "Title": "Options.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\Options.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\Options.cshtml",
@@ -1203,7 +1201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 63,
               "Title": "ToPark.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\ToPark.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\ToPark.cshtml.cs",
@@ -1215,7 +1213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 68,
               "Title": "Options.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\Options.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\Options.cshtml.cs",
@@ -1227,7 +1225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 65,
               "Title": "Delete.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\Delete.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\Delete.cshtml.cs",
@@ -1239,7 +1237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 70,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Details.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Details.cshtml",
@@ -1251,7 +1249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 69,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\Details.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\Details.cshtml",
@@ -1263,7 +1261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 72,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\appsettings.json",
               "RelativeDocumentMoniker": "ParkNetApp\\appsettings.json",
@@ -1275,7 +1273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 71,
               "Title": "ParkingLotModel.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Models\\ParkingLotModel.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Models\\ParkingLotModel.cs",
@@ -1287,7 +1285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 73,
               "Title": "Delete.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Delete.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Delete.cshtml.cs",
@@ -1299,7 +1297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 74,
               "Title": "Details.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Details.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Details.cshtml.cs",
@@ -1311,7 +1309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 75,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Index.cshtml.cs",
@@ -1323,7 +1321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 76,
               "Title": "Edit.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Edit.cshtml.cs",
@@ -1335,7 +1333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 77,
               "Title": "Details.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Details.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Details.cshtml.cs",
@@ -1347,7 +1345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 78,
               "Title": "Delete.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Delete.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Delete.cshtml.cs",
@@ -1359,7 +1357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 80,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Delete.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Delete.cshtml",
@@ -1371,7 +1369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 79,
               "Title": "Create.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\AddParkingLot\\Create.cshtml.cs",
@@ -1383,7 +1381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 81,
               "Title": "Details.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ParkingLotView\\Details.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ParkingLotView\\Details.cshtml.cs",
@@ -1395,7 +1393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 82,
               "Title": "20250215232502_FixingMigration.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250215232502_FixingMigration.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Migrations\\20250215232502_FixingMigration.cs",
@@ -1406,7 +1404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 83,
               "Title": "20250215223154_FixingPreviousMigration.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250215223154_FixingPreviousMigration.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Migrations\\20250215223154_FixingPreviousMigration.cs",
@@ -1417,7 +1415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 84,
               "Title": "20250215213753_ChangedSlotCodeToUniqueIndex.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250215213753_ChangedSlotCodeToUniqueIndex.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Migrations\\20250215213753_ChangedSlotCodeToUniqueIndex.cs",
@@ -1428,7 +1426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 85,
               "Title": "Utilities.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Utilities.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Utilities.cs",
@@ -1440,7 +1438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 86,
               "Title": "20250214142925_ChangedParkingLotEntity_DesignationAsUnique.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Migrations\\20250214142925_ChangedParkingLotEntity_DesignationAsUnique.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Migrations\\20250214142925_ChangedParkingLotEntity_DesignationAsUnique.cs",
@@ -1451,7 +1449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 87,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\ActivateAccount\\Details.cshtml",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\ActivateAccount\\Details.cshtml",
@@ -1463,7 +1461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 88,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "ParkNetApp\\Pages\\Index.cshtml.cs",
