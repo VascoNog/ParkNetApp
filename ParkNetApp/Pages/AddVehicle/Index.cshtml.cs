@@ -19,6 +19,7 @@ public class IndexModel : PageModel
     {
         UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         Vehicle = await _context.Vehicles
+            .Include(v => v.VehicleType )
             .Include(v => v.User)
             .Where(v => v.UserId == UserId)
             .ToListAsync();

@@ -17,9 +17,9 @@
             <input type="hidden" asp-for="Vehicle.UserId" value="@Model.UserId" />
             <div class="form-group">
                 
-                <label asp-for="Vehicle.Type" class="control-label"></label>
-                <input asp-for="Vehicle.Type" class="form-control" />
-                <span asp-validation-for="Vehicle.Type" class="text-danger"></span>
+                <label asp-for="Vehicle.VehicleType.Type" class="control-label"></label>
+                <input asp-for="Vehicle.VehicleType.Type" class="form-control" />
+                <span asp-validation-for="Vehicle.VehicleType.Type" class="text-danger"></span>
             </div>
             <div class="form-group">
                 

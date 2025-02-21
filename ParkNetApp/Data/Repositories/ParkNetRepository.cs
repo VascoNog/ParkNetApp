@@ -1,4 +1,5 @@
-﻿
+﻿using ParkNetApp.Data.Entities;
+using System.Collections.Specialized;
 
 namespace ParkNetApp.Data.Repositories;
 
@@ -106,14 +107,10 @@ public class ParkNetRepository
             .ToList();
     }
 
-
-
-
     public async Task AddNewPermitAndSaveChangesAsync(ParkingPermit parkingPermit)
     {
         _ctx.ParkingPermits.Add(parkingPermit);
         await _ctx.SaveChangesAsync();
-
     }
 
     public async Task<IList<UserInfo>> GetCurrentUsersInfos()
@@ -123,17 +120,59 @@ public class ParkNetRepository
         => await _ctx.UserInfos.FirstOrDefaultAsync(ui => ui.Id == currentUserId);
 
     public async Task<double> GetCurrentUserBalance(string userId)
-    =>  await _ctx.Transactions
+    => await _ctx.Transactions
             .Where(t => t.UserId == userId)
             .Where(t => t.TransactionDate <= DateTime.Now) // Porque o saldo é calculado até à data corrente e existirão avenças com data de transação futura
             .SumAsync(t => t.Amount);
 
-
     public async Task AddTransactionAndSaveChangesAsync(Transaction transaction)
     {
         await _ctx.Transactions.AddAsync(transaction);
-        await _ctx.SaveChangesAsync(); 
+        await _ctx.SaveChangesAsync();
     }
 
+    public Slot GetSlotById(int slotId)
+        => _ctx.Slots.Include(s => s.Floor)
+            .ThenInclude(f => f.ParkingLot)
+            .FirstOrDefault(s => s.Id == slotId);
 
+    public bool UserCanParkOrUnpark(Slot slot, string userId)
+    {
+        if (slot.IsOccupied)
+            return UserIsParkedAtCurrentSlot(slot, userId);
+
+        if (UserHasActivePermitAtCurrentSlot(slot, userId))
+            return true;
+
+        if (CurrentSlotHasNoActivePermit(slot))
+            return true;
+
+        if(CurrentSlotHasPermitFromOtherUser(slot, userId))
+            return false;
+
+        return UserHasCorrectVehicleType(slot, userId);
+    }
+
+    public bool UserHasActivePermitAtCurrentSlot(Slot slot, string userId)
+       => _ctx.ParkingPermits.Any(p => p.UserId == userId
+        && p.PermitInfo.ActiveUntil == null
+        && p.SlotId == slot.Id);
+
+    public bool CurrentSlotHasPermitFromOtherUser(Slot slot, string userId)
+        => _ctx.ParkingPermits.Any(p => p.SlotId == slot.Id
+            && p.PermitInfo.ActiveUntil == null
+            && p.UserId != userId);
+
+    public bool UserIsParkedAtCurrentSlot(Slot slot, string userId)
+        => _ctx.EntriesAndExitsHistory.Any(p => p.UserId == userId
+            && p.SlotId == slot.Id && p.ExitAt == null);
+
+    public bool CurrentSlotHasNoActivePermit(Slot slot)
+        => !_ctx.ParkingPermits.Any(p => p.SlotId == slot.Id
+            && p.PermitInfo.ActiveUntil == null);
+
+    public bool UserHasCorrectVehicleType(Slot slot, string userId)
+        => _ctx.Vehicles
+       .Include(v => v.VehicleType)
+       .Any(v => v.UserId == userId && v.VehicleType.Symbol == slot.SlotType);
 }

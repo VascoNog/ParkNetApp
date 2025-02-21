@@ -11,6 +11,7 @@ public class ParkNetDbContext : IdentityDbContext
 
     public DbSet<EntryAndExitHistory> EntriesAndExitsHistory {get; set; }
     public DbSet<Floor> Floors { get; set; }    
+    public DbSet<NonSubscriptionParkingTariff> NonSubscriptionParkingTariffs { get; set; } // Entidade isolada
     public DbSet<ParkingLot> ParkingLots { get; set; }
     public DbSet<ParkingPermit> ParkingPermits { get; set; } // Entidade isolada
     public DbSet<PermitInfo> PermitInfos { get; set; }
@@ -38,6 +39,14 @@ public class ParkNetDbContext : IdentityDbContext
         modelBuilder.Entity<Floor> (entity =>
         {
             entity.Property(e => e.Name).IsRequired().HasColumnType("nvarchar(10)");
+        });
+
+        // Configuration of NonSubscriptionParkingTariff Entity
+        modelBuilder.Entity<NonSubscriptionParkingTariff>(entity =>
+        {
+            entity.Property(e => e.Limit).IsRequired().HasColumnType("int");
+            entity.Property(e => e.Tariff).IsRequired().HasColumnType("decimal(5,2)");
+            entity.Property(e => e.ActiveSince).IsRequired().HasColumnType("date");
         });
 
         // Configuration of ParkingLot Entity
@@ -81,7 +90,7 @@ public class ParkNetDbContext : IdentityDbContext
         // Configuration of Transaction Entity
         modelBuilder.Entity<Transaction>(entity =>
         {
-            entity.Property(e => e.TransactionDate).IsRequired().HasColumnType("datetime2");
+            entity.Property(e => e.TransactionDate).HasColumnType("datetime2");
             entity.Property(e => e.Amount).IsRequired(). HasColumnType("decimal(18,2)");
             entity.Property(e => e.TransactionType).HasColumnType("nvarchar(500)"); // NULLABLE
         });
@@ -103,7 +112,6 @@ public class ParkNetDbContext : IdentityDbContext
         modelBuilder.Entity<Vehicle>(entity =>
         {
             entity.Property(e => e.PlateNumber).IsRequired().HasColumnType("nvarchar(25)");
-            entity.Property(e => e.Type).IsRequired().HasColumnType("nvarchar(20)");
             entity.HasIndex(e => e.PlateNumber).IsUnique();
             entity.Property(e => e.Make).IsRequired().HasColumnType("nvarchar(50)");
             entity.Property(e => e.Model).IsRequired().HasColumnType("nvarchar(50)");

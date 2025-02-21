@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Security.Claims;
-
-namespace ParkNetApp.Pages.AddVehicle;
+﻿namespace ParkNetApp.Pages.AddVehicle;
 
 [Authorize]
 public class CreateModel : PageModel
@@ -21,7 +18,7 @@ public class CreateModel : PageModel
     {
         UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-        VehicleType = new SelectList(_context.VehicleTypes, "Type", "Type");
+        VehicleType = new SelectList(_context.VehicleTypes, "Id", "Type");
 
         return Page();
     }
@@ -30,10 +27,11 @@ public class CreateModel : PageModel
     {
         if (!ModelState.IsValid)
         {
-            VehicleType = new SelectList(_context.VehicleTypes, "Type", "Type"); //Recarrega a SelectList se ocorrer um erro
+            VehicleType = new SelectList(_context.VehicleTypes, "Id", "Type"); //Recarrega a SelectList se ocorrer um erro
             return Page();
         }
 
+        Vehicle.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         _context.Vehicles.Add(Vehicle);
         await _context.SaveChangesAsync();
 

@@ -4,7 +4,7 @@ public class EntryAndExitHistory  // Para ter um histórico de entradas e saída
 {
     public int Id { get; set; }
     public DateTime EntryAt { get; set; }
-    public DateTime ExitAt { get; set; }
+    public DateTime? ExitAt { get; set; }
 
     //Foreign Key UserId
     public string UserId { get; set; }

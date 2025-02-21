@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ParkNetApp.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class First : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,6 +48,22 @@ namespace ParkNetApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NonSubscriptionParkingTariffs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Limit = table.Column<int>(type: "int", nullable: false),
+                    Tariff = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
+                    ActiveSince = table.Column<DateOnly>(type: "date", nullable: false),
+                    ActiveUntil = table.Column<DateOnly>(type: "date", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NonSubscriptionParkingTariffs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -211,7 +227,7 @@ namespace ParkNetApp.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TransactionType = table.Column<string>(type: "nvarchar(500)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
@@ -250,28 +266,6 @@ namespace ParkNetApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vehicles",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<string>(type: "nvarchar(20)", nullable: false),
-                    PlateNumber = table.Column<string>(type: "nvarchar(25)", nullable: false),
-                    Make = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    Model = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Vehicles", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Vehicles_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Floors",
                 columns: table => new
                 {
@@ -287,6 +281,34 @@ namespace ParkNetApp.Migrations
                         name: "FK_Floors_ParkingLots_ParkingLotId",
                         column: x => x.ParkingLotId,
                         principalTable: "ParkingLots",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Vehicles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PlateNumber = table.Column<string>(type: "nvarchar(25)", nullable: false),
+                    Make = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    Model = table.Column<string>(type: "nvarchar(50)", nullable: false),
+                    VehicleTypeId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vehicles", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Vehicles_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Vehicles_VehicleTypes_VehicleTypeId",
+                        column: x => x.VehicleTypeId,
+                        principalTable: "VehicleTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -320,7 +342,7 @@ namespace ParkNetApp.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EntryAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ExitAt = table.Column<DateTime>(type: "datetime2(0)", nullable: false),
+                    ExitAt = table.Column<DateTime>(type: "datetime2(0)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     VehicleId = table.Column<int>(type: "int", nullable: false),
                     SlotId = table.Column<int>(type: "int", nullable: false),
@@ -511,6 +533,11 @@ namespace ParkNetApp.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Vehicles_VehicleTypeId",
+                table: "Vehicles",
+                column: "VehicleTypeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_VehicleTypes_Symbol",
                 table: "VehicleTypes",
                 column: "Symbol",
@@ -545,13 +572,13 @@ namespace ParkNetApp.Migrations
                 name: "EntriesAndExitsHistory");
 
             migrationBuilder.DropTable(
+                name: "NonSubscriptionParkingTariffs");
+
+            migrationBuilder.DropTable(
                 name: "ParkingPermits");
 
             migrationBuilder.DropTable(
                 name: "UserInfos");
-
-            migrationBuilder.DropTable(
-                name: "VehicleTypes");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -570,6 +597,9 @@ namespace ParkNetApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "VehicleTypes");
 
             migrationBuilder.DropTable(
                 name: "Floors");

@@ -5,9 +5,35 @@
 }
 
 @* Reservar ao Admin *@
-<a asp-page="./Edit" asp-route-id="@Model.SlotId" class="btn btn-lg btn-warning">Edit</a>  
-<a asp-page="./Delete" asp-route-id="@Model.SlotId" class="btn btn-lg btn-danger">Delete</a> 
+<a asp-page="./Edit" asp-route-id="@Model.Slot.Id" class="btn btn-lg btn-warning">Edit</a>  
+<a asp-page="./Delete" asp-route-id="@Model.Slot.Id" class="btn btn-lg btn-danger">Delete</a> 
 
 @* Reservar ao User *@
-<a asp-page="./ToPark" asp-route-id="@Model.SlotId" class="btn btn-lg btn-primary">Park/Unpark in this Slot</a>  
+@if (!Model.Slot.IsOccupied)
+{
+    @if (Model.CanPerformAction)
+    {
+        <a asp-page="./ToPark" asp-route-id="@Model.Slot.Id" class="btn btn-lg btn-primary">Park</a>
+    }
+    else
+    {
+        <p>You cannot park here</p>
+    }
+}
+else // Slot está ocupado
+{
+    @if (Model.CanPerformAction)
+    {
+        <a asp-page="./ToPark" asp-route-id="@Model.Slot.Id" class="btn btn-lg btn-warning">Unpark</a>
+    }
+    else
+    {
+        <p>You are not parked here!</p>
+    }
+}
 
+<div>
+    <a asp-page="/ParkingLotView/View" asp-route-id="@Model.Slot.Floor.ParkingLot.Id">
+        Back to Parking Lot Layout
+    </a>
+</div>

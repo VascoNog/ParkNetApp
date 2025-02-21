@@ -235,7 +235,7 @@ namespace ParkNetApp.Migrations
                     b.Property<DateTime>("EntryAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ExitAt")
+                    b.Property<DateTime?>("ExitAt")
                         .HasColumnType("datetime2(0)");
 
                     b.Property<int>("SlotId")
@@ -283,6 +283,31 @@ namespace ParkNetApp.Migrations
                     b.HasIndex("ParkingLotId");
 
                     b.ToTable("Floors");
+                });
+
+            modelBuilder.Entity("ParkNetApp.Data.Entities.NonSubscriptionParkingTariff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateOnly>("ActiveSince")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly?>("ActiveUntil")
+                        .HasColumnType("date");
+
+                    b.Property<int>("Limit")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Tariff")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NonSubscriptionParkingTariffs");
                 });
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.ParkingLot", b =>
@@ -423,7 +448,7 @@ namespace ParkNetApp.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("TransactionDate")
+                    b.Property<DateTime?>("TransactionDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("TransactionType")
@@ -500,12 +525,11 @@ namespace ParkNetApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("VehicleTypeId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -513,6 +537,8 @@ namespace ParkNetApp.Migrations
                         .IsUnique();
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("VehicleTypeId");
 
                     b.ToTable("Vehicles");
                 });
@@ -699,7 +725,15 @@ namespace ParkNetApp.Migrations
                         .WithMany()
                         .HasForeignKey("UserId");
 
+                    b.HasOne("ParkNetApp.Data.Entities.VehicleType", "VehicleType")
+                        .WithMany()
+                        .HasForeignKey("VehicleTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("User");
+
+                    b.Navigation("VehicleType");
                 });
 #pragma warning restore 612, 618
         }
