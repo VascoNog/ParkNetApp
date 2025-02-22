@@ -26,14 +26,18 @@ public class IndexModel : PageModel
             return Page();
         }
 
+        UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        CurrentBalance = await _repo.GetCurrentUserBalance(UserId);
+
         if (NewTransaction.TransactionType == "Withdraw")
         {
-            NewTransaction.Amount = - NewTransaction.Amount; // Para garantir que o valor é negativo no caso de levantamento
+            if (NewTransaction.Amount >= CurrentBalance)
+                NewTransaction.Amount = (double) (CurrentBalance - 0.01); 
+            NewTransaction.Amount = - NewTransaction.Amount; // Valor é negativo no caso de levantamento
         }
 
-        NewTransaction.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        NewTransaction.TransactionDate = DateTime.Now;
-
+        NewTransaction.UserId = UserId;
+        NewTransaction.TransactionDate = DateTime.UtcNow;
         Console.WriteLine(NewTransaction.Amount);
         Console.WriteLine(NewTransaction.UserId);
         Console.WriteLine(NewTransaction.TransactionDate);
