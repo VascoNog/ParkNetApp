@@ -1,6 +1,6 @@
 ﻿namespace ParkNetApp.Data.Entities;
 
-public class Transaction
+public class Movement
 {
     public int Id { get; set; }
     public DateTime? TransactionDate { get; set; } // Pode ser data futura, no caso das avenças por exemplo?

@@ -17,7 +17,8 @@ public class OptionsModel : PageModel
 
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         Slot = _repo.GetSlotById(id.Value);
-        CanPerformAction = _repo.UserCanParkOrUnpark(Slot, userId);
+
+        CanPerformAction = _repo.CanPerformAction(Slot, userId);
 
         return Page(); 
     }

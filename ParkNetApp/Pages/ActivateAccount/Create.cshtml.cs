@@ -8,7 +8,7 @@ public class CreateModel : PageModel
     public UserInfo UserInfo { get; set; }
 
     [BindProperty]
-    public Transaction FirstCardPayment { get; set; }
+    public Movement FirstCardPayment { get; set; }
 
     private readonly ParkNetDbContext _context;
     public CreateModel(ParkNetDbContext context)
@@ -31,7 +31,7 @@ public class CreateModel : PageModel
         // Fazer o primeiro pagamento em cartão e atualizar a entidade Transaction e UserInfo
         try
         {
-            var transactionStatus = _context.Transactions.Add(FirstCardPayment);
+            var transactionStatus = _context.Movements.Add(FirstCardPayment);
             if (transactionStatus.State == EntityState.Added)
             {
                 UserInfo.IsActivated = true;

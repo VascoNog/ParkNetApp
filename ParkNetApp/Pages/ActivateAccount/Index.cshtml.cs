@@ -7,7 +7,7 @@ public class IndexModel : PageModel
     public IndexModel(ParkNetRepository parkNetRepository) => _repo = parkNetRepository;
 
     [BindProperty]
-    public Transaction NewTransaction { get; set; }
+    public Movement NewTransaction { get; set; }
     public string UserId { get; set; }  
     public UserInfo UserInfo { get;set; } // Posso lidar deste lado com o corrente user logado
     public double CurrentBalance { get; set; }
@@ -42,7 +42,6 @@ public class IndexModel : PageModel
         await _repo.AddTransactionAndSaveChangesAsync(NewTransaction);
 
         return RedirectToPage("./Index");
-        // OU return Page();
     }
 
 }

@@ -238,10 +238,10 @@ namespace ParkNetApp.Migrations
                     b.Property<DateTime?>("ExitAt")
                         .HasColumnType("datetime2(0)");
 
-                    b.Property<int>("SlotId")
+                    b.Property<int>("MovementId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TransactionId")
+                    b.Property<int>("SlotId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -252,9 +252,9 @@ namespace ParkNetApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SlotId");
+                    b.HasIndex("MovementId");
 
-                    b.HasIndex("TransactionId");
+                    b.HasIndex("SlotId");
 
                     b.HasIndex("UserId");
 
@@ -283,6 +283,33 @@ namespace ParkNetApp.Migrations
                     b.HasIndex("ParkingLotId");
 
                     b.ToTable("Floors");
+                });
+
+            modelBuilder.Entity("ParkNetApp.Data.Entities.Movement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("TransactionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TransactionType")
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Movements");
                 });
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.NonSubscriptionParkingTariff", b =>
@@ -437,33 +464,6 @@ namespace ParkNetApp.Migrations
                     b.ToTable("Slots");
                 });
 
-            modelBuilder.Entity("ParkNetApp.Data.Entities.Transaction", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime?>("TransactionDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TransactionType")
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Transactions");
-                });
-
             modelBuilder.Entity("ParkNetApp.Data.Entities.UserInfo", b =>
                 {
                     b.Property<string>("Id")
@@ -530,6 +530,9 @@ namespace ParkNetApp.Migrations
 
                     b.Property<int>("VehicleTypeId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("isParked")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -623,15 +626,15 @@ namespace ParkNetApp.Migrations
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.EntryAndExitHistory", b =>
                 {
-                    b.HasOne("ParkNetApp.Data.Entities.Slot", "Slot")
+                    b.HasOne("ParkNetApp.Data.Entities.Movement", "Movement")
                         .WithMany()
-                        .HasForeignKey("SlotId")
+                        .HasForeignKey("MovementId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ParkNetApp.Data.Entities.Transaction", "Transaction")
+                    b.HasOne("ParkNetApp.Data.Entities.Slot", "Slot")
                         .WithMany()
-                        .HasForeignKey("TransactionId")
+                        .HasForeignKey("SlotId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -645,9 +648,9 @@ namespace ParkNetApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Slot");
+                    b.Navigation("Movement");
 
-                    b.Navigation("Transaction");
+                    b.Navigation("Slot");
 
                     b.Navigation("User");
 
@@ -663,6 +666,15 @@ namespace ParkNetApp.Migrations
                         .IsRequired();
 
                     b.Navigation("ParkingLot");
+                });
+
+            modelBuilder.Entity("ParkNetApp.Data.Entities.Movement", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.ParkingPermit", b =>
@@ -699,15 +711,6 @@ namespace ParkNetApp.Migrations
                         .IsRequired();
 
                     b.Navigation("Floor");
-                });
-
-            modelBuilder.Entity("ParkNetApp.Data.Entities.Transaction", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ParkNetApp.Data.Entities.UserInfo", b =>

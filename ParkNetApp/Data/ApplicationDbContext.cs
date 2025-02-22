@@ -9,34 +9,31 @@ public class ParkNetDbContext : IdentityDbContext
     {
     }
 
-    public DbSet<EntryAndExitHistory> EntriesAndExitsHistory {get; set; }
-    public DbSet<Floor> Floors { get; set; }    
+    public DbSet<EntryAndExitHistory> EntriesAndExitsHistory { get; set; }
+    public DbSet<Floor> Floors { get; set; }
     public DbSet<NonSubscriptionParkingTariff> NonSubscriptionParkingTariffs { get; set; } // Entidade isolada
     public DbSet<ParkingLot> ParkingLots { get; set; }
     public DbSet<ParkingPermit> ParkingPermits { get; set; } // Entidade isolada
     public DbSet<PermitInfo> PermitInfos { get; set; }
     public DbSet<Slot> Slots { get; set; }
-    public DbSet<Transaction> Transactions { get; set; }
+    public DbSet<Movement> Movements { get; set; }
     public DbSet<UserInfo> UserInfos { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
     public DbSet<VehicleType> VehicleTypes { get; set; } // Entidade isolada
 
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
         base.OnModelCreating(modelBuilder);
 
-        // Configuration of ActivityHistory Entity  
-        modelBuilder.Entity<EntryAndExitHistory> (entity =>
+        // Configuration of ActivityHistory Entity
+        modelBuilder.Entity<EntryAndExitHistory>(entity =>
         {
             entity.Property(e => e.EntryAt).IsRequired().HasColumnType("datetime2");
             entity.Property(e => e.ExitAt).HasColumnType("datetime2(0)");
         });
 
-
         // Configuration of Floor Entity
-        modelBuilder.Entity<Floor> (entity =>
+        modelBuilder.Entity<Floor>(entity =>
         {
             entity.Property(e => e.Name).IsRequired().HasColumnType("nvarchar(10)");
         });
@@ -75,7 +72,6 @@ public class ParkNetDbContext : IdentityDbContext
             entity.Property(e => e.Value).IsRequired().HasColumnType("decimal(18,2)");
             entity.Property(e => e.ActiveSince).IsRequired().HasColumnType("date");
             entity.Property(e => e.ActiveUntil).HasColumnType("date");
-
         });
 
         // Configuration of Slot Entity
@@ -87,11 +83,11 @@ public class ParkNetDbContext : IdentityDbContext
             entity.Property(e => e.IsOccupied).IsRequired(); // BOOLEAN TYPE; True if occupied, False if not
         });
 
-        // Configuration of Transaction Entity
-        modelBuilder.Entity<Transaction>(entity =>
+        // Configuration of Movement Entity
+        modelBuilder.Entity<Movement>(entity =>
         {
             entity.Property(e => e.TransactionDate).HasColumnType("datetime2");
-            entity.Property(e => e.Amount).IsRequired(). HasColumnType("decimal(18,2)");
+            entity.Property(e => e.Amount).IsRequired().HasColumnType("decimal(18,2)");
             entity.Property(e => e.TransactionType).HasColumnType("nvarchar(500)"); // NULLABLE
         });
 
@@ -115,6 +111,7 @@ public class ParkNetDbContext : IdentityDbContext
             entity.HasIndex(e => e.PlateNumber).IsUnique();
             entity.Property(e => e.Make).IsRequired().HasColumnType("nvarchar(50)");
             entity.Property(e => e.Model).IsRequired().HasColumnType("nvarchar(50)");
+            entity.Property(e => e.isParked).IsRequired(); 
         });
 
         // Configuration of VehicleType Entity

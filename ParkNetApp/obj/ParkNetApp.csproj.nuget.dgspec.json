@@ -13,8 +13,12 @@
         "packagesPath": "C:\\Users\\Vasco Nogueira\\.nuget\\packages\\",
         "outputPath": "D:\\ReStart_Pessoal\\ParkNet\\ParkNetApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Vasco Nogueira\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Vasco Nogueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"

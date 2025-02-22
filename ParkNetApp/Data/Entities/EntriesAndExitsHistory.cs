@@ -22,6 +22,6 @@ public class EntryAndExitHistory  // Para ter um histórico de entradas e saída
 
 
     //Foreign Key TransactionId
-    public int TransactionId { get; set; }
-    public Transaction Transaction { get; set; }
+    public int MovementId { get; set; }
+    public Movement Movement { get; set; }
 }

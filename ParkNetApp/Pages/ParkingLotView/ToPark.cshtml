@@ -5,7 +5,83 @@
     ViewData["Title"] = "Park or Unpark";
 }
 
-<h3>Are you sure you want to park or unpark here?</h3>
+@* 
+@if (Model.Slot.IsOccupied)
+{
+    <p>Choose the vehicle to unpark</p>
+}
+else
+{
+    <p>Choose the vehicle to park</p>
+}
 
-<h3>TODO</h3>
+<form method="post">
+    <select name="vehicleId" class="form-control">
+        @foreach (var vehicle in Model.UserVehicles)
+        {
+            <option value="@vehicle.Id">
+                @vehicle.Make @vehicle.Model (@vehicle.PlateNumber) - @vehicle.VehicleType.Type
+            </option>
+        }
+    </select>
+    <input type="hidden" name="slotId" value="@Model.Slot.Id" />
 
+    <div class="form-group mt-2">
+        <input type="submit" value="Apply" class="btn btn-primary" />
+    </div>
+</form>
+ *@
+
+@if (Model.Slot.IsOccupied)
+{
+    @if (Model.CurrentVehicle == null) // Não é suposto isto acontecer penso
+    {
+        <p>You do not have any vehicle to unpark</p>
+        <div>
+            <a asp-page="/ParkingLotView/View" asp-route-id="@Model.Slot.Floor.ParkingLot.Id">
+                Back to Parking Lot Layout
+            </a>
+        </div>
+    }
+    else
+    {
+        <p>Unpark the vehicle</p>
+        <form method="post">
+            <input type="hidden" name="vehicleId" value="@Model.CurrentVehicle.Id" />
+            <input type="hidden" name="slotId" value="@Model.Slot.Id" />
+            <div class="form-group mt-2">
+                <input type="submit" value="Apply" class="btn btn-primary" />
+            </div>
+        </form>
+    }
+}
+else
+{
+    @if(Model.AvailableVehiclesToPark.Count == 0)
+    {
+        <p> You do not have any vehicle to park</p>
+        <div>
+            <a asp-page="/ParkingLotView/View" asp-route-id="@Model.Slot.Floor.ParkingLot.Id">
+                Back to Parking Lot Layout
+            </a>
+        </div>
+    }
+    else
+    {
+        <p>Choose the vehicle to park</p>
+        <form method="post">
+            <select name="vehicleId" class="form-control">
+                @foreach (var vehicle in Model.AvailableVehiclesToPark)
+                {
+                    <option value="@vehicle.Id">
+                        @vehicle.Make @vehicle.Model (@vehicle.PlateNumber) - @vehicle.VehicleType.Type
+                    </option>
+                }
+            </select>
+            <input type="hidden" name="slotId" value="@Model.Slot.Id" />
+            <div class="form-group mt-2">
+                <input type="submit" value="Apply" class="btn btn-primary" />
+            </div>
+        </form>
+    }
+}

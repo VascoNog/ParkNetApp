@@ -46,6 +46,7 @@ public class CreateModel : PageModel
         };
 
         await _repo.AddNewPermitAndSaveChangesAsync(ParkingPermit);
+        await _repo.AddMovementForPermitAndSaveAsync(ParkingPermit);
 
         return RedirectToPage("./Index");
     }

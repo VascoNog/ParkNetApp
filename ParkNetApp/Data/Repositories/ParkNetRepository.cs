@@ -1,5 +1,5 @@
-﻿using ParkNetApp.Data.Entities;
-using System.Collections.Specialized;
+﻿
+using ParkNetApp.Data.Entities;
 
 namespace ParkNetApp.Data.Repositories;
 
@@ -112,6 +112,34 @@ public class ParkNetRepository
         _ctx.ParkingPermits.Add(parkingPermit);
         await _ctx.SaveChangesAsync();
     }
+    
+    public async Task AddMovementForPermitAndSaveAsync(ParkingPermit parkingPermit )
+    {
+        var daysOfPermit = _ctx.ParkingPermits
+            .Include(pp => pp.PermitInfo)
+            .Where(pp => pp.Id == parkingPermit.Id)
+            .Select(pp => pp.PermitInfo.DaysOfPermit)
+            .FirstOrDefault();
+
+        var amountOfPermit = _ctx.ParkingPermits
+            .Include(pp => pp.PermitInfo)
+            .Where(pp=> pp.Id == parkingPermit.Id)
+            .Select(pp => pp.PermitInfo.Value)
+            .FirstOrDefault();
+
+        var permitEndAt = parkingPermit.StartedAt.AddDays(daysOfPermit);
+
+        Movement newMovement = new()
+        {
+            TransactionDate = permitEndAt, //Data Futura
+            Amount = amountOfPermit,
+            TransactionType = "Permit",
+            UserId = parkingPermit.UserId
+        };
+
+        await _ctx.Movements.AddAsync(newMovement);
+        await _ctx.SaveChangesAsync();
+    }
 
     public async Task<IList<UserInfo>> GetCurrentUsersInfos()
         => await _ctx.UserInfos.ToListAsync();
@@ -120,14 +148,14 @@ public class ParkNetRepository
         => await _ctx.UserInfos.FirstOrDefaultAsync(ui => ui.Id == currentUserId);
 
     public async Task<double> GetCurrentUserBalance(string userId)
-    => await _ctx.Transactions
+    => await _ctx.Movements
             .Where(t => t.UserId == userId)
             .Where(t => t.TransactionDate <= DateTime.Now) // Porque o saldo é calculado até à data corrente e existirão avenças com data de transação futura
             .SumAsync(t => t.Amount);
 
-    public async Task AddTransactionAndSaveChangesAsync(Transaction transaction)
+    public async Task AddTransactionAndSaveChangesAsync(Movement movement)
     {
-        await _ctx.Transactions.AddAsync(transaction);
+        await _ctx.Movements.AddAsync(movement);
         await _ctx.SaveChangesAsync();
     }
 
@@ -135,6 +163,23 @@ public class ParkNetRepository
         => _ctx.Slots.Include(s => s.Floor)
             .ThenInclude(f => f.ParkingLot)
             .FirstOrDefault(s => s.Id == slotId);
+
+    public Vehicle GetVehicleById(int vehicleId)
+        => _ctx.Vehicles.FirstOrDefault(v => v.Id == vehicleId);
+
+
+
+    //public bool UserWantsParkOrUnparkRigthVehicle (Slot slot, string userId)
+    //{
+    //    if (UserCanParkOrUnpark(slot, userId))
+    //        return (UserHasCorrectVehicleType (slot, userId));
+    //    return false;
+    //}
+
+    // Se for para estacionar unicamente
+    public bool CanPerformAction(Slot slot, string userId)
+     => UserCanParkOrUnpark(slot, userId)
+        && UserHasCorrectVehicleType(slot, userId);
 
     public bool UserCanParkOrUnpark(Slot slot, string userId)
     {
@@ -144,24 +189,27 @@ public class ParkNetRepository
         if (UserHasActivePermitAtCurrentSlot(slot, userId))
             return true;
 
-        if (CurrentSlotHasNoActivePermit(slot))
-            return true;
-
-        if(CurrentSlotHasPermitFromOtherUser(slot, userId))
-            return false;
-
-        return UserHasCorrectVehicleType(slot, userId);
+        return CurrentSlotHasNoActivePermit(slot);
     }
 
-    public bool UserHasActivePermitAtCurrentSlot(Slot slot, string userId)
-       => _ctx.ParkingPermits.Any(p => p.UserId == userId
-        && p.PermitInfo.ActiveUntil == null
-        && p.SlotId == slot.Id);
+    //public bool UserHasActivePermitAtCurrentSlot(Slot slot, string userId)
+    //   => _ctx.ParkingPermits.Any(p => p.UserId == userId
+    //    && p.PermitInfo.ActiveUntil == null
+    //    && p.SlotId == slot.Id);
 
-    public bool CurrentSlotHasPermitFromOtherUser(Slot slot, string userId)
-        => _ctx.ParkingPermits.Any(p => p.SlotId == slot.Id
-            && p.PermitInfo.ActiveUntil == null
-            && p.UserId != userId);
+    public bool UserHasActivePermitAtCurrentSlot(Slot slot, string userId)
+    {
+        var userPermits = _ctx.ParkingPermits
+            .Include(pp => pp.PermitInfo) 
+            .Where(pp => pp.SlotId == slot.Id && pp.UserId == userId)
+            .ToList();
+        if (userPermits.Count == 0)
+            return false;
+
+        return userPermits.Any(permit => permit.StartedAt.AddDays(permit.PermitInfo.DaysOfPermit) >= DateTime.UtcNow);
+    }
+
+
 
     public bool UserIsParkedAtCurrentSlot(Slot slot, string userId)
         => _ctx.EntriesAndExitsHistory.Any(p => p.UserId == userId
@@ -175,4 +223,139 @@ public class ParkNetRepository
         => _ctx.Vehicles
        .Include(v => v.VehicleType)
        .Any(v => v.UserId == userId && v.VehicleType.Symbol == slot.SlotType);
+
+    public IList<Vehicle> GetAvailableVehiclesByUserId(string userId)
+        => _ctx.Vehicles.Include(v => v.VehicleType)
+        .Where(v => v.UserId == userId).ToList();
+
+    public IList<Vehicle> GetAvailableVehiclesToPark(string userId, Slot slot)
+    {
+        //var vehicles = _ctx.EntriesAndExitsHistory
+        //     .Include(eeh => eeh.Vehicle)
+        //     .Include(eeh => eeh.Slot)
+        //     .Where(eeh => eeh.ExitAt != null 
+        //        && eeh.UserId == userId 
+        //        && eeh.SlotId == slot.Id)
+        //     .Distinct()
+        //     .Select(eeh => eeh.Vehicle)
+        //     .ToList();
+
+        IList<Vehicle> availableVehiclesToPark = [];
+
+        var unparkedUserVehicles = _ctx.Vehicles.Include(v => v.VehicleType)
+            .Where(v => v.isParked == false
+            && v.UserId == userId)
+            .ToList();
+
+        foreach (var vhcl in unparkedUserVehicles)
+        {
+            if (vhcl.VehicleType.Symbol == slot.SlotType)
+                availableVehiclesToPark.Add(vhcl);
+        }
+        return availableVehiclesToPark;
+    }
+
+    public Vehicle GetCurrentlyParkedVehicle(Slot slot)
+    {
+        return _ctx.EntriesAndExitsHistory
+             .Include(eeh => eeh.Vehicle)
+             .Include(eeh => eeh.Slot)
+             .Where(eeh => eeh.ExitAt == null
+                && eeh.SlotId == slot.Id
+                && eeh.Vehicle.isParked == true)
+             .Select(eeh => eeh.Vehicle)
+             .Distinct()
+             .FirstOrDefault();
+    }
+    
+
+    public async Task UpdateEntriesAndExitsAndSaveAsync(string userId, Vehicle vehicle, Slot slot)
+    {
+        var dateNow = DateTime.UtcNow;
+
+        slot.IsOccupied = false;
+        vehicle.isParked = false;
+
+        var currentEntryAndExitHistory = GetCurrentEntryAndExitHistory(userId, vehicle.Id, slot);
+        _ctx.EntriesAndExitsHistory.FirstOrDefault(eeh => eeh.Id == currentEntryAndExitHistory.Id).ExitAt = dateNow;
+
+        // Calcular o Amount da Transaction e Guardar na base de dados
+        await UpdateTransactionAmountAndSave(currentEntryAndExitHistory.MovementId, currentEntryAndExitHistory);
+    }
+
+    public EntryAndExitHistory GetCurrentEntryAndExitHistory(string userId, int vehicleId, Slot slot)
+    => _ctx.EntriesAndExitsHistory.FirstOrDefault(eeh => eeh.UserId == userId
+        && eeh.VehicleId == vehicleId
+        && eeh.SlotId == slot.Id
+        && eeh.ExitAt == null);
+
+    public async Task CreateNewEntryHistoryAndSaveAsync(string userId, Vehicle vehicle, Slot slot)
+    {
+        var movement = await CreateNewTransactionAndSaveAsync(userId);
+        if (movement is not null)
+        {
+            slot.IsOccupied = true;
+            vehicle.isParked = true;
+            EntryAndExitHistory newEntry = new()
+            {
+                EntryAt = DateTime.UtcNow,
+                UserId = userId,
+                VehicleId = vehicle.Id,
+                SlotId = slot.Id,
+                MovementId = movement.Id
+            };
+            await _ctx.EntriesAndExitsHistory.AddAsync(newEntry);
+            await _ctx.SaveChangesAsync();
+        }
+    }
+
+    public async Task UpdateTransactionAmountAndSave(int movementId, EntryAndExitHistory entryAndExitHistory)
+    {
+        const double minTariff = 0.01;
+        var dateNow = DateTime.UtcNow;
+        var minutes = (dateNow - entryAndExitHistory.EntryAt).TotalMinutes;
+        var movement = await _ctx.Movements.FirstOrDefaultAsync(t => t.Id == movementId);
+
+        if (!UserHasActivePermitAtCurrentSlot(entryAndExitHistory.Slot, entryAndExitHistory.UserId))
+        {
+            var tariff = (double)_ctx.NonSubscriptionParkingTariffs
+                .Where(nst => minutes <= nst.Limit).FirstOrDefault().Tariff;
+            if (tariff == 0)
+                tariff = (double)_ctx.NonSubscriptionParkingTariffs.Min(nst => nst.Tariff) - minTariff;
+            if (tariff < 0)
+                tariff = minTariff;
+
+            if (movement is not null)
+            {
+                movement.Amount = tariff * minutes;
+                movement.TransactionDate = dateNow;
+                await _ctx.SaveChangesAsync();
+            }
+        }
+        else
+        {
+            if (movement is not null)
+            {
+                movement.Amount = 0; //Porque tem avença
+                movement.TransactionDate = dateNow;
+                await _ctx.SaveChangesAsync();
+            }
+        }
+    }
+
+    // Mudar o nome de Transaction por causa da ambiguidade com System ?
+    public async Task<Movement> CreateNewTransactionAndSaveAsync(string userId)
+    {
+        Movement newMovement = new()
+        {
+            Amount = 0, // COLOCAR A NULLABLE MAIS TARDE
+            TransactionType = "Parking",
+            UserId = userId
+        };
+
+        await _ctx.Movements.AddAsync(newMovement);
+        await _ctx.SaveChangesAsync();
+
+        return newMovement;
+    }
 }
