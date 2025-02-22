@@ -1,4 +1,6 @@
-﻿namespace ParkNetApp.Pages.ActivateAccount;
+﻿using FluentResults;
+
+namespace ParkNetApp.Pages.ActivateAccount;
 [Authorize]
 
 public class IndexModel : PageModel
@@ -8,41 +10,52 @@ public class IndexModel : PageModel
 
     [BindProperty]
     public Movement NewTransaction { get; set; }
-    public string UserId { get; set; }  
+
+    [BindProperty]
     public UserInfo UserInfo { get;set; } // Posso lidar deste lado com o corrente user logado
+
+    [BindProperty]
     public double CurrentBalance { get; set; }
 
     public async Task OnGetAsync()
     {
-        UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        UserInfo = await _repo.GetCurrentUserInfo(UserId);
-        CurrentBalance = await _repo.GetCurrentUserBalance(UserId);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        UserInfo = await _repo.GetCurrentUserInfo(userId);
+        CurrentBalance = await _repo.GetCurrentUserBalance(userId);
     }
 
     public async Task<IActionResult> OnPostAsync()
     {
         if (!ModelState.IsValid)
         {
+            UserInfo = await _repo.GetCurrentUserInfo(User.FindFirstValue(ClaimTypes.NameIdentifier));
             return Page();
         }
 
-        UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        CurrentBalance = await _repo.GetCurrentUserBalance(UserId);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        UserInfo = await _repo.GetCurrentUserInfo(userId);
+        CurrentBalance = await _repo.GetCurrentUserBalance(userId);
 
         if (NewTransaction.TransactionType == "Withdraw")
         {
-            if (NewTransaction.Amount >= CurrentBalance)
-                NewTransaction.Amount = (double) (CurrentBalance - 0.01); 
-            NewTransaction.Amount = - NewTransaction.Amount; // Valor é negativo no caso de levantamento
+            var result = await _repo.TryGetCorrectWithdrawAmount(userId, NewTransaction.Amount);
+            if (result.IsSuccess)
+            {
+                NewTransaction.Amount = result.Value;
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Message);
+                }
+                return Page();
+            }
         }
 
-        NewTransaction.UserId = UserId;
+        NewTransaction.UserId = userId;
         NewTransaction.TransactionDate = DateTime.UtcNow;
-        Console.WriteLine(NewTransaction.Amount);
-        Console.WriteLine(NewTransaction.UserId);
-        Console.WriteLine(NewTransaction.TransactionDate);
-        Console.WriteLine(NewTransaction.TransactionType);
-        
+
         await _repo.AddTransactionAndSaveChangesAsync(NewTransaction);
 
         return RedirectToPage("./Index");

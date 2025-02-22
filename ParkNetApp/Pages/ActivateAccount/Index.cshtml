@@ -4,10 +4,9 @@
 
 @{
     ViewData["Title"] = "Index";
-    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
-@if(Model.UserInfo == null)
+@if(Model.UserInfo == null || Model.UserInfo.IsActivated == false)
 {
     <a href="/ActivateAccount/Create">Activate Now</a>
 }
@@ -106,9 +105,9 @@ else
 
                 <!-- Formulário para Load -->
                 <form method="post">
-                    <input type="hidden" asp-for="NewTransaction.TransactionType" value="Adding Funds to Card">
                     <label>Load more:</label>
-                    <select name="Amount" class="form-control">
+   "
+                    <select asp-for="NewTransaction.Amount" class="form-control">
                         <option value="5">5€</option>
                         <option value="10">10€</option>
                         <option value="20">20€</option>
@@ -125,6 +124,7 @@ else
                         <option value="400">400€</option>
                         <option value="500">500€</option>
                     </select>
+                    <input type="hidden" asp-for="NewTransaction.TransactionType" value="Adding Funds to Card">
 
                     <div class="form-group mt-2">
                         <input type="submit" value="Load Funds" class="btn btn-success" />
@@ -136,17 +136,23 @@ else
                 <!-- Formulário para Withdraw -->
                 <form method="post">
                     <label>Or withdraw:</label>
+
+                    <!-- Exibir mensagens de erro -->
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
                     <input type="hidden" asp-for="NewTransaction.TransactionType" value="Withdraw">
+
                     <input type="number" asp-for="NewTransaction.Amount" class="form-control"
                            min="0.01"
                            max="@((Model.CurrentBalance - 0.01))"
                            step="0.01"
-                           placeholder="Enter a value between 0.01€ and @((Model.CurrentBalance - 0.01).ToString("F2"))" required>
+                           placeholder="Enter a value between 0.01€ and @((Model.CurrentBalance - 0.01).ToString("F2"))€ " required>
 
                     <div class="form-group mt-2">
                         <input type="submit" value="Withdraw" class="btn btn-warning" />
                     </div>
                 </form>
+
             }
         </div>
     </form>

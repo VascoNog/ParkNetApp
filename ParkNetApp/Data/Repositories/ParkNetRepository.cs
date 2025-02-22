@@ -1,4 +1,4 @@
-﻿
+﻿using FluentResults;
 using ParkNetApp.Data.Entities;
 
 namespace ParkNetApp.Data.Repositories;
@@ -112,8 +112,8 @@ public class ParkNetRepository
         _ctx.ParkingPermits.Add(parkingPermit);
         await _ctx.SaveChangesAsync();
     }
-    
-    public async Task AddMovementForPermitAndSaveAsync(ParkingPermit parkingPermit )
+
+    public async Task AddMovementForPermitAndSaveAsync(ParkingPermit parkingPermit)
     {
         var daysOfPermit = _ctx.ParkingPermits
             .Include(pp => pp.PermitInfo)
@@ -123,7 +123,7 @@ public class ParkNetRepository
 
         var amountOfPermit = _ctx.ParkingPermits
             .Include(pp => pp.PermitInfo)
-            .Where(pp=> pp.Id == parkingPermit.Id)
+            .Where(pp => pp.Id == parkingPermit.Id)
             .Select(pp => pp.PermitInfo.Value)
             .FirstOrDefault();
 
@@ -167,8 +167,6 @@ public class ParkNetRepository
     public Vehicle GetVehicleById(int vehicleId)
         => _ctx.Vehicles.FirstOrDefault(v => v.Id == vehicleId);
 
-
-
     //public bool UserWantsParkOrUnparkRigthVehicle (Slot slot, string userId)
     //{
     //    if (UserCanParkOrUnpark(slot, userId))
@@ -200,7 +198,7 @@ public class ParkNetRepository
     public bool UserHasActivePermitAtCurrentSlot(Slot slot, string userId)
     {
         var userPermits = _ctx.ParkingPermits
-            .Include(pp => pp.PermitInfo) 
+            .Include(pp => pp.PermitInfo)
             .Where(pp => pp.SlotId == slot.Id && pp.UserId == userId)
             .ToList();
         if (userPermits.Count == 0)
@@ -208,8 +206,6 @@ public class ParkNetRepository
 
         return userPermits.Any(permit => permit.StartedAt.AddDays(permit.PermitInfo.DaysOfPermit) >= DateTime.UtcNow);
     }
-
-
 
     public bool UserIsParkedAtCurrentSlot(Slot slot, string userId)
         => _ctx.EntriesAndExitsHistory.Any(p => p.UserId == userId
@@ -233,8 +229,8 @@ public class ParkNetRepository
         //var vehicles = _ctx.EntriesAndExitsHistory
         //     .Include(eeh => eeh.Vehicle)
         //     .Include(eeh => eeh.Slot)
-        //     .Where(eeh => eeh.ExitAt != null 
-        //        && eeh.UserId == userId 
+        //     .Where(eeh => eeh.ExitAt != null
+        //        && eeh.UserId == userId
         //        && eeh.SlotId == slot.Id)
         //     .Distinct()
         //     .Select(eeh => eeh.Vehicle)
@@ -267,7 +263,6 @@ public class ParkNetRepository
              .Distinct()
              .FirstOrDefault();
     }
-    
 
     public async Task UpdateEntriesAndExitsAndSaveAsync(string userId, Vehicle vehicle, Slot slot)
     {
@@ -315,11 +310,16 @@ public class ParkNetRepository
         var dateNow = DateTime.UtcNow;
         var minutes = (dateNow - entryAndExitHistory.EntryAt).TotalMinutes;
         var movement = await _ctx.Movements.FirstOrDefaultAsync(t => t.Id == movementId);
+        double tariff = 0.0d;
 
         if (!UserHasActivePermitAtCurrentSlot(entryAndExitHistory.Slot, entryAndExitHistory.UserId))
         {
-            var tariff = (double)_ctx.NonSubscriptionParkingTariffs
-                .Where(nst => minutes <= nst.Limit).FirstOrDefault().Tariff;
+
+            tariff = (double)_ctx.NonSubscriptionParkingTariffs
+                .Where(nst => minutes <= nst.Limit)
+                .AsEnumerable()
+                .Select(nst => (double)nst.Tariff)
+                .FirstOrDefault(0);
             if (tariff == 0)
                 tariff = (double)_ctx.NonSubscriptionParkingTariffs.Min(nst => nst.Tariff) - minTariff;
             if (tariff < 0)
@@ -327,7 +327,7 @@ public class ParkNetRepository
 
             if (movement is not null)
             {
-                movement.Amount = - (tariff * minutes);
+                movement.Amount = -(tariff * minutes);
                 movement.TransactionDate = dateNow;
                 await _ctx.SaveChangesAsync();
             }
@@ -358,4 +358,34 @@ public class ParkNetRepository
 
         return newMovement;
     }
+
+    public async Task<Result<double>> TryGetCorrectWithdrawAmount(string userId, double withdrawAmount)
+    {
+        // Verifica se o utilizador está estacionado sem ter qualquer avença válida
+        if (IsUserParkingWithoutPermit(userId))
+            return Result.Fail("Error: The user cannot withdraw because they are parked without a permit.");
+
+        var currentBalance = await GetCurrentUserBalance(userId);
+
+        double adjustedAmount = currentBalance - 0.01;
+        if (withdrawAmount >= currentBalance)
+        {
+            if (adjustedAmount <= 0)
+                return Result.Fail("Error: The user cannot withdraw because they do not have enough balance.");
+
+           withdrawAmount = adjustedAmount;
+        }
+
+        // Regista a transação como valor negativo (levantamento)
+        return Result.Ok(-withdrawAmount);
+    }
+
+    public bool IsUserParkingWithoutPermit(string userId)
+        => _ctx.Vehicles.Any(v => v.UserId == userId && v.isParked == true)
+            && !UserHasSomeActivePermit(userId);
+
+    public bool UserHasSomeActivePermit(string userId)
+        => _ctx.ParkingPermits.Include(pp => pp.PermitInfo)
+            .Where(pp => pp.UserId == userId)
+            .Any(pp => pp.StartedAt.AddDays(pp.PermitInfo.DaysOfPermit) >= DateTime.UtcNow);
 }
