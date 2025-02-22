@@ -327,7 +327,7 @@ public class ParkNetRepository
 
             if (movement is not null)
             {
-                movement.Amount = tariff * minutes;
+                movement.Amount = - (tariff * minutes);
                 movement.TransactionDate = dateNow;
                 await _ctx.SaveChangesAsync();
             }
