@@ -52,6 +52,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZhdGVBY2NvdW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivityHistory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdHlIaXN0b3J5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivityHistory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdHlIaXN0b3J5XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivityHistory/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdHlIaXN0b3J5XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivityHistory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdHlIaXN0b3J5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/ActivityHistory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpdHlIaXN0b3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ReStart_Pessoal/ParkNet/ParkNetApp/Pages/AddParkingLot/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGFya2luZ0xvdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
