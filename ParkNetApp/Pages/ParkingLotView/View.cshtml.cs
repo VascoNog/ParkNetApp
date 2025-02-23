@@ -15,9 +15,7 @@ public class ViewModel : PageModel
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {
-        //ParkingLot = await _repo.GetParkingLot(id.Value);
-
-        //Slot = await _repo.GetSlotsFromParkingLot(id.Value);
+        ParkingLot = await _repo.GetParkingLot(id.Value);
 
         ParkingModel = await _repo.GetParkingLotSchema(id.Value);
         if (ParkingModel == null)

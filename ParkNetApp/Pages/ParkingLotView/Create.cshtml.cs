@@ -1,45 +1,76 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using ParkNetApp.Data;
-using ParkNetApp.Data.Entities;
+﻿using System.Threading.Tasks;
 
-namespace ParkNetApp.Pages.ParkingLotView
+namespace ParkNetApp.Pages.ParkingLotView;
+
+public class CreateModel : PageModel
 {
-    public class CreateModel : PageModel
+    private readonly ParkNetApp.Data.ParkNetDbContext _context;
+
+    private ParkNetRepository _repo;
+    public CreateModel(ParkNetRepository parkNetRepository) => _repo = parkNetRepository;
+
+
+    [BindProperty]
+    public Slot Slot { get; set; }
+
+    [BindProperty]
+    public int CurrentParkingLotId { get; set; }
+
+    [BindProperty]
+    public int CurrentNumberOfFloors { get; set; }
+
+    public SelectList VehicleTypes { get; set; }
+    public SelectList CurrentFloors { get; set; }
+
+
+    public async Task<IActionResult> OnGet(int? id) //PK id
     {
-        private readonly ParkNetApp.Data.ParkNetDbContext _context;
+        CurrentParkingLotId = id.Value;
 
-        public CreateModel(ParkNetApp.Data.ParkNetDbContext context)
-        {
-            _context = context;
-        }
+        var slots = await _repo.GetSlotsFromParkingLot(id.Value);
 
-        public IActionResult OnGet()
+        var floors = await _repo.GetFloorsByParkingLotId(id.Value);
+        CurrentNumberOfFloors = floors.Count();
+        CurrentFloors = new SelectList (floors, "Id", "Name");
+
+        VehicleTypes = new SelectList(await _repo.GetAvailableVehicleSymbols());
+
+        return Page();
+    }
+
+
+    public async Task<IActionResult> OnPostAsync()
+    {
+        if (!ModelState.IsValid)
         {
-            ViewData["FloorId"] = new SelectList(_context.Floors, "Id", "Name");
             return Page();
         }
-
-        [BindProperty]
-        public Slot Slot { get; set; } = default!;
-
-        // For more information, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        if (!_repo.IsSlotCodeValid(Slot.Code, CurrentParkingLotId))
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Slots.Add(Slot);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            ModelState.AddModelError("Slot.Code", "Invalid code! It must start with letters, " +
+                $"end with numbers, and must not already be in use.");
+            return Page();
         }
+        Slot.Code = Slot.Code.ToUpper();
+
+
+        if (Slot.FloorId == -1) //Create New Floor
+        {
+            Floor newFloor = new()
+            {
+                Name = "Floor" + (CurrentNumberOfFloors + 1),
+                ParkingLotId = CurrentParkingLotId,
+            };
+
+            await _repo.AddNewFloor(newFloor);
+            await _repo.SaveAllChangesAsync();
+            Slot.FloorId = await _repo.GetNewFloorId(CurrentParkingLotId, newFloor.Name);
+        }
+
+        await _repo.AddNewSlot(Slot);
+        await _repo.SaveAllChangesAsync();
+
+        return Redirect($"/ParkingLotView/View?id={CurrentParkingLotId}");
+
     }
 }

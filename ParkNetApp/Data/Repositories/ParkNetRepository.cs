@@ -435,4 +435,36 @@ public class ParkNetRepository
         => await _ctx.EmailBoxes.Where(eb => eb.RecipientId == userId)
         .OrderByDescending(eb => eb.SentAt)
         .ToListAsync();
+
+    public async Task<List<char>> GetAvailableVehicleSymbols()
+        => await _ctx.VehicleTypes.Select(vt => vt.Symbol).ToListAsync();
+
+    public async Task<List<Floor>> GetFloorsByParkingLotId(int parkingLotId)
+        => await _ctx.Floors.Where(f => f.ParkingLotId == parkingLotId)
+        .Distinct().ToListAsync();
+
+    public async Task AddNewFloor(Floor newFloor)
+        => await _ctx.Floors.AddAsync(newFloor);
+
+    public async Task AddNewSlot(Slot newSlot)
+        => await _ctx.Slots.AddAsync(newSlot);
+
+    public async Task SaveAllChangesAsync() => await _ctx.SaveChangesAsync();
+
+    public async Task<int> GetNewFloorId(int parkingLotId, string floorName)
+        => await _ctx.Floors.Where(f => f.ParkingLotId == parkingLotId && f.Name == floorName)
+            .Select(f => f.Id).FirstOrDefaultAsync();
+
+    public bool IsSlotCodeValid(string slotCode, int parkingLotId)
+    => !_ctx.Slots.Include(s => s.Floor)
+            .ThenInclude(f => f.ParkingLot)
+            .Any(c => c.Code == slotCode && c.Floor.ParkingLot.Id == parkingLotId) 
+            &&
+            Regex.IsMatch(slotCode, @"^[A-Za-z]+[0-9]+$");
+
+
+
+
 }
+
+

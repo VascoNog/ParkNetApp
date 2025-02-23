@@ -1,8 +1,4 @@
-﻿
-using ParkNetApp.Data.Entities;
-
-namespace ParkNetApp.Pages.AddParkingLot;
-
+﻿namespace ParkNetApp.Pages.AddParkingLot;
 [Authorize]
 
 public class CreateModel : PageModel
@@ -11,9 +7,9 @@ public class CreateModel : PageModel
     [BindProperty]
     public ParkingLot ParkingLot { get; set; }
 
-    private readonly ParkNetApp.Data.ParkNetDbContext _context;
+    private readonly ParkNetDbContext _context;
 
-    public CreateModel(ParkNetApp.Data.ParkNetDbContext context)
+    public CreateModel(ParkNetDbContext context)
     {
         _context = context;
         
@@ -31,6 +27,12 @@ public class CreateModel : PageModel
             return Page();
         }
 
+        if (!Utilities.IsLayoutValid(ParkingLot.Layout))
+        {
+            ModelState.AddModelError("ParkingLot.Layout", "Layout is not valid");
+            return Page();
+        }
+
         try
         {
             _context.ParkingLots.Add(ParkingLot);
@@ -41,7 +43,7 @@ public class CreateModel : PageModel
             throw new Exception("Parking lot designation already exists. Choose other one");
         }
 
-        //After update database with new parking lot, we neet to update the floors and slots
+        //After update database with new parking lot, we need to update the floors and slots
         //FLOORS
         int parkingLotId = _context.ParkingLots.FirstOrDefault(p => p.Designation == ParkingLot.Designation).Id;
         var floors = Utilities.GetFloors(ParkingLot.Layout, parkingLotId);

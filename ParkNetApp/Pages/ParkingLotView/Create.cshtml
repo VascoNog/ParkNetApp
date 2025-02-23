@@ -1,37 +1,41 @@
 ﻿@page
 @model ParkNetApp.Pages.ParkingLotView.CreateModel
 
-        @{
-        ViewData["Title"] = "Create";
-        }
+@{
+    ViewData["Title"] = "Create";
+}
+      
+     <h1>Create new slots</h1>
         
-        <h1>Create</h1>
-        
-    <h4>Slot</h4>
     <hr />
     <div class="row">
     <div class="col-md-4">
     <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Slot.Code" class="control-label"></label>
+                <label class="control-label">Floor</label>
+                <select asp-for="Slot.FloorId" class="form-control" asp-items="Model.CurrentFloors">
+                    <option value="-1">New Floor</option>
+                </select>
+                <span asp-validation-for="Slot.FloorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Slot Code</label>
                 <input asp-for="Slot.Code" class="form-control" />
                 <span asp-validation-for="Slot.Code" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Slot.SlotType" class="control-label"></label>
-                <input asp-for="Slot.SlotType" class="form-control" />
+                <label class="control-label">Vehicle Type</label>
+                <select asp-for="Slot.SlotType" class="form-control">
+                    <option value="C"selected>Car</option>
+                    <option value="M">Motorcycle</option>
+                </select>
                 <span asp-validation-for="Slot.SlotType" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Slot.IsOccupied" /> @Html.DisplayNameFor(model => model.Slot.IsOccupied)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Slot.FloorId" class="control-label"></label>
-                <select asp-for="Slot.FloorId" class ="form-control" asp-items="ViewBag.FloorId"></select>
-            </div>
+
+            <input type="hidden" asp-for="Slot.IsOccupied" value="false" />
+            <input type="hidden" asp-for="CurrentParkingLotId" />
+            <input type="hidden" asp-for="CurrentNumberOfFloors" />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

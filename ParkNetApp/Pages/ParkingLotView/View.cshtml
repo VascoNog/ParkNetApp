@@ -4,7 +4,13 @@
 @{
     ViewData["Title"] = "Parking Lot Layout";
     var parkingLot = Model.ParkingModel.GroupBy(s => s.FloorId); // Agrupa os slots por andar
+
 }
+
+
+<div>
+    <a asp-page="./Create" asp-route-id="@parkingLot.First().First().ParkingLotId">Add New Slots</a>
+</div>
 
 
 <style>
