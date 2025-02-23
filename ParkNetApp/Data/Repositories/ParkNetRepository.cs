@@ -1,5 +1,4 @@
 ﻿using FluentResults;
-using ParkNetApp.Data.Entities;
 
 namespace ParkNetApp.Data.Repositories;
 
@@ -314,7 +313,6 @@ public class ParkNetRepository
 
         if (!UserHasActivePermitAtCurrentSlot(entryAndExitHistory.Slot, entryAndExitHistory.UserId))
         {
-
             tariff = (double)_ctx.NonSubscriptionParkingTariffs
                 .Where(nst => minutes <= nst.Limit)
                 .AsEnumerable()
@@ -373,7 +371,7 @@ public class ParkNetRepository
             if (adjustedAmount <= 0)
                 return Result.Fail("Error: The user cannot withdraw because they do not have enough balance.");
 
-           withdrawAmount = adjustedAmount;
+            withdrawAmount = adjustedAmount;
         }
 
         // Regista a transação como valor negativo (levantamento)
@@ -388,4 +386,35 @@ public class ParkNetRepository
         => _ctx.ParkingPermits.Include(pp => pp.PermitInfo)
             .Where(pp => pp.UserId == userId)
             .Any(pp => pp.StartedAt.AddDays(pp.PermitInfo.DaysOfPermit) >= DateTime.UtcNow);
+
+    public async Task<double> GetBillingWithinDateRange(DateTime? startDate, DateTime? endDate, string? filter)
+    {
+        if (filter == "All")
+        {
+            return -(await _ctx.Movements
+            .Where(m => m.TransactionDate >= startDate && m.TransactionDate <= endDate
+            && (m.TransactionType == "Permit" || m.TransactionType == "Parking"))
+            .SumAsync(m => m.Amount));
+        }
+        return -(await _ctx.Movements
+       .Where(m => m.TransactionDate >= startDate && m.TransactionDate <= endDate
+           && m.TransactionType == filter)
+       .SumAsync(m => m.Amount));
+    }
+
+    public async Task<double> GetBillingWithinDateRange()
+    {
+        var startDate = GetMostRecentDate() ?? DateTime.UtcNow.AddYears(-1);
+        var endDate = GetMostRecentDate() ?? DateTime.UtcNow;
+        return -(await _ctx.Movements
+        .Where(m => m.TransactionDate >= startDate && m.TransactionDate <= endDate
+            && (m.TransactionType == "Permit" || m.TransactionType == "Parking"))
+        .SumAsync(m => m.Amount));
+    }
+
+    public DateTime? GetOldestDate()
+        => _ctx.Movements.Min(m => (DateTime?)m.TransactionDate);
+
+    public DateTime? GetMostRecentDate()
+        => _ctx.Movements.Max(m => (DateTime?)m.TransactionDate);
 }

@@ -1,6 +1,9 @@
+using System.Globalization;
 
-using ParkNetApp;
-using ParkNetApp.Data.Repositories;
+var cultureInfo = new CultureInfo("pt-PT");
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

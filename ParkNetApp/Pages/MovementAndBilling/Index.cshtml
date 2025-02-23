@@ -1,0 +1,52 @@
+﻿@page
+@model ParkNetApp.Pages.MovementAndBilling.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movements Dashboard</h1>
+
+<p>
+    <a asp-page="Create">Create New Entry Manually</a>
+</p>
+
+<p>
+    <a asp-page="BillingView">Billing Report</a>
+</p>
+
+
+<form method="get">
+    <label for="emailFilter">Filter by User Email:</label>
+    <select id="emailFilter" name="emailFilter" asp-for="SelectedEmail" asp-items="Model.UserEmails">
+        <option value="">See All User Emails</option>
+    </select>
+    <label for="typeFilter">Filter by Transaction Type:</label>
+    <select id="typeFilter" name="typeFilter" asp-for="SelectedTransactionType" asp-items="Model.TransactionTypes">
+        <option value="">See All Transaction Types</option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Transaction date</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>User Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Movement)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TransactionDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+                <td>@Html.DisplayFor(modelItem => item.TransactionType)</td>
+                <td>@Html.DisplayFor(modelItem => item.User.Email)</td>
+            </tr>
+        }
+    </tbody>
+</table>

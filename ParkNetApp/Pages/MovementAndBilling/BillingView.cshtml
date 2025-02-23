@@ -1,0 +1,33 @@
+﻿@page
+@model ParkNetApp.Pages.MovementAndBilling.BillingViewModel
+
+@{
+    ViewData["Title"] = "BillingView";
+}
+
+<h1>Billing</h1>
+
+<form method="get">
+    <label for="typeFilter">Filter by Transaction Type:</label><br>
+    <select id="typeFilter" name="typeFilter" asp-for="SelectedTypeFilter" asp-items="Model.TransTypesOptions">
+        <option value="">Choose a transaction type </option>
+    </select>
+    <br><br>
+
+    <label for="startDate">Start Date:</label><br>
+    <input type="date" id="startDate" name="startDate" asp-for="SelectedStartDate" />
+    <br><br>
+
+    <label for="endDate">End Date:</label><br>
+    <input type="date" id="endDate" name="endDate" asp-for="SelectedEndDate" />
+    <br><br>
+
+    <button type="submit">Filter</button>
+</form>
+
+
+<h2><strong>BILLING between @DateOnly.FromDateTime(Model.SelectedStartDate)
+        and @DateOnly.FromDateTime(Model.SelectedEndDate) </strong> 
+</h2>
+<h3> @Model.BillingWithinDateRange.ToString("C2")</h3>
+
