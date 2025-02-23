@@ -17,11 +17,14 @@ public class IndexModel : PageModel
     [BindProperty]
     public double CurrentBalance { get; set; }
 
+    public IList<EmailBox> UserMessages { get; set; }
+
     public async Task OnGetAsync()
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         UserInfo = await _repo.GetCurrentUserInfo(userId);
         CurrentBalance = await _repo.GetCurrentUserBalance(userId);
+        UserMessages = await _repo.GetUserMessagesByUserId(userId);
     }
 
     public async Task<IActionResult> OnPostAsync()

@@ -20,6 +20,7 @@ public class ParkNetDbContext : IdentityDbContext
     public DbSet<UserInfo> UserInfos { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
     public DbSet<VehicleType> VehicleTypes { get; set; } // Entidade isolada
+    public DbSet<EmailBox> EmailBoxes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -78,9 +79,8 @@ public class ParkNetDbContext : IdentityDbContext
         modelBuilder.Entity<Slot>(entity =>
         {
             entity.Property(e => e.Code).IsRequired().HasColumnType("nvarchar(10)");
-            /*entity.HasIndex(e => new { e.Code, e.FloorId }).IsUnique(); */// Torna Code Unico dentro de cada Floor
             entity.Property(e => e.SlotType).IsRequired().HasColumnType("nchar(1)");
-            entity.Property(e => e.IsOccupied).IsRequired(); // BOOLEAN TYPE; True if occupied, False if not
+            entity.Property(e => e.IsOccupied).IsRequired();
         });
 
         // Configuration of Movement Entity
@@ -111,7 +111,7 @@ public class ParkNetDbContext : IdentityDbContext
             entity.HasIndex(e => e.PlateNumber).IsUnique();
             entity.Property(e => e.Make).IsRequired().HasColumnType("nvarchar(50)");
             entity.Property(e => e.Model).IsRequired().HasColumnType("nvarchar(50)");
-            entity.Property(e => e.isParked).IsRequired(); 
+            entity.Property(e => e.isParked).IsRequired();
         });
 
         // Configuration of VehicleType Entity
@@ -121,6 +121,14 @@ public class ParkNetDbContext : IdentityDbContext
             entity.HasIndex(e => e.Type).IsUnique();
             entity.Property(e => e.Symbol).IsRequired().HasColumnType("nchar(1)");
             entity.HasIndex(e => e.Symbol).IsUnique();
+        });
+
+        // Configuration of EmailBox Entity
+        modelBuilder.Entity<EmailBox>(entity =>
+        {
+            entity.Property(e => e.Subject).IsRequired().HasColumnType("nvarchar(100)");
+            entity.Property(e => e.Description).IsRequired().HasColumnType("nvarchar(500)");
+            entity.Property(e => e.SentAt).IsRequired().HasColumnType("datetime2");
         });
     }
 }

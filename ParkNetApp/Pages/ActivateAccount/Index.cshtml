@@ -35,26 +35,26 @@ else
                     {
                         <p>ACTIVE</p>
                     }
-            </td>
-            <td>
-                @Model.UserInfo.CreditCardNumb
-                (@Model.UserInfo.CCExpDate)
-            </td>
-            <td>
-                @Model.UserInfo.DriverLicenseNumber
-                (@Model.UserInfo.DLExpDate)
-            </td>
+                </td>
+                <td>
+                    @Model.UserInfo.CreditCardNumb
+                    (@Model.UserInfo.CCExpDate)
+                </td>
+                <td>
+                    @Model.UserInfo.DriverLicenseNumber
+                    (@Model.UserInfo.DLExpDate)
+                </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@Model.UserInfo.Id">Edit</a>
                     @* <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>  *@
                 </td>
-        </tr>
-    </tbody>
-</table>
+            </tr>
+        </tbody>
+    </table>
 
+    <br />
     <h4>Load or Withdraw money from the ParkNet card</h4>
-
     <form method="post">
         <div>
             @if (Model.CurrentBalance == 0)
@@ -90,7 +90,7 @@ else
                 <p>You have a debit of @(Model.CurrentBalance.ToString("c")) - Load ParkNet card with:</p>
                 <div>
                     <input asp-for="NewTransaction.Amount" type="number" class="form-control mt-2"
-                           min="@(Math.Abs(Model.CurrentBalance) + 5)" max="500" step="0.01"
+                           min="@(Math.Abs(Model.CurrentBalance) + 5)" step="0.01"
                            placeholder="Enter a value between @(Math.Abs(Model.CurrentBalance) + 5) and 500€">
                     <input type="hidden" asp-for="NewTransaction.TransactionType" value="Adding Funds to Card">
                 </div>
@@ -156,6 +156,37 @@ else
             }
         </div>
     </form>
+    <br />
+    <h4>Messages</h4>
+    @if (Model.UserMessages == null || !Model.UserMessages.Any())
+    {
+        <p>No messages available</p>
+    }
+    else
+    {
+        @if (Model.UserMessages.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Description</th>
+                        <th>Sent At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var message in Model.UserMessages)
+                    {
+                        <tr>
+                            <td>@message.Subject</td>
+                            <td>@message.Description</td>
+                            <td>@message.SentAt.ToString("yyyy-MM-dd HH:mm")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    }
 
 }
 

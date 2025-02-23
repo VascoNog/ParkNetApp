@@ -5,7 +5,6 @@ public class OptionsModel : PageModel
     public ParkNetRepository _repo;
     public OptionsModel(ParkNetRepository parkNetRepository) => _repo = parkNetRepository;
 
-    [BindProperty]
     public Slot Slot { get; set; }
 
     public bool CanPerformAction { get; set; }

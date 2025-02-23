@@ -1,4 +1,5 @@
 ﻿using FluentResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace ParkNetApp.Data.Repositories;
 
@@ -149,7 +150,7 @@ public class ParkNetRepository
     public async Task<double> GetCurrentUserBalance(string userId)
     => await _ctx.Movements
             .Where(t => t.UserId == userId)
-            .Where(t => t.TransactionDate <= DateTime.Now) // Porque o saldo é calculado até à data corrente e existirão avenças com data de transação futura
+            .Where(t => t.TransactionDate <= DateTime.UtcNow) // Porque o saldo é calculado até à data corrente e existirão avenças com data de transação futura
             .SumAsync(t => t.Amount);
 
     public async Task AddTransactionAndSaveChangesAsync(Movement movement)
@@ -393,7 +394,7 @@ public class ParkNetRepository
         {
             return -(await _ctx.Movements
             .Where(m => m.TransactionDate >= startDate && m.TransactionDate <= endDate
-            && (m.TransactionType == "Permit" || m.TransactionType == "Parking"))
+            && m.TransactionType == "Permit" || m.TransactionType == "Parking")
             .SumAsync(m => m.Amount));
         }
         return -(await _ctx.Movements
@@ -404,17 +405,34 @@ public class ParkNetRepository
 
     public async Task<double> GetBillingWithinDateRange()
     {
-        var startDate = GetMostRecentDate() ?? DateTime.UtcNow.AddYears(-1);
-        var endDate = GetMostRecentDate() ?? DateTime.UtcNow;
+        
+        var startDate = DateTime.UtcNow.AddYears(-1);
+        var endDate = DateTime.UtcNow;
         return -(await _ctx.Movements
         .Where(m => m.TransactionDate >= startDate && m.TransactionDate <= endDate
-            && (m.TransactionType == "Permit" || m.TransactionType == "Parking"))
+            && m.TransactionType == "Permit" || m.TransactionType == "Parking")
         .SumAsync(m => m.Amount));
     }
+    public async Task<List<string>> GetAllUserDistinctEmails()
+        => await _ctx.Users.Select(u => u.Email).Distinct().OrderBy(e => e).ToListAsync();
+    public async Task<List<Movement>> GetAllMovementsIncludingUser()
+        => await _ctx.Movements.Include(m => m.User).ToListAsync();
 
-    public DateTime? GetOldestDate()
-        => _ctx.Movements.Min(m => (DateTime?)m.TransactionDate);
+    public async Task<double> GetBalanceByUserEmail(string email)
+    {
+        var userMovement = await GetAllMovementsIncludingUser();
+        return userMovement.Where(um => um.User.Email == email
+            && um.TransactionDate <= DateTime.UtcNow).Sum(um => um.Amount);
+    }
 
-    public DateTime? GetMostRecentDate()
-        => _ctx.Movements.Max(m => (DateTime?)m.TransactionDate);
+    public async Task CreateNewNegativeBalanceEmailAndSaveAsync(EmailBox newEmail)
+    {
+        await _ctx.EmailBoxes.AddAsync(newEmail);
+        await _ctx.SaveChangesAsync();
+    }
+
+    public async Task<List<EmailBox>> GetUserMessagesByUserId(string userId)
+        => await _ctx.EmailBoxes.Where(eb => eb.RecipientId == userId)
+        .OrderByDescending(eb => eb.SentAt)
+        .ToListAsync();
 }

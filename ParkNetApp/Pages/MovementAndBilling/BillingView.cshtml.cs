@@ -20,15 +20,10 @@ public class BillingViewModel : PageModel
     [BindProperty]
     public string SelectedTypeFilter { get; set; }
 
-
     public SelectList TransTypesOptions { get; set; }
 
     public async Task OnGetAsync(DateTime? startDate, DateTime? endDate, string? typeFilter)
     {
-        _ = startDate;
-        _ = endDate;
-        _ = typeFilter;
-
         if (startDate != null && endDate != null && !string.IsNullOrEmpty(typeFilter))
             BillingWithinDateRange = await _repo.GetBillingWithinDateRange(startDate, endDate, typeFilter);
         else
@@ -37,7 +32,7 @@ public class BillingViewModel : PageModel
         List<string> transTypes = ["All","Parking", "Permit"];
         TransTypesOptions = new SelectList(transTypes);
 
-        SelectedTypeFilter = typeFilter;
+        SelectedTypeFilter = typeFilter ?? "All";
         SelectedStartDate = startDate ?? DateTime.UtcNow.AddYears(-1);
         SelectedEndDate = endDate ?? DateTime.UtcNow;
     }

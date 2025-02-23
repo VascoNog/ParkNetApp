@@ -27,26 +27,57 @@
     </select>
     <button type="submit">Filter</button>
 </form>
+<br />
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Transaction date</th>
-            <th>Amount</th>
-            <th>Type</th>
-            <th>User Email</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Movement)
+
+@if (Model.Movement == null || !Model.Movement.Any())
+{
+    <p>No transactions found.</p>
+}
+else
+{
+    @if(Model.SelectedEmail != null)
+    {
+        <p><strong>@Model.SelectedEmail</strong></p>
+        <p>Current user balance: <span class="text-danger">@Model.UserBalance?.ToString("C")</span></p>
+   
+        @if (Model.UserBalance < 0)
         {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.TransactionDate)</td>
-                <td>@Html.DisplayFor(modelItem => item.Amount)</td>
-                <td>@Html.DisplayFor(modelItem => item.TransactionType)</td>
-                <td>@Html.DisplayFor(modelItem => item.User.Email)</td>
-            </tr>
+            @if (Model.UserBalance < 0)
+            {
+                <form method="post">
+                    <input type="hidden" name="recipientId" value="@Model.Movement.FirstOrDefault(m => m.User.Email == Model.SelectedEmail)?.UserId" />
+                    <input type="hidden" name="userBalance" value="@Model.UserBalance" />
+                    <button type="submit" class="btn btn-primary">Send an email to the user</button>
+                </form>
+
+            }
         }
-    </tbody>
-</table>
+    }
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Transaction date</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>User Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Movement)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.TransactionDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TransactionType)</td>
+                    <td>@Html.DisplayFor(modelItem => item.User.Email)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    
+}
