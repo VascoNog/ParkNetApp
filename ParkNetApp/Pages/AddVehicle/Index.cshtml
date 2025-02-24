@@ -11,47 +11,29 @@
     <a asp-page="Create">Create New</a>
 </p>
 
-@if (Model.Vehicle.Count == 0)
+@if (Model.Vehicles.Count == 0)
 {
-    <p> You don't have any vehicles yet! </p>
+    <p>You haven't added any vehicles to the platform yet!</p>
 }
 else
 {
-
     <table class="table">
         <thead>
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Vehicle[0].VehicleType.Type)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Vehicle[0].PlateNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Vehicle[0].Make)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Vehicle[0].Model)
-
-                <th></th>
+                <th>Type</th>
+                <th>Plate Number</th>
+                <th>Make</th>
+                <th>Model</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Vehicle)
+            @foreach (var item in Model.Vehicles)
             {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.VehicleType.Type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PlateNumber)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Make)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Model)
-                    </td>
+                    <td>@item.VehicleType.Type</td>
+                    <td>@item.PlateNumber</td>
+                    <td>@item.Make</td>
+                    <td>@item.Model</td>
                     <td>
                         <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                         <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
@@ -60,11 +42,4 @@ else
             }
         </tbody>
     </table>
-
-
-
-
 }
-
-
-

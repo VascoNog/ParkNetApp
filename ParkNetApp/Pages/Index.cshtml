@@ -1,19 +1,34 @@
 ﻿@page
 @using System.Security.Claims
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to ParkNet</h1>
-    @if (Model.IsActivated)
-    {
-        <p>Conta <strong>ativa</strong>. ✅</p>
-    }
-    else
-    {
-        <p>Conta <strong>inativa</strong>. ❌</p>
-        <a href="/ActivateAccount/Create">Activate Now</a>
-    }
-</div>
+<div>
+@if (User.IsInRole("Member"))
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome to ParkNet</h1>
+        @if (Model.IsActivated)
+        {
+            <p>Conta <strong>ativa</strong>. ✅</p>
+        }
+        else
+
+        {
+            <p>Conta <strong>inativa</strong>. ❌</p>
+            <a href="/ActivateAccount/Create">Activate your account now</a>
+        }
+    </div>
+ }
+ </div>
+
+@if (User.IsInRole("Admin"))
+{
+        <h6 class="text-success">Admin Account</h6>
+}
+

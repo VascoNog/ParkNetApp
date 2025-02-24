@@ -1,27 +1,18 @@
 ﻿
 namespace ParkNetApp.Pages.AddVehicle;
-[Authorize]
+
+[Authorize (Roles="Member")]
 public class IndexModel : PageModel
 {
-    private readonly ParkNetApp.Data.ParkNetDbContext _context;
-    public IList<Vehicle> Vehicle { get;set; }
-    
-    [BindProperty]
-    public string UserId { get; set; }
+    private ParkNetRepository _repo;
+    public IList<Vehicle> Vehicles { get;set; }
 
-
-    public IndexModel(ParkNetApp.Data.ParkNetDbContext context)
-    {
-        _context = context;
-    }
+    public IndexModel(ParkNetRepository parkNetRepository) 
+        => _repo = parkNetRepository;
 
     public async Task OnGetAsync()
     {
-        UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        Vehicle = await _context.Vehicles
-            .Include(v => v.VehicleType )
-            .Include(v => v.User)
-            .Where(v => v.UserId == UserId)
-            .ToListAsync();
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        Vehicles = await _repo.GetVehiclesByUserId(userId);
     }
 }

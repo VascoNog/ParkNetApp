@@ -35,7 +35,7 @@ public class ToParkModel : PageModel
             return NotFound();
         }
 
-        CurrentVehicle = _repo.GetVehicleById(vehicleId.Value);
+        CurrentVehicle = await _repo.GetVehicleByIdAsync(vehicleId.Value);
         Slot = _repo.GetSlotById(slotId.Value);
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 

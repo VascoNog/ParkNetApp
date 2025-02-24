@@ -12,15 +12,15 @@ using ParkNetApp.Data;
 namespace ParkNetApp.Migrations
 {
     [DbContext(typeof(ParkNetDbContext))]
-    [Migration("20250224131020_LimitToDouble")]
-    partial class LimitToDouble
+    [Migration("20250224204111_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.1")
+                .HasAnnotation("ProductVersion", "9.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -358,8 +358,8 @@ namespace ParkNetApp.Migrations
                     b.Property<DateOnly?>("ActiveUntil")
                         .HasColumnType("date");
 
-                    b.Property<int>("Limit")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Limit")
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<decimal>("Tariff")
                         .HasColumnType("decimal(5,2)");

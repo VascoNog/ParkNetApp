@@ -1,6 +1,6 @@
 ﻿namespace ParkNetApp.Pages.ActivateAccount;
 
-[Authorize]
+[Authorize(Roles = "Member")]
 
 public class CreateModel : PageModel
 {

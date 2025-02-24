@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ParkNetApp.Migrations
 {
     /// <inheritdoc />
-    public partial class First : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -56,7 +56,7 @@ namespace ParkNetApp.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Limit = table.Column<int>(type: "int", nullable: false),
+                    Limit = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
                     Tariff = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
                     ActiveSince = table.Column<DateOnly>(type: "date", nullable: false),
                     ActiveUntil = table.Column<DateOnly>(type: "date", nullable: true)
@@ -219,6 +219,27 @@ namespace ParkNetApp.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EmailBoxes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Subject = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", nullable: false),
+                    SentAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RecipientId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmailBoxes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EmailBoxes_AspNetUsers_RecipientId",
+                        column: x => x.RecipientId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -450,6 +471,11 @@ namespace ParkNetApp.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_EmailBoxes_RecipientId",
+                table: "EmailBoxes",
+                column: "RecipientId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_EntriesAndExitsHistory_MovementId",
                 table: "EntriesAndExitsHistory",
                 column: "MovementId");
@@ -568,6 +594,9 @@ namespace ParkNetApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "EmailBoxes");
 
             migrationBuilder.DropTable(
                 name: "EntriesAndExitsHistory");

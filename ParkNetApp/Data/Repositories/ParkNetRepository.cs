@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using Microsoft.EntityFrameworkCore;
-using System.Net.WebSockets;
+using System.ComponentModel;
+using System.Diagnostics;
 
 namespace ParkNetApp.Data.Repositories;
 
@@ -9,10 +10,6 @@ public class ParkNetRepository
     private readonly ParkNetDbContext _ctx;
 
     public ParkNetRepository(ParkNetDbContext context) => _ctx = context;
-
-    public ParkNetRepository()
-    {
-    }
 
     public bool IsAnActiveAccount(string userId)
         => _ctx.UserInfos.Any(u => u.Id == userId && u.IsActivated == true);
@@ -169,8 +166,9 @@ public class ParkNetRepository
             .ThenInclude(f => f.ParkingLot)
             .FirstOrDefault(s => s.Id == slotId);
 
-    public Vehicle GetVehicleById(int vehicleId)
-        => _ctx.Vehicles.FirstOrDefault(v => v.Id == vehicleId);
+    public async Task<Vehicle?> GetVehicleByIdAsync(int vehicleId)
+    => await _ctx.Vehicles.FirstOrDefaultAsync(v => v.Id == vehicleId);
+
 
     public bool CanPerformAction(Slot slot, string userId)
      => UserCanParkOrUnpark(slot, userId)
@@ -449,15 +447,34 @@ public class ParkNetRepository
             .Select(f => f.Id).FirstOrDefaultAsync();
 
     public bool IsSlotCodeValid(string slotCode, int parkingLotId)
-    => !_ctx.Slots.Include(s => s.Floor)
-            .ThenInclude(f => f.ParkingLot)
-            .Any(c => c.Code == slotCode && c.Floor.ParkingLot.Id == parkingLotId) 
-            &&
-            Regex.IsMatch(slotCode, @"^[A-Za-z]+[0-9]+$");
+        => !_ctx.Slots.Include(s => s.Floor)
+                .ThenInclude(f => f.ParkingLot)
+                .Any(c => c.Code == slotCode && c.Floor.ParkingLot.Id == parkingLotId) 
+                &&
+                Regex.IsMatch(slotCode, @"^[A-Za-z]+[0-9]+$");
 
 
+    public async Task<IList<Vehicle>> GetVehiclesByUserId(string userId)
+        => await _ctx.Vehicles
+                .Include(v => v.VehicleType)
+                .Include(v => v.User)
+                .Where(v => v.UserId == userId)
+                .ToListAsync();
 
 
+    public async Task<bool> CanDeleteVehicle(int vehicleId)
+        => await _ctx.Vehicles.AnyAsync(v => v.Id == vehicleId
+            && v.isParked == false);
+
+    public async Task RemoveVehicleAndSaveAsync(Vehicle vehicle)
+    {
+        _ctx.Vehicles.Remove(vehicle);
+        await _ctx.SaveChangesAsync();
+    }
+    
+    
+    
 }
+
 
 

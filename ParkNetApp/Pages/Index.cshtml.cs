@@ -1,27 +1,24 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using ParkNetApp.Data.Repositories;
-using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace ParkNetApp.Pages;
-
 [Authorize]
+
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
-    private readonly ParkNetRepository _parkNetRepository;
+    private readonly ParkNetRepository _repo;
     public bool IsActivated { get; private set; }
 
     public IndexModel(ILogger<IndexModel> logger, ParkNetRepository parkNetRepository)
     {
         _logger = logger;
-        _parkNetRepository = parkNetRepository;
+        _repo = parkNetRepository;
     }
 
-    public void OnGet()
+    public async Task OnGet()
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        IsActivated = _parkNetRepository.IsAnActiveAccount(userId);
+        IsActivated = _repo.IsAnActiveAccount(userId);
+        
     }
 }

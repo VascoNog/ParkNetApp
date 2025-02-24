@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 
 namespace ParkNetApp.Pages.ActivateAccount;
-[Authorize]
+[Authorize (Roles = "Member")]
 
 public class IndexModel : PageModel
 {

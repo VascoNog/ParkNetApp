@@ -1,62 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using ParkNetApp.Data;
-using ParkNetApp.Data.Entities;
+﻿namespace ParkNetApp.Pages.AddVehicle;
 
-namespace ParkNetApp.Pages.AddVehicle
+public class DeleteModel : PageModel
 {
-    public class DeleteModel : PageModel
+    private readonly ParkNetRepository _repo;
+
+    public DeleteModel(ParkNetRepository parkNetRepository)
+        => _repo = parkNetRepository;
+
+    [BindProperty]
+    public Vehicle? Vehicle { get; set; }
+
+    public async Task<IActionResult> OnGetAsync(int? id)
     {
-        private readonly ParkNetApp.Data.ParkNetDbContext _context;
-
-        public DeleteModel(ParkNetApp.Data.ParkNetDbContext context)
+        if (id == null)
         {
-            _context = context;
-        }
-
-        [BindProperty]
-        public Vehicle Vehicle { get; set; } = default!;
-
-        public async Task<IActionResult> OnGetAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var vehicle = await _context.Vehicles.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (vehicle is not null)
-            {
-                Vehicle = vehicle;
-
-                return Page();
-            }
-
             return NotFound();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        Vehicle = await _repo.GetVehicleByIdAsync(id.Value);
+        if (Vehicle == null)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var vehicle = await _context.Vehicles.FindAsync(id);
-            if (vehicle != null)
-            {
-                Vehicle = vehicle;
-                _context.Vehicles.Remove(Vehicle);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
+            return NotFound();
         }
+
+        return Page();
+    }
+
+    public async Task<IActionResult> OnPostAsync(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+
+        Vehicle = await _repo.GetVehicleByIdAsync(id.Value);
+        if (Vehicle == null)
+        {
+            ModelState.AddModelError(string.Empty, "The vehicle does not exist or was already deleted.");
+            return Page();
+        }
+
+        if (!await _repo.CanDeleteVehicle(id.Value))
+        {
+            ModelState.AddModelError(string.Empty, "This vehicle cannot be deleted because it is currently parked.");
+            return Page();
+        }
+
+        await _repo.RemoveVehicleAndSaveAsync(Vehicle);
+
+        return RedirectToPage("./Index");
     }
 }
