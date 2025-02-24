@@ -11,15 +11,15 @@ public class ParkNetDbContext : IdentityDbContext
 
     public DbSet<EntryAndExitHistory> EntriesAndExitsHistory { get; set; }
     public DbSet<Floor> Floors { get; set; }
-    public DbSet<NonSubscriptionParkingTariff> NonSubscriptionParkingTariffs { get; set; } // Entidade isolada
+    public DbSet<NonSubscriptionParkingTariff> NonSubscriptionParkingTariffs { get; set; }
     public DbSet<ParkingLot> ParkingLots { get; set; }
-    public DbSet<ParkingPermit> ParkingPermits { get; set; } // Entidade isolada
+    public DbSet<ParkingPermit> ParkingPermits { get; set; }
     public DbSet<PermitInfo> PermitInfos { get; set; }
     public DbSet<Slot> Slots { get; set; }
     public DbSet<Movement> Movements { get; set; }
     public DbSet<UserInfo> UserInfos { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
-    public DbSet<VehicleType> VehicleTypes { get; set; } // Entidade isolada
+    public DbSet<VehicleType> VehicleTypes { get; set; }
     public DbSet<EmailBox> EmailBoxes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,7 +42,7 @@ public class ParkNetDbContext : IdentityDbContext
         // Configuration of NonSubscriptionParkingTariff Entity
         modelBuilder.Entity<NonSubscriptionParkingTariff>(entity =>
         {
-            entity.Property(e => e.Limit).IsRequired().HasColumnType("int");
+            entity.Property(e => e.Limit).IsRequired().HasColumnType("decimal(5,2)");
             entity.Property(e => e.Tariff).IsRequired().HasColumnType("decimal(5,2)");
             entity.Property(e => e.ActiveSince).IsRequired().HasColumnType("date");
         });

@@ -355,8 +355,8 @@ namespace ParkNetApp.Migrations
                     b.Property<DateOnly?>("ActiveUntil")
                         .HasColumnType("date");
 
-                    b.Property<int>("Limit")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Limit")
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<decimal>("Tariff")
                         .HasColumnType("decimal(5,2)");

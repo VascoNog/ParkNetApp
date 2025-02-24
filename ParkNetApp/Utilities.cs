@@ -6,7 +6,7 @@ public class Utilities
 
     public static bool IsLayoutValid(string layout)
         => !string.IsNullOrEmpty(layout)
-        && Regex.IsMatch(layout, "^[CM ]+$");
+        && Regex.IsMatch(layout, "^[CM \n]+$", RegexOptions.Multiline);
 
     public static List<Slot> GetSlots(string layout, List<Floor> floorsOfParkingLot)
     {

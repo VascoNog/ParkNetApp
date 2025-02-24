@@ -395,3 +395,4 @@ D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\staticwebassets.upToDateC
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\ot756y5lbt-fwrpzi6ras.gz
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\obj\Debug\net9.0\compressed\w1zqpgyx2w-z7tjbgkh5w.gz
 D:\ReStart_Pessoal\ParkNet\ParkNetApp\bin\Debug\net9.0\FluentResults.dll
+D:\ReStart_Pessoal\ParkNet\ParkNetApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
