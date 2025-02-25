@@ -3,7 +3,6 @@
 
 @{
     ViewData["Title"] = "Index";
-    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
 <h1> Add a new Permit</h1>
@@ -24,7 +23,6 @@
                 @parkingLot.Designation
                  - @parkingLot.City
                 (@parkingLot.Country)
-
             </option>
         }
     </select>

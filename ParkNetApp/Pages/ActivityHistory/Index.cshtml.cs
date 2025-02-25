@@ -1,29 +1,17 @@
-﻿namespace ParkNetApp.Pages.ActivityHistory
+﻿namespace ParkNetApp.Pages.ActivityHistory;
+[Authorize (Roles ="Member")]
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private ParkNetRepository _repo;
+    public IndexModel(ParkNetRepository parkNetRepository)
+        => _repo = parkNetRepository;
+
+    public IList<EntryAndExitHistory> EntryAndExitHistory { get;set; }
+
+    public async Task OnGetAsync()
     {
-        private readonly ParkNetApp.Data.ParkNetDbContext _context;
-
-        public IndexModel(ParkNetApp.Data.ParkNetDbContext context)
-        {
-            _context = context;
-        }
-
-        public IList<EntryAndExitHistory> EntryAndExitHistory { get;set; } = default!;
-
-        public async Task OnGetAsync()
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            EntryAndExitHistory = await _context.EntriesAndExitsHistory
-                .Include(e => e.Movement)
-                .Include(e => e.Slot)
-                    .ThenInclude(s => s.Floor)
-                        .ThenInclude(f => f.ParkingLot)
-                .Include(e => e.User)
-                .Include(e => e.Vehicle)
-                .Where(e => e.UserId == userId) 
-                .ToListAsync();
-
-        }
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        EntryAndExitHistory = await _repo.GetUserEntryAndExitHistory(userId);
     }
 }

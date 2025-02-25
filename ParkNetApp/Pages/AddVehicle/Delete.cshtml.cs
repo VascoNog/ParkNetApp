@@ -1,5 +1,5 @@
 ﻿namespace ParkNetApp.Pages.AddVehicle;
-
+[Authorize (Roles="Member")]
 public class DeleteModel : PageModel
 {
     private readonly ParkNetRepository _repo;

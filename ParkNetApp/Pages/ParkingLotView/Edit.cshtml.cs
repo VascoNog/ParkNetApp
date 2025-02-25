@@ -1,24 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using ParkNetApp.Data.Entities;
-
+﻿
 namespace ParkNetApp.Pages.ParkingLotView;
-
 public class EditModel : PageModel
 {
     [BindProperty]
     public Slot Slot { get; set; }
 
     [BindProperty]
-    public IList<Floor> Floor { get; set; }
+    public IList<Floor> Floors { get; set; }
 
 
-    private readonly ParkNetApp.Data.ParkNetDbContext _context;
-
-    public EditModel(ParkNetApp.Data.ParkNetDbContext context)
-    {
-        _context = context;
-    }
-
+    private ParkNetRepository _repo;
+    public EditModel(ParkNetRepository parkNetRepository)
+        => _repo = parkNetRepository;
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {
@@ -27,29 +20,21 @@ public class EditModel : PageModel
             return NotFound();
         }
 
-        var slot = await _context.Slots.Include(s => s.Floor)
-            .ThenInclude(f => f.ParkingLot)
-            .FirstOrDefaultAsync(m => m.Id == id);
+        var slot = await _repo.GetSlotAsyncById(id.Value);
         if (slot == null)
         {
             return NotFound();
         }
         Slot = slot;
 
-
-        var floor = _context.Slots.Include(s => s.Floor)
-            .ThenInclude(f => f.ParkingLot)
-            .Where(s => s.Floor.ParkingLotId == slot.Floor.ParkingLotId)
-            .Select(s => s.Floor)
-            .Distinct()
-            .ToList();
-        if(floor == null)
+        var floors = await _repo.GetFloorsBySlot(Slot);
+        if(floors == null)
         {
             return NotFound();
         }
-        Floor = floor;
+        Floors = floors;
 
-        ViewData["FloorId"] = new SelectList(Floor, "Id", "Name");
+        ViewData["FloorId"] = new SelectList(Floors, "Id", "Name");
         return Page();
     }
 
@@ -60,11 +45,11 @@ public class EditModel : PageModel
             return Page();
         }
 
-        _context.Attach(Slot).State = EntityState.Modified;
+        _repo.AttachSateModified(Slot);
 
         try
         {
-            await _context.SaveChangesAsync();
+            await _repo.SaveAllChangesAsync();
         }
         catch (DbUpdateConcurrencyException)
         {
@@ -78,36 +63,27 @@ public class EditModel : PageModel
             }
         }
 
-         var slot = await _context.Slots
-        .Include(s => s.Floor)
-        .ThenInclude(f => f.ParkingLot)
-        .FirstOrDefaultAsync(s => s.Id == Slot.Id);
+        var slot = await _repo.GetSlotAsyncById(Slot.Id);
         if (slot == null)
         {
             return NotFound();
         }
         Slot = slot;
 
-
-        var floor = _context.Slots.Include(s => s.Floor)
-            .ThenInclude(f => f.ParkingLot)
-            .Where(s => s.Floor.ParkingLotId == slot.Floor.ParkingLotId)
-            .Select(s => s.Floor)
-            .Distinct()
-            .ToList();
-        if (floor == null)
+        var floors = await _repo.GetFloorsBySlot(Slot);
+        if (floors == null)
         {
             return NotFound();
         }
-        Floor = floor;
+        Floors = floors;
 
-        ViewData["FloorId"] = new SelectList(Floor, "Id", "Name");
+        ViewData["FloorId"] = new SelectList(Floors, "Id", "Name");
 
         return Page();
     }
 
     private bool SlotExists(int id)
     {
-        return _context.Slots.Any(e => e.Id == id);
+        return _repo.IsValidSlot(id);
     }
 }

@@ -7,10 +7,24 @@
 
 }
 
+@if(User.IsInRole("Admin"))
+{
+    <div>
+        <a asp-page="./Create" asp-route-id="@parkingLot.First().First().ParkingLotId">Add New Slots</a>
+    </div>
 
-<div>
-    <a asp-page="./Create" asp-route-id="@parkingLot.First().First().ParkingLotId">Add New Slots</a>
-</div>
+}
+
+@if (Model.SlotsInUseByUser != null && Model.SlotsInUseByUser.Any())
+{
+    @if (User.IsInRole("Member"))
+    {
+        <h4 class="text-success">
+            You are parked here:
+            <span class="text-primary">@string.Join(", ", Model.SlotsInUseByUser)</span>
+        </h4>
+    }
+}
 
 
 <style>

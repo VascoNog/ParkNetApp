@@ -1,17 +1,13 @@
 ﻿namespace ParkNetApp.Pages.AddParkingLot;
-
+[Authorize (Roles="Admin")]
 public class EditModel : PageModel
 {
+    private ParkNetRepository _repo;
+    public EditModel(ParkNetRepository parkNetRepository)
+        => _repo = parkNetRepository;
 
     [BindProperty]
-    public ParkingLot ParkingLot { get; set; } 
-
-    private readonly ParkNetApp.Data.ParkNetDbContext _context;
-
-    public EditModel(ParkNetApp.Data.ParkNetDbContext context)
-    {
-        _context = context;
-    }
+    public ParkingLot ParkingLot { get; set; }
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {
@@ -20,7 +16,7 @@ public class EditModel : PageModel
             return NotFound();
         }
 
-        var parkinglot =  await _context.ParkingLots.FirstOrDefaultAsync(m => m.Id == id);
+        var parkinglot = await _repo.GetParkingLot(id.Value);
         if (parkinglot == null)
         {
             return NotFound();
@@ -36,11 +32,11 @@ public class EditModel : PageModel
             return Page();
         }
 
-        _context.Attach(ParkingLot).State = EntityState.Modified;
+        _repo.AttachSateModified(ParkingLot);
 
         try
         {
-            await _context.SaveChangesAsync();
+            await _repo.SaveAllChangesAsync();
         }
         catch (DbUpdateConcurrencyException)
         {
@@ -59,6 +55,6 @@ public class EditModel : PageModel
 
     private bool ParkingLotExists(int id)
     {
-        return _context.ParkingLots.Any(e => e.Id == id);
+        return _repo.IsValidParkingLot(id);
     }
 }

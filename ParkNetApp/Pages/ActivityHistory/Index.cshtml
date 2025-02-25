@@ -7,10 +7,6 @@
 
 <h1 class="mb-4">History - Entries and Exits</h1>
 
-@* <p>
-    <a asp-page="Create" class="btn btn-primary">Create New</a>
-</p> *@
-
 <table class="table table-striped table-bordered">
     <thead class="thead-dark">
         <tr>
@@ -35,11 +31,6 @@
                 <td>@(item.Movement.Amount.ToString("C") ?? "--")</td>
                 <td>@(item.Movement.TransactionType ?? "--")</td>
                 <td>@(item.Movement.TransactionDate?.ToString("dd/MM/yyyy HH:mm") ?? "--")</td>
-@*                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
-                </td> *@
             </tr>
         }
     </tbody>

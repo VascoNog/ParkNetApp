@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 
 namespace ParkNetApp.Pages.MovementAndBilling;
-
+[Authorize]
 public class IndexModel : PageModel
 {
     private ParkNetRepository _repo;

@@ -5,8 +5,6 @@ namespace ParkNetApp.Pages.AddPermit;
 
 public class CreateModel : PageModel
 {
-    private readonly ParkNetApp.Data.ParkNetDbContext _context;
-
     public IList<Slot> Slots { get; set; }
     public IList<PermitInfo> PermitInfos { get; set; }
     private ParkNetRepository _repo { get; }
@@ -23,9 +21,6 @@ public class CreateModel : PageModel
         Slots = _repo.GetAvailableSlots(id.Value);  
         PermitInfos = _repo.GetPermitAvailableDays();
 
-        //ViewData["SLotId"] = new SelectList(_repo.GetAvailableSlots(id.Value), "Id", "Code");
-        //ViewData["PermitInfoId"] = new SelectList(_repo.GetPermitAvailableDays(), "Id", "DaysOfPermit");
-
         return Page();
     }
 
@@ -35,7 +30,6 @@ public class CreateModel : PageModel
         {
             return Page();
         }
-
 
         ParkingPermit ParkingPermit = new()
         {

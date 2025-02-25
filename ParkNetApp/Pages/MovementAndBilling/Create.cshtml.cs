@@ -1,34 +1,33 @@
-﻿namespace ParkNetApp.Pages.MovementAndBilling;
+﻿using System.Threading.Tasks;
+
+namespace ParkNetApp.Pages.MovementAndBilling;
 [Authorize]
 public class CreateModel : PageModel
 {
-    private readonly ParkNetApp.Data.ParkNetDbContext _context;
-
-    public CreateModel(ParkNetApp.Data.ParkNetDbContext context)
-    {
-        _context = context;
-    }
+    private ParkNetRepository _repo;
+    public CreateModel(ParkNetRepository parkNetRepository)
+        => _repo = parkNetRepository;
 
     [BindProperty]
     public Movement Movement { get; set; }
 
     public SelectList TransTypesOptions { get; set; }
 
-    public IActionResult OnGet()
+    public async Task<IActionResult> OnGet()
     {
-        ViewData["UserId"] = new SelectList(_context.Users, "Id", "Email");
+        //var users = await _repo.GetUsers();
+        ViewData["UserId"] = new SelectList(await _repo.GetUsers(), "Id", "Email");
         List<string> transTypes = ["Parking", "Permit", "Withdraw", "Adding Funds to Card"];
         TransTypesOptions = new SelectList(transTypes);
 
         return Page();
     }
 
-    // For more information, see https://aka.ms/RazorPagesCRUD.
     public async Task<IActionResult> OnPostAsync()
     {
         if (!ModelState.IsValid)
         {
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Email");
+            ViewData["UserId"] = new SelectList(await _repo.GetUsers(), "Id", "Email");
             return Page();
         }
 
@@ -41,8 +40,7 @@ public class CreateModel : PageModel
             Movement.Amount = - Movement.Amount;
 
 
-        _context.Movements.Add(Movement);
-        await _context.SaveChangesAsync();
+        await _repo.AddMovementAndSaveAsync(Movement);
 
         return RedirectToPage("./Index");
     }

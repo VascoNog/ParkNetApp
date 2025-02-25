@@ -1,5 +1,8 @@
 ﻿using FluentResults;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
+using ParkNetApp.Data.Entities;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 
@@ -471,10 +474,95 @@ public class ParkNetRepository
         _ctx.Vehicles.Remove(vehicle);
         await _ctx.SaveChangesAsync();
     }
-    
-    
-    
+
+    public async Task<List<ParkingLot>> GetAllParkingLots()
+        => await _ctx.ParkingLots.ToListAsync();
+
+    public async Task<List<ParkingPermit>> GetUserPermitsByUserId(string userId)
+        => await _ctx.ParkingPermits
+        .Include(p => p.PermitInfo)
+        .Include(p => p.Slot)
+            .ThenInclude(s => s.Floor)
+            .ThenInclude(f => f.ParkingLot)
+        .Include(p => p.User)
+        .Where(p => p.UserId == userId)
+        .ToListAsync();
+
+    public void AttachSateModified(ParkingLot parkingLot)
+        => _ctx.Attach(parkingLot).State = EntityState.Modified;
+
+    public void AttachSateModified(Slot slot)
+    => _ctx.Attach(slot).State = EntityState.Modified;
+
+
+    public bool IsValidParkingLot(int id)
+        => _ctx.ParkingLots.Any(p => p.Id == id);
+
+    public bool IsValidSlot(int id)
+        => _ctx.Slots.Any(e => e.Id == id);
+
+    public async Task<Slot> GetSlotAsyncById(int slotId)
+        => await _ctx.Slots.Include(s => s.Floor)
+            .ThenInclude(f => f.ParkingLot)
+            .FirstOrDefaultAsync(m => m.Id == slotId);
+
+    public async Task<List<Floor>> GetFloorsBySlot(Slot slot)
+        => await _ctx.Slots.Include(s => s.Floor)
+            .ThenInclude(f => f.ParkingLot)
+            .Where(s => s.Floor.ParkingLotId == slot.Floor.ParkingLotId)
+            .Select(s => s.Floor)
+            .Distinct()
+            .ToListAsync();
+
+    public async Task<List<IdentityUser>> GetUsers()
+        => await _ctx.Users.ToListAsync();
+
+    public async Task AddMovementAndSaveAsync(Movement movement)
+    {
+        _ctx.Movements.Add(movement);
+        await _ctx.SaveChangesAsync();
+    } 
+
+    public async Task<List<EntryAndExitHistory>> GetUserEntryAndExitHistory(string userId)
+        => await _ctx.EntriesAndExitsHistory
+            .Include(e => e.Movement)
+            .Include(e => e.Slot)
+                .ThenInclude(s => s.Floor)
+                    .ThenInclude(f => f.ParkingLot)
+            .Include(e => e.User)
+            .Include(e => e.Vehicle)
+            .Where(e => e.UserId == userId)
+            .ToListAsync();
+
+    public async Task<List<EntryAndExitHistory>> GetSlotsWhereUserIsParkedB(int parkingLotId, string userId)
+       => await _ctx.EntriesAndExitsHistory
+            .Include(eeh => eeh.Slot)
+                .ThenInclude(s => s.Floor)
+                .ThenInclude(f => f.ParkingLot)
+            .Include(eeh => eeh.User)
+            .Where(ehh => ehh.UserId == userId
+            && ehh.Slot.Floor.ParkingLotId == parkingLotId
+            && ehh.ExitAt == null)
+            .ToListAsync();
+
+    public async Task<IList<string>> GetSlotsWhereUserIsParked(int parkingLotId, string userId)
+       => await (from s in _ctx.Slots
+                       join f in _ctx.Floors on s.FloorId equals f.Id
+                       join pl in _ctx.ParkingLots on f.ParkingLotId equals pl.Id
+                       join eeh in _ctx.EntriesAndExitsHistory on s.Id equals eeh.SlotId
+                       where eeh.UserId == userId && pl.Id == parkingLotId
+                       && eeh.ExitAt == null
+                       select s.Code).ToListAsync();
+                
+
+
 }
+
+   //return await(from pl in _ctx.ParkingLots
+   //                   join f in _ctx.Floors on pl.Id equals f.ParkingLotId
+   //                   join s in _ctx.Slots on f.Id equals s.FloorId
+   //                   where pl.Id == parkingLotId
+   //                   select new ParkingModel
 
 
 

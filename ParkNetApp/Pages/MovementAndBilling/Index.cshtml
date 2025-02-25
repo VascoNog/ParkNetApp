@@ -7,27 +7,29 @@
 
 <h1>Billings</h1>
 
-<p>
-    <a asp-page="Create">Create New Entry Manually</a>
-</p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-page="Create">Create New Entry Manually</a>
+    </p>
 
-<p>
-    <a asp-page="BillingView">Billing Report</a>
-</p>
+    <p>
+        <a asp-page="BillingView">Billing Report</a>
+    </p>
 
-
-<form method="get">
-    <label for="emailFilter">Filter by User Email:</label>
-    <select id="emailFilter" name="emailFilter" asp-for="SelectedEmail" asp-items="Model.UserEmails">
-        <option value="">See All User Emails</option>
-    </select>
-    <label for="typeFilter">Filter by Transaction Type:</label>
-    <select id="typeFilter" name="typeFilter" asp-for="SelectedTransactionType" asp-items="Model.TransactionTypes">
-        <option value="">See All Transaction Types</option>
-    </select>
-    <button type="submit">Filter</button>
-</form>
-<br />
+    <form method="get">
+        <label for="emailFilter">Filter by User Email:</label>
+        <select id="emailFilter" name="emailFilter" asp-for="SelectedEmail" asp-items="Model.UserEmails">
+            <option value="">See All User Emails</option>
+        </select>
+        <label for="typeFilter">Filter by Transaction Type:</label>
+        <select id="typeFilter" name="typeFilter" asp-for="SelectedTransactionType" asp-items="Model.TransactionTypes">
+            <option value="">See All Transaction Types</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <br />
+}
 
 
 @if (Model.Movement == null || !Model.Movement.Any())
@@ -40,7 +42,7 @@ else
     {
         <p><strong>@Model.SelectedEmail</strong></p>
         <p>Current user balance: <span class="text-danger">@Model.UserBalance?.ToString("C")</span></p>
-   
+
         @if (Model.UserBalance < 0)
         {
             @if (Model.UserBalance < 0)
@@ -63,21 +65,24 @@ else
                 <th>Amount</th>
                 <th>Type</th>
                 <th>User Email</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.Movement)
             {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.TransactionDate)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Amount)</td>
-                    <td>@Html.DisplayFor(modelItem => item.TransactionType)</td>
-                    <td>@Html.DisplayFor(modelItem => item.User.Email)</td>
-                </tr>
+                if (item.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier) || User.IsInRole("Admin"))
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.TransactionDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TransactionType)</td>
+                        <td>@Html.DisplayFor(modelItem => item.User.Email)</td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
+
 
     
 }
