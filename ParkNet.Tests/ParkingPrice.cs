@@ -88,7 +88,7 @@ namespace ParkNet.Tests
         {
             // Arrange
             DateTime dateTimeReference = DateTime.UtcNow;
-            DateTime entryAt = dateTimeReference.AddHours(-10).AddMinutes(-30);
+            DateTime entryAt = dateTimeReference.AddHours(-100).AddMinutes(-30);
             DateTime exitAt = dateTimeReference;
             double minutes = (exitAt - entryAt).TotalMinutes;
 
@@ -96,7 +96,7 @@ namespace ParkNet.Tests
             var result = _repo.GetCorrectParkingAmount(minutes);
 
             // Assert
-            Assert.Equal(-6.30, result);
+            Assert.Equal(-60.30, result);
         }
 
         [Fact]

@@ -1,10 +1,4 @@
 ﻿using FluentResults;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
-using ParkNetApp.Data.Entities;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Diagnostics;
 
 namespace ParkNetApp.Data.Repositories;
 
@@ -322,14 +316,13 @@ public class ParkNetRepository
     public double GetCorrectParkingAmount(double minutes)
     {
         const double minTariff = 0.01;
-
+        minutes = Math.Round(minutes, 2);
         var tariff = _ctx.NonSubscriptionParkingTariffs
         .Where(nst => minutes <= nst.Limit
          && nst.ActiveUntil == null)
         .OrderBy(nst => nst.Limit)
         .Select(nst => nst.Tariff)
         .FirstOrDefault();
-
         if (tariff == 0)
             tariff = (double)_ctx.NonSubscriptionParkingTariffs.Min(nst => nst.Tariff) - minTariff;
         if (tariff < 0)
@@ -557,12 +550,4 @@ public class ParkNetRepository
 
 
 }
-
-   //return await(from pl in _ctx.ParkingLots
-   //                   join f in _ctx.Floors on pl.Id equals f.ParkingLotId
-   //                   join s in _ctx.Slots on f.Id equals s.FloorId
-   //                   where pl.Id == parkingLotId
-   //                   select new ParkingModel
-
-
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParkNet.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f98cd460b8e8c3badf8d94775cda87c8a8bb0ea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec38c23d79dfe1818baa4dcf597fd545c3fc6683")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParkNet.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParkNet.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -42,8 +42,8 @@ public class ParkNetDbContext : IdentityDbContext
         // Configuration of NonSubscriptionParkingTariff Entity
         modelBuilder.Entity<NonSubscriptionParkingTariff>(entity =>
         {
-            entity.Property(e => e.Limit).IsRequired().HasColumnType("decimal(5,2)");
-            entity.Property(e => e.Tariff).IsRequired().HasColumnType("decimal(5,2)");
+            entity.Property(e => e.Limit).IsRequired().HasColumnType("decimal(20,2)");
+            entity.Property(e => e.Tariff).IsRequired().HasColumnType("decimal(20,2)");
             entity.Property(e => e.ActiveSince).IsRequired().HasColumnType("date");
         });
 
